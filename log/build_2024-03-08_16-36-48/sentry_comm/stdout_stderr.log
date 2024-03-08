@@ -1,0 +1,32 @@
+[ 40%] Built target sentry_can
+[100%] Built target sentry_comm
+-- Install configuration: ""
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/sentry_comm/sentry_can
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm/comm_node.hpp
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm/can.hpp
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/library_path.sh
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/library_path.dsv
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/libsentry_comm.so
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/package_run_dependencies/sentry_comm
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/parent_prefix_path/sentry_comm
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/ament_prefix_path.sh
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/path.sh
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/path.dsv
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.bash
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.sh
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.zsh
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/package.dsv
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/packages/sentry_comm
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/rclcpp_components/sentry_comm
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/sentry_commConfig.cmake
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/sentry_commConfig-version.cmake
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/package.xml
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/launch
+-- Up-to-date: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/launch/sentry_comm.launch.py

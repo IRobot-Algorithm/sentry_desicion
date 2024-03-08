@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+            <Sequence name="Sequence">
+                <Condition ID="airForce"/>
+                <Condition ID="baseUnfolds"/>
+                <Condition ID="gameStart"/>
+                <Condition ID="outpostSurvives"/>
+                <Condition ID="lowHp"/>
+                <Action ID="GoBack" service_name="nav_goal"/>
+                <Action ID="RmulGoSupply" service_name="nav_goal"/>
+                <Action ID="RmulPatrol" service_name="nav_goal"/>
+            </Sequence>
+    </BehaviorTree>
+
+</root>

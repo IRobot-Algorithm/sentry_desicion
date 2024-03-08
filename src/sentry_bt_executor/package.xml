@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>sentry_bt_executor</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="694621753@qq.com">cwl</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>nav2_behavior_tree</depend>
+  <depend>nav2_util</depend>
+  <depend>nav_msgs</depend>
+  <depend>rclcpp_action</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>behaviortree_cpp_v3</depend>
+  <depend>sentry_behavior_tree</depend>
+  <depend>sentry_interfaces</depend>
+  <depend>rmos_interfaces</depend>
+  <depend>std_msgs</depend>
+  <depend>rclcpp_components</depend>
+
+
+  <!-- <depend>sentry_behavior_tree</depend> -->
+  
+  <exec_depend>ros2launch</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

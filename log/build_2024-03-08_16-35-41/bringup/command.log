@@ -1,0 +1,6 @@
+Invoking command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/niuoruo/workspace/sentry/ws/desicion/src/bringup -DCMAKE_INSTALL_PREFIX=/home/niuoruo/workspace/sentry/ws/desicion/install/bringup
+Invoked command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/niuoruo/workspace/sentry/ws/desicion/src/bringup -DCMAKE_INSTALL_PREFIX=/home/niuoruo/workspace/sentry/ws/desicion/install/bringup
+Invoking command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/desicion/build/bringup -- -j16 -l16
+Invoked command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/desicion/build/bringup -- -j16 -l16
+Invoking command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/desicion/build/bringup
+Invoked command in '/home/niuoruo/workspace/sentry/ws/desicion/build/bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/desicion/build/bringup

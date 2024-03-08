@@ -1,0 +1,91 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_auto: 0.9.12 (/opt/ros/foxy/share/ament_cmake_auto/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found sentry_interfaces: 0.0.0 (/home/niuoruo/workspace/sentry/ws/desicion/install/sentry_interfaces/share/sentry_interfaces/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+-- Found FastRTPS: /opt/ros/foxy/include  
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/niuoruo/workspace/sentry/ws/desicion/src/sentry_comm/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/niuoruo/workspace/sentry/ws/desicion/build/sentry_comm
+[35m[1mScanning dependencies of target sentry_comm[0m
+[35m[1mScanning dependencies of target sentry_can[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/sentry_can.dir/rclcpp_components/node_main_sentry_can.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/sentry_comm.dir/src/can.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/sentry_comm.dir/src/can_comm_node.cpp.o[0m
+[ 80%] [32m[1mLinking CXX executable sentry_can[0m
+[ 80%] Built target sentry_can
+[100%] [32m[1mLinking CXX shared library libsentry_comm.so[0m
+[100%] Built target sentry_comm
+-- Install configuration: ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/sentry_comm/sentry_can
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/sentry_comm/sentry_can" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm/comm_node.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/include/sentry_comm/can.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/library_path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/library_path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/libsentry_comm.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/lib/libsentry_comm.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/package_run_dependencies/sentry_comm
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/parent_prefix_path/sentry_comm
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/ament_prefix_path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/ament_prefix_path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/environment/path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.bash
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.zsh
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/local_setup.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/package.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/packages/sentry_comm
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/ament_index/resource_index/rclcpp_components/sentry_comm
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/sentry_commConfig.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/cmake/sentry_commConfig-version.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/package.xml
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/launch
+-- Installing: /home/niuoruo/workspace/sentry/ws/desicion/install/sentry_comm/share/sentry_comm/launch/sentry_comm.launch.py
