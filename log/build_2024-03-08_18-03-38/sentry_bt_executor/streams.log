@@ -1,0 +1,115 @@
+[0.125s] Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor -DCMAKE_INSTALL_PREFIX=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor
+[0.185s] -- The C compiler identification is GNU 9.4.0
+[0.238s] -- The CXX compiler identification is GNU 9.4.0
+[0.241s] -- Check for working C compiler: /usr/bin/cc
+[0.325s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.326s] -- Detecting C compiler ABI info
+[0.409s] -- Detecting C compiler ABI info - done
+[0.419s] -- Detecting C compile features
+[0.419s] -- Detecting C compile features - done
+[0.422s] -- Check for working CXX compiler: /usr/bin/c++
+[0.499s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.501s] -- Detecting CXX compiler ABI info
+[0.605s] -- Detecting CXX compiler ABI info - done
+[0.618s] -- Detecting CXX compile features
+[0.618s] -- Detecting CXX compile features - done
+[0.620s] -- Found ament_cmake_auto: 0.9.12 (/opt/ros/foxy/share/ament_cmake_auto/cmake)
+[0.645s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.645s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.818s] -- Found sentry_interfaces: 0.0.0 (/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/cmake)
+[0.844s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.849s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.932s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.957s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.027s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.158s] -- Found rmos_interfaces: 0.0.0 (/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/cmake)
+[1.291s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.292s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.293s] -- Looking for pthread.h
+[1.381s] -- Looking for pthread.h - found
+[1.381s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.455s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.456s] -- Looking for pthread_create in pthreads
+[1.524s] -- Looking for pthread_create in pthreads - not found
+[1.524s] -- Looking for pthread_create in pthread
+[1.601s] -- Looking for pthread_create in pthread - found
+[1.602s] -- Found Threads: TRUE  
+[2.370s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/foxy/share/eigen3_cmake_module/cmake)
+[2.371s] -- Found Eigen3: TRUE (found version "3.3.7") 
+[3.562s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[3.579s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.580s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.580s] -- Configured cppcheck include dirs: /home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/include
+[3.580s] -- Configured cppcheck exclude dirs and/or files: 
+[3.581s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.581s] -- Configured cpplint exclude dirs and/or files: 
+[3.581s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.582s] -- Added test 'lint_cmake' to check CMake code style
+[3.582s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[3.583s] -- Added test 'uncrustify' to check C / C++ code style
+[3.583s] -- Configured uncrustify additional arguments: 
+[3.583s] -- Added test 'xmllint' to check XML markup files
+[3.588s] -- Configuring done
+[3.631s] -- Generating done
+[3.632s] -- Build files have been written to: /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor
+[3.641s] Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor' returned '0': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor -DCMAKE_INSTALL_PREFIX=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor
+[3.644s] Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor -- -j16 -l16
+[3.680s] [35m[1mScanning dependencies of target bt_executor[0m
+[3.680s] [35m[1mScanning dependencies of target information_processor[0m
+[3.680s] [35m[1mScanning dependencies of target sentry_bt_executor[0m
+[3.707s] [ 33%] [32mBuilding CXX object CMakeFiles/information_processor.dir/rclcpp_components/node_main_information_processor.cpp.o[0m
+[3.707s] [ 33%] [32mBuilding CXX object CMakeFiles/bt_executor.dir/rclcpp_components/node_main_bt_executor.cpp.o[0m
+[3.722s] [ 50%] [32mBuilding CXX object CMakeFiles/sentry_bt_executor.dir/src/bt_executor.cpp.o[0m
+[5.278s] [ 66%] [32m[1mLinking CXX executable bt_executor[0m
+[5.326s] [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:[m[K In member function ‘[01m[Kvoid sentry_bt_executor::BtExecutor::refereeInformationCallback(sentry_interfaces::msg::RefereeInformation_<std::allocator<void> >::SharedPtr)[m[K’:
+[5.326s] [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:214:105:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreferee_information[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[5.327s]   214 | void BtExecutor::refereeInformationCallback([01;35m[Kconst sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information[m[K)
+[5.327s]       |                                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[5.328s] [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:[m[K In member function ‘[01m[Kvoid sentry_bt_executor::BtExecutor::armorsCallback(rmos_interfaces::msg::Armors_<std::allocator<void> >::SharedPtr)[m[K’:
+[5.328s] [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:220:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karmors[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[5.328s]   220 | void BtExecutor::armorsCallback([01;35m[Kconst rmos_interfaces::msg::Armors::SharedPtr armors[m[K)
+[5.328s]       |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[5.344s] [ 83%] [32m[1mLinking CXX executable information_processor[0m
+[5.378s] [ 83%] Built target bt_executor
+[5.439s] [ 83%] Built target information_processor
+[10.809s] [100%] [32m[1mLinking CXX shared library libsentry_bt_executor.so[0m
+[11.267s] [100%] Built target sentry_bt_executor
+[11.278s] Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor' returned '0': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor -- -j16 -l16
+[11.325s] Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor
+[11.337s] -- Install configuration: ""
+[11.337s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/information_processor
+[11.338s] -- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/information_processor" to ""
+[11.339s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor
+[11.340s] -- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor" to ""
+[11.340s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/include
+[11.340s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/include/sentry_bt_executor
+[11.340s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/include/sentry_bt_executor/bt_executor.hpp
+[11.340s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/library_path.sh
+[11.341s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/library_path.dsv
+[11.341s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/libsentry_bt_executor.so
+[11.345s] -- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/libsentry_bt_executor.so" to ""
+[11.345s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/ament_index/resource_index/package_run_dependencies/sentry_bt_executor
+[11.345s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/ament_index/resource_index/parent_prefix_path/sentry_bt_executor
+[11.345s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/ament_prefix_path.sh
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/ament_prefix_path.dsv
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/path.sh
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/environment/path.dsv
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/local_setup.bash
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/local_setup.sh
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/local_setup.zsh
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/local_setup.dsv
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.dsv
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/ament_index/resource_index/packages/sentry_bt_executor
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/ament_index/resource_index/rclcpp_components/sentry_bt_executor
+[11.346s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/cmake/ament_cmake_export_libraries-extras.cmake
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/cmake/sentry_bt_executorConfig.cmake
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/cmake/sentry_bt_executorConfig-version.cmake
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.xml
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/launch
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/launch/bt_executor.launch.py
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/README.md
+[11.347s] -- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/test_rmul.xml
+[11.349s] Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor' returned '0': AMENT_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor

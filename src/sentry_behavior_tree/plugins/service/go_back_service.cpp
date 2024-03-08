@@ -5,16 +5,12 @@ namespace sentry_behavior_tree{
 
     GoBackService::GoBackService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
-        : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf)
-    {
-    }
+        : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
     void GoBackService::on_tick()
     {
-
         request_->pose.pose.position.x = 0;
         request_->pose.pose.position.y = 0;
-        request_->pose.header.frame_id = "map";
 
         RCLCPP_INFO(node_->get_logger(),"go_back_service on_tick()... ");
     }

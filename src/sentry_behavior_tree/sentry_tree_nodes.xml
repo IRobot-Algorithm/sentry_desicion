@@ -12,6 +12,8 @@
     <Action ID="RmulGoSupply"/>
 
     <Action ID="RmulPatrol"/>
+   
+    <Action ID="SetTarget"/>
 
     <!-- ############################### CONDITION NODES ############################## -->
 

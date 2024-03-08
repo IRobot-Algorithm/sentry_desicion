@@ -1,0 +1,651 @@
+[2.049s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[2.049s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f3ae2e5cb80>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=16, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f3ae2e5cb80>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f3ae2ebb220>)
+[2.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.136s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/niuoruo/workspace/sentry/ws/sentry_desicion'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.144s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['ignore', 'ignore_ament_install']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'ignore'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'ignore_ament_install'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['colcon_pkg']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'colcon_pkg'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['colcon_meta']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'colcon_meta'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['ros']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'ros'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['cmake', 'python']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'cmake'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'python'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extensions ['python_setup_py']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag) by extension 'python_setup_py'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['ignore', 'ignore_ament_install']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'ignore'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'ignore_ament_install'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['colcon_pkg']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'colcon_pkg'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['colcon_meta']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'colcon_meta'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['ros']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'ros'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['cmake', 'python']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'cmake'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'python'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extensions ['python_setup_py']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_46_46) by extension 'python_setup_py'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['ignore', 'ignore_ament_install']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'ignore'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'ignore_ament_install'
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['colcon_pkg']
+[2.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'colcon_pkg'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['colcon_meta']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'colcon_meta'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['ros']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'ros'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['cmake', 'python']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'cmake'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'python'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extensions ['python_setup_py']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bag/rosbag2_2023_07_06-00_50_27) by extension 'python_setup_py'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extensions ['ignore', 'ignore_ament_install']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extension 'ignore'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extension 'ignore_ament_install'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extensions ['colcon_pkg']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extension 'colcon_pkg'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extensions ['colcon_meta']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extension 'colcon_meta'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extensions ['ros']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/bringup) by extension 'ros'
+[2.149s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bringup' with type 'ros.ament_cmake' and name 'bringup'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['ignore', 'ignore_ament_install']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'ignore'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'ignore_ament_install'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['colcon_pkg']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'colcon_pkg'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['colcon_meta']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'colcon_meta'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['ros']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'ros'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['cmake', 'python']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'cmake'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'python'
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extensions ['python_setup_py']
+[2.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/docs) by extension 'python_setup_py'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extension 'ignore'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extension 'ignore_ament_install'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extensions ['colcon_pkg']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extension 'colcon_pkg'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extensions ['colcon_meta']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extension 'colcon_meta'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extensions ['ros']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/rmos_interfaces) by extension 'ros'
+[2.150s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rmos_interfaces' with type 'ros.ament_cmake' and name 'rmos_interfaces'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extensions ['ignore', 'ignore_ament_install']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extension 'ignore'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extension 'ignore_ament_install'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extensions ['colcon_pkg']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extension 'colcon_pkg'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extensions ['colcon_meta']
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extension 'colcon_meta'
+[2.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extensions ['ros']
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_behavior_tree) by extension 'ros'
+[2.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sentry_behavior_tree' with type 'ros.ament_cmake' and name 'sentry_behavior_tree'
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extensions ['ignore', 'ignore_ament_install']
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extension 'ignore'
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extension 'ignore_ament_install'
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extensions ['colcon_pkg']
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extension 'colcon_pkg'
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extensions ['colcon_meta']
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extension 'colcon_meta'
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extensions ['ros']
+[2.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_bt_executor) by extension 'ros'
+[2.152s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sentry_bt_executor' with type 'ros.ament_cmake' and name 'sentry_bt_executor'
+[2.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extensions ['ignore', 'ignore_ament_install']
+[2.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extension 'ignore'
+[2.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extension 'ignore_ament_install'
+[2.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extensions ['colcon_pkg']
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extension 'colcon_pkg'
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extensions ['colcon_meta']
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extension 'colcon_meta'
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extensions ['ros']
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_comm) by extension 'ros'
+[2.153s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sentry_comm' with type 'ros.ament_cmake' and name 'sentry_comm'
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extension 'ignore'
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extension 'ignore_ament_install'
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extensions ['colcon_pkg']
+[2.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extension 'colcon_pkg'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extensions ['colcon_meta']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extension 'colcon_meta'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extensions ['ros']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_interfaces) by extension 'ros'
+[2.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sentry_interfaces' with type 'ros.ament_cmake' and name 'sentry_interfaces'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extensions ['ignore', 'ignore_ament_install']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extension 'ignore'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extension 'ignore_ament_install'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extensions ['colcon_pkg']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extension 'colcon_pkg'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extensions ['colcon_meta']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extension 'colcon_meta'
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extensions ['ros']
+[2.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/sentry_srvs) by extension 'ros'
+[2.155s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sentry_srvs' with type 'ros.ament_cmake' and name 'sentry_srvs'
+[2.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.337s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.337s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.410s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/niuoruo/workspace/sentry/ws/sentry_desicion/install
+[2.443s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 300 installed packages in /opt/ros/foxy
+[2.444s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_args' from command line to 'None'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_target' from command line to 'None'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_clean_first' from command line to 'False'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'cmake_force_configure' from command line to 'False'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'ament_cmake_args' from command line to 'None'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[2.572s] Level 5:colcon.colcon_core.verb:set package 'bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.572s] DEBUG:colcon.colcon_core.verb:Building package 'bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/bringup', 'symlink_install': False, 'test_result_base': None}
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_args' from command line to 'None'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_target' from command line to 'None'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[2.605s] Level 5:colcon.colcon_core.verb:set package 'rmos_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.605s] DEBUG:colcon.colcon_core.verb:Building package 'rmos_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/rmos_interfaces', 'symlink_install': False, 'test_result_base': None}
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_args' from command line to 'None'
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_target' from command line to 'None'
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[2.638s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[2.639s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[2.639s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[2.639s] Level 5:colcon.colcon_core.verb:set package 'sentry_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.639s] DEBUG:colcon.colcon_core.verb:Building package 'sentry_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_interfaces', 'symlink_install': False, 'test_result_base': None}
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_args' from command line to 'None'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_target' from command line to 'None'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_clean_cache' from command line to 'False'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_clean_first' from command line to 'False'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'cmake_force_configure' from command line to 'False'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'ament_cmake_args' from command line to 'None'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'catkin_cmake_args' from command line to 'None'
+[2.672s] Level 5:colcon.colcon_core.verb:set package 'sentry_srvs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.672s] DEBUG:colcon.colcon_core.verb:Building package 'sentry_srvs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_srvs', 'symlink_install': False, 'test_result_base': None}
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_args' from command line to 'None'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_target' from command line to 'None'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_clean_cache' from command line to 'False'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_clean_first' from command line to 'False'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'cmake_force_configure' from command line to 'False'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'ament_cmake_args' from command line to 'None'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'catkin_cmake_args' from command line to 'None'
+[2.712s] Level 5:colcon.colcon_core.verb:set package 'sentry_behavior_tree' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.712s] DEBUG:colcon.colcon_core.verb:Building package 'sentry_behavior_tree' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree', 'symlink_install': False, 'test_result_base': None}
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_args' from command line to 'None'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_target' from command line to 'None'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_clean_cache' from command line to 'False'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_clean_first' from command line to 'False'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'cmake_force_configure' from command line to 'False'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'ament_cmake_args' from command line to 'None'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'catkin_cmake_args' from command line to 'None'
+[2.753s] Level 5:colcon.colcon_core.verb:set package 'sentry_comm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.753s] DEBUG:colcon.colcon_core.verb:Building package 'sentry_comm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_comm', 'symlink_install': False, 'test_result_base': None}
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_args' from command line to 'None'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_target' from command line to 'None'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_clean_cache' from command line to 'False'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_clean_first' from command line to 'False'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'cmake_force_configure' from command line to 'False'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'ament_cmake_args' from command line to 'None'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'catkin_cmake_args' from command line to 'None'
+[2.793s] Level 5:colcon.colcon_core.verb:set package 'sentry_bt_executor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.793s] DEBUG:colcon.colcon_core.verb:Building package 'sentry_bt_executor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor', 'merge_install': False, 'path': '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor', 'symlink_install': False, 'test_result_base': None}
+[2.827s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.864s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.865s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_interfaces' with build type 'ament_cmake'
+[2.865s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_interfaces'
+[2.899s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.900s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.900s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.011s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/rmos_interfaces' with build type 'ament_cmake'
+[3.011s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/rmos_interfaces'
+[3.052s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.052s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.162s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_srvs' with build type 'ament_cmake'
+[3.162s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_srvs'
+[3.198s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.198s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.300s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/bringup' with build type 'ament_cmake'
+[3.300s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/bringup'
+[3.345s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.345s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.453s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces -- -j16 -l16
+[3.458s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces -- -j16 -l16
+[3.463s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs -- -j16 -l16
+[3.467s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup -- -j16 -l16
+[3.496s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup -- -j16 -l16
+[3.533s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup
+[3.541s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bringup)
+[3.541s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/bringup
+[3.582s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup' for CMake module files
+[3.583s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup' for CMake config files
+[3.583s] Level 1:colcon.colcon_core.shell:create_environment_hook('bringup', 'cmake_prefix_path')
+[3.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.ps1'
+[3.641s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.dsv'
+[3.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.sh'
+[3.642s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/bin'
+[3.642s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/lib/pkgconfig/bringup.pc'
+[3.642s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/lib/python3.8/site-packages'
+[3.642s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/bin'
+[3.682s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.ps1'
+[3.682s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.dsv'
+[3.683s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.sh'
+[3.683s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.bash'
+[3.684s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.zsh'
+[3.684s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/colcon-core/packages/bringup)
+[3.689s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs -- -j16 -l16
+[3.689s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces -- -j16 -l16
+[3.693s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces -- -j16 -l16
+[3.743s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bringup)
+[3.782s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup' for CMake module files
+[3.784s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup' for CMake config files
+[3.784s] Level 1:colcon.colcon_core.shell:create_environment_hook('bringup', 'cmake_prefix_path')
+[3.821s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.ps1'
+[3.822s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.dsv'
+[3.822s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/hook/cmake_prefix_path.sh'
+[3.822s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/bin'
+[3.823s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/lib/pkgconfig/bringup.pc'
+[3.823s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/lib/python3.8/site-packages'
+[3.823s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/bin'
+[3.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.ps1'
+[3.857s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.dsv'
+[3.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.sh'
+[3.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.bash'
+[3.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/bringup/package.zsh'
+[3.858s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup/share/colcon-core/packages/bringup)
+[3.861s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces
+[3.864s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces
+[3.866s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs
+[3.911s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rmos_interfaces)
+[3.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/rmos_interfaces
+[3.950s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces' for CMake module files
+[3.951s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces' for CMake config files
+[3.952s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'cmake_prefix_path')
+[3.986s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.ps1'
+[3.986s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.dsv'
+[3.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.sh'
+[3.987s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib'
+[3.988s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'ld_library_path_lib')
+[4.026s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.ps1'
+[4.026s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.dsv'
+[4.026s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.sh'
+[4.027s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/bin'
+[4.027s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/pkgconfig/rmos_interfaces.pc'
+[4.027s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages'
+[4.027s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'pythonpath')
+[4.069s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.ps1'
+[4.070s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.dsv'
+[4.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.sh'
+[4.070s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/bin'
+[4.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.ps1'
+[4.104s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.dsv'
+[4.105s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.sh'
+[4.105s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.bash'
+[4.105s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.zsh'
+[4.106s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/colcon-core/packages/rmos_interfaces)
+[4.108s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_srvs)
+[4.109s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_srvs
+[4.143s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs' for CMake module files
+[4.143s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs' for CMake config files
+[4.144s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'cmake_prefix_path')
+[4.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.ps1'
+[4.182s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.dsv'
+[4.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.sh'
+[4.182s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib'
+[4.182s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'ld_library_path_lib')
+[4.219s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.ps1'
+[4.219s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.dsv'
+[4.220s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.sh'
+[4.220s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/bin'
+[4.220s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/pkgconfig/sentry_srvs.pc'
+[4.220s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages'
+[4.220s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'pythonpath')
+[4.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.ps1'
+[4.263s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.dsv'
+[4.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.sh'
+[4.264s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/bin'
+[4.302s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.ps1'
+[4.303s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.dsv'
+[4.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.sh'
+[4.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.bash'
+[4.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.zsh'
+[4.304s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/colcon-core/packages/sentry_srvs)
+[4.306s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_interfaces)
+[4.306s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_interfaces
+[4.340s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces' for CMake module files
+[4.340s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces' for CMake config files
+[4.340s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'cmake_prefix_path')
+[4.376s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.ps1'
+[4.377s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.dsv'
+[4.377s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.sh'
+[4.377s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib'
+[4.377s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'ld_library_path_lib')
+[4.413s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.ps1'
+[4.413s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.dsv'
+[4.414s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.sh'
+[4.414s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/bin'
+[4.414s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/pkgconfig/sentry_interfaces.pc'
+[4.414s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages'
+[4.414s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'pythonpath')
+[4.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.ps1'
+[4.453s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.dsv'
+[4.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.sh'
+[4.454s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/bin'
+[4.487s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.ps1'
+[4.487s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.dsv'
+[4.488s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.sh'
+[4.488s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.bash'
+[4.488s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.zsh'
+[4.488s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/colcon-core/packages/sentry_interfaces)
+[4.524s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rmos_interfaces)
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces' for CMake module files
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces' for CMake config files
+[4.562s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'cmake_prefix_path')
+[4.605s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.ps1'
+[4.605s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.dsv'
+[4.605s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/cmake_prefix_path.sh'
+[4.606s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib'
+[4.606s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'ld_library_path_lib')
+[4.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.ps1'
+[4.640s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.dsv'
+[4.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/ld_library_path_lib.sh'
+[4.640s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/bin'
+[4.641s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/pkgconfig/rmos_interfaces.pc'
+[4.641s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages'
+[4.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('rmos_interfaces', 'pythonpath')
+[4.684s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.ps1'
+[4.685s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.dsv'
+[4.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/hook/pythonpath.sh'
+[4.685s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/bin'
+[4.722s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.ps1'
+[4.722s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.dsv'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.sh'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.bash'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/rmos_interfaces/package.zsh'
+[4.724s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/share/colcon-core/packages/rmos_interfaces)
+[4.758s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_srvs)
+[4.794s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs' for CMake module files
+[4.795s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs' for CMake config files
+[4.795s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'cmake_prefix_path')
+[4.838s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.ps1'
+[4.838s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.dsv'
+[4.838s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/cmake_prefix_path.sh'
+[4.839s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib'
+[4.839s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'ld_library_path_lib')
+[4.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.ps1'
+[4.875s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.dsv'
+[4.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/ld_library_path_lib.sh'
+[4.875s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/bin'
+[4.875s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/pkgconfig/sentry_srvs.pc'
+[4.875s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages'
+[4.875s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_srvs', 'pythonpath')
+[4.908s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.ps1'
+[4.908s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.dsv'
+[4.908s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/hook/pythonpath.sh'
+[4.909s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/bin'
+[4.942s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.ps1'
+[4.942s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.dsv'
+[4.942s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.sh'
+[4.943s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.bash'
+[4.943s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/sentry_srvs/package.zsh'
+[4.943s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/share/colcon-core/packages/sentry_srvs)
+[4.979s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_interfaces)
+[5.018s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces' for CMake module files
+[5.018s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces' for CMake config files
+[5.019s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'cmake_prefix_path')
+[5.058s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.ps1'
+[5.058s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.dsv'
+[5.058s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/cmake_prefix_path.sh'
+[5.059s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib'
+[5.059s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'ld_library_path_lib')
+[5.096s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.ps1'
+[5.096s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.dsv'
+[5.096s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/ld_library_path_lib.sh'
+[5.096s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/bin'
+[5.096s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/pkgconfig/sentry_interfaces.pc'
+[5.097s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages'
+[5.097s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_interfaces', 'pythonpath')
+[5.129s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.ps1'
+[5.129s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.dsv'
+[5.129s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/hook/pythonpath.sh'
+[5.130s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/bin'
+[5.162s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.ps1'
+[5.163s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.dsv'
+[5.163s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.sh'
+[5.164s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.bash'
+[5.164s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/sentry_interfaces/package.zsh'
+[5.164s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/share/colcon-core/packages/sentry_interfaces)
+[5.164s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree' with build type 'ament_cmake'
+[5.165s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree'
+[5.205s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.206s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.308s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_comm' with build type 'ament_cmake'
+[5.308s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_comm'
+[5.346s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.346s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.466s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree -- -j16 -l16
+[5.470s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm -- -j16 -l16
+[5.542s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree -- -j16 -l16
+[5.551s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm -- -j16 -l16
+[5.598s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm
+[5.612s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree
+[5.616s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_comm)
+[5.617s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib PYTHONPATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib/python3.8/site-packages:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_comm
+[5.661s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm' for CMake module files
+[5.661s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm' for CMake config files
+[5.661s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_comm', 'cmake_prefix_path')
+[5.695s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.ps1'
+[5.695s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.dsv'
+[5.695s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.sh'
+[5.696s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib'
+[5.696s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_comm', 'ld_library_path_lib')
+[5.736s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.ps1'
+[5.736s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.dsv'
+[5.736s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.sh'
+[5.736s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/bin'
+[5.737s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib/pkgconfig/sentry_comm.pc'
+[5.737s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib/python3.8/site-packages'
+[5.737s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/bin'
+[5.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.ps1'
+[5.772s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.dsv'
+[5.772s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.sh'
+[5.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.bash'
+[5.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.zsh'
+[5.773s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/colcon-core/packages/sentry_comm)
+[5.776s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_behavior_tree)
+[5.777s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_behavior_tree
+[5.811s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree' for CMake module files
+[5.812s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree' for CMake config files
+[5.812s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_behavior_tree', 'cmake_prefix_path')
+[5.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.ps1'
+[5.846s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.dsv'
+[5.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.sh'
+[5.847s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib'
+[5.847s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_behavior_tree', 'ld_library_path_lib')
+[5.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.ps1'
+[5.884s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.dsv'
+[5.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.sh'
+[5.885s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/bin'
+[5.885s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/pkgconfig/sentry_behavior_tree.pc'
+[5.885s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/python3.8/site-packages'
+[5.885s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/bin'
+[5.918s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.ps1'
+[5.918s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.dsv'
+[5.919s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.sh'
+[5.919s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.bash'
+[5.919s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.zsh'
+[5.919s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/colcon-core/packages/sentry_behavior_tree)
+[5.960s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_comm)
+[5.995s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm' for CMake module files
+[5.995s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm' for CMake config files
+[5.995s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_comm', 'cmake_prefix_path')
+[6.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.ps1'
+[6.031s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.dsv'
+[6.031s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/cmake_prefix_path.sh'
+[6.031s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib'
+[6.032s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_comm', 'ld_library_path_lib')
+[6.077s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.ps1'
+[6.077s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.dsv'
+[6.078s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/hook/ld_library_path_lib.sh'
+[6.078s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/bin'
+[6.078s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib/pkgconfig/sentry_comm.pc'
+[6.078s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib/python3.8/site-packages'
+[6.078s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/bin'
+[6.113s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.ps1'
+[6.113s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.dsv'
+[6.114s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.sh'
+[6.114s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.bash'
+[6.114s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/sentry_comm/package.zsh'
+[6.114s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/share/colcon-core/packages/sentry_comm)
+[6.158s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_behavior_tree)
+[6.191s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree' for CMake module files
+[6.191s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree' for CMake config files
+[6.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_behavior_tree', 'cmake_prefix_path')
+[6.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.ps1'
+[6.230s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.dsv'
+[6.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/cmake_prefix_path.sh'
+[6.231s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib'
+[6.231s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_behavior_tree', 'ld_library_path_lib')
+[6.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.ps1'
+[6.266s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.dsv'
+[6.266s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/hook/ld_library_path_lib.sh'
+[6.266s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/bin'
+[6.266s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/pkgconfig/sentry_behavior_tree.pc'
+[6.266s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/python3.8/site-packages'
+[6.266s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/bin'
+[6.301s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.ps1'
+[6.301s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.dsv'
+[6.302s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.sh'
+[6.302s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.bash'
+[6.302s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.zsh'
+[6.302s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/colcon-core/packages/sentry_behavior_tree)
+[6.303s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor' with build type 'ament_cmake'
+[6.303s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor'
+[6.338s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.338s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor -- -j16 -l16
+[6.554s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --build /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor -- -j16 -l16
+[6.603s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor
+[6.620s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_bt_executor)
+[6.621s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor' returned '0': CMAKE_PREFIX_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/bringup:/opt/ros/foxy LD_LIBRARY_PATH=/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_srvs/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/rmos_interfaces/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib:/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_comm/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/extras/CUPTI/lib64:/home/niuoruo/bag/TensorRT/TensorRT-8.2.3.0.Linux.x86_64-gnu.cuda-11.4.cudnn8.2/TensorRT-8.2.3.0/lib /usr/bin/cmake --install /home/niuoruo/workspace/sentry/ws/sentry_desicion/build/sentry_bt_executor
+[6.656s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor' for CMake module files
+[6.656s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor' for CMake config files
+[6.656s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_bt_executor', 'cmake_prefix_path')
+[6.693s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.ps1'
+[6.693s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.dsv'
+[6.693s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.sh'
+[6.694s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib'
+[6.694s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_bt_executor', 'ld_library_path_lib')
+[6.726s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.ps1'
+[6.726s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.dsv'
+[6.727s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.sh'
+[6.727s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/bin'
+[6.727s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/pkgconfig/sentry_bt_executor.pc'
+[6.727s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/python3.8/site-packages'
+[6.728s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/bin'
+[6.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.ps1'
+[6.761s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.dsv'
+[6.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.sh'
+[6.762s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.bash'
+[6.762s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.zsh'
+[6.762s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/colcon-core/packages/sentry_bt_executor)
+[6.866s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sentry_bt_executor)
+[6.903s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor' for CMake module files
+[6.904s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor' for CMake config files
+[6.904s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_bt_executor', 'cmake_prefix_path')
+[6.938s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.ps1'
+[6.938s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.dsv'
+[6.938s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/cmake_prefix_path.sh'
+[6.939s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib'
+[6.939s] Level 1:colcon.colcon_core.shell:create_environment_hook('sentry_bt_executor', 'ld_library_path_lib')
+[6.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.ps1'
+[6.972s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.dsv'
+[6.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/hook/ld_library_path_lib.sh'
+[6.973s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/bin'
+[6.973s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/pkgconfig/sentry_bt_executor.pc'
+[6.973s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/lib/python3.8/site-packages'
+[6.973s] Level 1:colcon.colcon_core.environment:checking '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/bin'
+[7.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.ps1'
+[7.010s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.dsv'
+[7.010s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.sh'
+[7.010s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.bash'
+[7.010s] INFO:colcon.colcon_core.shell:Creating package script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/package.zsh'
+[7.011s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_bt_executor/share/colcon-core/packages/sentry_bt_executor)
+[7.011s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.011s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.011s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.011s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.054s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.054s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.054s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.066s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.108s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/local_setup.ps1'
+[7.109s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/_local_setup_util_ps1.py'
+[7.110s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/setup.ps1'
+[7.147s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/local_setup.sh'
+[7.147s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/_local_setup_util_sh.py'
+[7.148s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/setup.sh'
+[7.185s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/local_setup.bash'
+[7.186s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/setup.bash'
+[7.222s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/local_setup.zsh'
+[7.222s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/setup.zsh'

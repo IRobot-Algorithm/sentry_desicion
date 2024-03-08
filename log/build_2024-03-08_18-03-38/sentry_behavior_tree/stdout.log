@@ -1,0 +1,70 @@
+[35m[1mScanning dependencies of target set_target_bt_node[0m
+[ 11%] Built target air_force_condition_bt_node
+[ 27%] Built target outpost_survives_condition_bt_node
+[ 33%] Built target low_hp_condition_bt_node
+[ 44%] Built target game_start_condition_bt_node
+[ 55%] Built target base_unfolds_condition_bt_node
+[ 66%] Built target rmul_go_supply_bt_node
+[ 77%] Built target go_back_bt_node
+[ 88%] Built target rmul_patrol_bt_node
+[ 94%] [32mBuilding CXX object CMakeFiles/set_target_bt_node.dir/plugins/service/set_target_service.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libset_target_bt_node.so[0m
+[100%] Built target set_target_bt_node
+-- Install configuration: ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libgo_back_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libgo_back_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/librmul_patrol_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/librmul_patrol_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/librmul_go_supply_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/librmul_go_supply_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libset_target_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libset_target_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libair_force_condition_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libair_force_condition_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libbase_unfolds_condition_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libbase_unfolds_condition_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libgame_start_condition_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/libgame_start_condition_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/liblow_hp_condition_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/liblow_hp_condition_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/liboutpost_survives_condition_bt_node.so
+-- Set runtime path of "/home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/lib/liboutpost_survives_condition_bt_node.so" to ""
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include/
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/service
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/service/rmul_go_supply_service.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/service/set_target_service.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/service/rmul_patrol_service.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/service/go_back_service.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/action
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/control
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/decorator
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition/game_start_condition.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition/outpost_survives_condition.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition/air_force_condition.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition/base_unfolds_condition.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//sentry_behavior_tree/plugins/condition/low_hp_condition.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/include//bt_engine.hpp
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/sentry_tree_nodes.xml
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/library_path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/library_path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/ament_index/resource_index/package_run_dependencies/sentry_behavior_tree
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/ament_index/resource_index/parent_prefix_path/sentry_behavior_tree
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/ament_prefix_path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/ament_prefix_path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/path.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/environment/path.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/local_setup.bash
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/local_setup.sh
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/local_setup.zsh
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/local_setup.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.dsv
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/ament_index/resource_index/packages/sentry_behavior_tree
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/cmake/sentry_behavior_treeConfig.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/cmake/sentry_behavior_treeConfig-version.cmake
+-- Installing: /home/niuoruo/workspace/sentry/ws/sentry_desicion/install/sentry_behavior_tree/share/sentry_behavior_tree/package.xml

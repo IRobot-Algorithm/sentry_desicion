@@ -9,6 +9,7 @@
                 <Condition ID="outpostSurvives"/>
                 <Condition ID="lowHp"/>
                 <Action ID="GoBack" service_name="nav_goal"/>
+                <Action ID="SetTarget" service_name="nav_target"/>
                 <Action ID="RmulGoSupply" service_name="nav_goal"/>
                 <Action ID="RmulPatrol" service_name="nav_goal"/>
             </Sequence>

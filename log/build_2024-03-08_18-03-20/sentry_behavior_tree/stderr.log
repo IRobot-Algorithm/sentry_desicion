@@ -1,0 +1,10 @@
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus sentry_behavior_tree::SetTargetService::check_future(std::shared_future<std::shared_ptr<sentry_srvs::srv::NavTarget_Response_<std::allocator<void> > > >)[m[K’:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:26:43:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kelse[m[K’
+   26 |             return BT::NodeStatus::SUCCESS
+      |                                           [01;31m[K^[m[K
+      |                                           [32m[K;[m[K
+   27 |         [32m[Kelse[m[K if (rc == rclcpp::FutureReturnCode::TIMEOUT)
+      |         [32m[K~~~~[m[K                               
+make[2]: *** [CMakeFiles/set_target_bt_node.dir/build.make:63: CMakeFiles/set_target_bt_node.dir/plugins/service/set_target_service.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:202: CMakeFiles/set_target_bt_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -32,9 +32,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "go_back_bt_node",
         "rmul_patrol_bt_node",
         "rmul_go_supply_bt_node",
+        "set_target_bt_node",
         "air_force_condition_bt_node",
         "base_unfolds_condition_bt_node",
-        "low_hp_bt_node", 
+        "low_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
     };

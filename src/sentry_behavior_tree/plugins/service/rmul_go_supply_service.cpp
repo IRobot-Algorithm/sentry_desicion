@@ -7,11 +7,10 @@ namespace sentry_behavior_tree{
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void RmulGoSupplyService::on_tick(){
-
+    void RmulGoSupplyService::on_tick()
+    {
         request_->pose.pose.position.x = -3;
         request_->pose.pose.position.y = 6;
-        request_->pose.header.frame_id = "map";
 
         RCLCPP_INFO(node_->get_logger(),"rmul_go_supply_service on_tick()... ");
     }

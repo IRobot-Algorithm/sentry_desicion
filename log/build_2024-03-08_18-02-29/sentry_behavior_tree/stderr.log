@@ -1,0 +1,148 @@
+In file included from [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:2[m[K:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:13:85:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   13 | class SetTargetService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::[01;31m[KNavTarget[m[K>{
+      |                                                                                     [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:13:85:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:13:94:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   13 | class SetTargetService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget[01;31m[K>[m[K{
+      |                                                                                              [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   22 |         std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result) override;
+      |                                              [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:76:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   22 |         std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result) override;
+      |                                                                            [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   22 |         std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result) override;
+      |                                              [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:76:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   22 |         std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result) override;
+      |                                                                            [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   22 |         std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result) override;
+      |                                              [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:46:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:76:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   22 |         std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result) override;
+      |                                                                            [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::shared_future[m[K’ is not a type
+   22 |         std::[01;31m[Kshared_future[m[K<sentry_srvs::srv::NavTarget::Response::SharedPtr> future_result) override;
+      |              [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:22:27:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+   22 |         std::shared_future[01;31m[K<[m[Ksentry_srvs::srv::NavTarget::Response::SharedPtr> future_result) override;
+      |                           [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:19:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid sentry_behavior_tree::SetTargetService::on_tick()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+   19 |         void [01;31m[Kon_tick[m[K() override;
+      |              [01;31m[K^~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:21:24:[m[K [01;31m[Kerror: [m[K‘[01m[KBT::NodeStatus sentry_behavior_tree::SetTargetService::check_future(int)[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+   21 |         BT::NodeStatus [01;31m[Kcheck_future[m[K(
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:[m[K In constructor ‘[01m[Ksentry_behavior_tree::SetTargetService::SetTargetService(const string&, const BT::NodeConfiguration&)[m[K’:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:63:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+    8 |         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::[01;31m[KNavTarget[m[K>(service_node_name, conf){}
+      |                                                               [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:63:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+    8 |         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget[01;31m[K>[m[K(service_node_name, conf){}
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:73:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K([m[K’ token
+    8 |         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget>[01;31m[K([m[Kservice_node_name, conf){}
+      |                                                                         [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:6:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kservice_node_name[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    6 |     SetTargetService::SetTargetService([01;35m[Kconst std::string & service_node_name[m[K,
+      |                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:7:39:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kconf[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    7 |         [01;35m[Kconst BT::NodeConfiguration & conf[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:[m[K At global scope:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:91:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K,[m[K’ token
+    8 |         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget>[34m[K([m[Kservice_node_name[01;31m[K,[m[K conf){}
+      |                                                                         [34m[K~[m[K                 [01;31m[K^[m[K
+      |                                                                                           [32m[K)[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:8:97:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K)[m[K’ token
+    8 |         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget>(service_node_name, conf[01;31m[K)[m[K{}
+      |                                                                                                 [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:[m[K In member function ‘[01m[Kvoid sentry_behavior_tree::SetTargetService::on_tick()[m[K’:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:12:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krequest_[m[K’ was not declared in this scope
+   12 |         [01;31m[Krequest_[m[K->pose.pose.position.x = 0;
+      |         [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/service.hpp:34[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:25[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/opt/ros/foxy/include/nav2_util/node_utils.hpp:19[m[K,
+                 from [01m[K/opt/ros/foxy/include/nav2_behavior_tree/bt_service_node.hpp:22[m[K,
+                 from [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/include/sentry_behavior_tree/plugins/service/set_target_service.hpp:4[m[K,
+                 from [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:2[m[K:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:15:21:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+   15 |         RCLCPP_INFO([01;31m[Knode_[m[K->get_logger(),"set_target_service on_tick()... ");
+      |                     [01;31m[K^~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:15:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   15 |         [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(),"set_target_service on_tick()... ");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:15:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   15 |         [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(),"set_target_service on_tick()... ");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:15:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   15 |         [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(),"set_target_service on_tick()... ");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:[m[K At global scope:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   19 |     std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result)
+      |                                          [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result)
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   19 |     std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result)
+      |                                          [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result)
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   19 |     std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result)
+      |                                          [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result)
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:18:20:[m[K [01;31m[Kerror: [m[K‘[01m[KBT::NodeStatus sentry_behavior_tree::SetTargetService::check_future[m[K’ is not a static data member of ‘[01m[Kclass sentry_behavior_tree::SetTargetService[m[K’
+   18 |     BT::NodeStatus [01;31m[KSetTargetService[m[K::check_future(
+      |                    [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+   19 |     std::shared_future<sentry_srvs::srv::[01;31m[KNavTarget[m[K::Response::SharedPtr> future_result)
+      |                                          [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:42:[m[K [01;31m[Kerror: [m[K‘[01m[KNavTarget[m[K’ is not a member of ‘[01m[Ksentry_srvs::srv[m[K’
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:19:72:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr[01;31m[K>[m[K future_result)
+      |                                                                        [01;31m[K^[m[K
+In file included from [01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:40[m[K:
+/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h: In instantiation of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerNodeType(const string&) [with T = sentry_behavior_tree::SetTargetService; std::string = std::__cxx11::basic_string<char>][m[K’:
+[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_behavior_tree/plugins/service/set_target_service.cpp:44:16:[m[K   required from here
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:368:64:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: [registerNode]: accepts only classed derived from either ActionNodeBase, DecoratorNode, ControlNode or ConditionNode
+  366 |     static_assert(std::is_base_of<ActionNodeBase, T>::[01;31m[Kvalue ||[m[K
+      |                                                       [01;31m[K~~~~~~~~[m[K  
+  367 | [01;31m[K                      std::is_base_of<ControlNode, T>::value ||[m[K
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K 
+  368 | [01;31m[K                      std::is_base_of<DecoratorNode, T>::value ||[m[K
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+  369 | [01;31m[K                      std::is_base_of<ConditionNode, T>::value[m[K,
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  
+[01m[K/opt/ros/foxy/include/behaviortree_cpp_v3/bt_factory.h:399:19:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: [registerNode]: you MUST implement the static method:   PortsList providedPorts();
+
+  399 |     static_assert([01;31m[K!(param_constructable && !has_static_ports_list)[m[K, "[registerNode]: you "
+      |                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/set_target_bt_node.dir/build.make:63: CMakeFiles/set_target_bt_node.dir/plugins/service/set_target_service.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:202: CMakeFiles/set_target_bt_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

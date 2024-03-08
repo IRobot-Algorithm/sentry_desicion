@@ -7,11 +7,10 @@ namespace sentry_behavior_tree{
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void RmulPatrolService::on_tick(){
-
+    void RmulPatrolService::on_tick()
+    {
         request_->pose.pose.position.x = 9.0;
         request_->pose.pose.position.y = -6.0;
-        request_->pose.header.frame_id = "map";
 
         RCLCPP_INFO(node_->get_logger(),"rmul_patrol_service on_tick()... ");
     }
