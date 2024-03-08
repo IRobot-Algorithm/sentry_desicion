@@ -1,8 +1,0 @@
-[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:[m[K In member function ‘[01m[Kvoid sentry_bt_executor::BtExecutor::refereeInformationCallback(sentry_interfaces::msg::RefereeInformation_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:214:105:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreferee_information[m[K’ [[01;35m[K-Wunused-parameter[m[K]
-  214 | void BtExecutor::refereeInformationCallback([01;35m[Kconst sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information[m[K)
-      |                                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
-[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:[m[K In member function ‘[01m[Kvoid sentry_bt_executor::BtExecutor::armorsCallback(rmos_interfaces::msg::Armors_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/home/niuoruo/workspace/sentry/ws/sentry_desicion/src/sentry_bt_executor/src/bt_executor.cpp:220:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karmors[m[K’ [[01;35m[K-Wunused-parameter[m[K]
-  220 | void BtExecutor::armorsCallback([01;35m[Kconst rmos_interfaces::msg::Armors::SharedPtr armors[m[K)
-      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
