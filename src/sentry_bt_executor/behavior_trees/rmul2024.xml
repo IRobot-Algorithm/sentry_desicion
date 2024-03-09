@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="RMUL2023">
+  <!-- ////////// -->
+  <BehaviorTree ID="RMUL2023">
+    <Sequence name="Sequence">
+      <!-- <Condition ID="airForce"/>
+      <Condition ID="baseUnfolds"/>
+      <Condition ID="gameStart"/>
+      <Condition ID="outpostSurvives"/>
+      <Condition ID="lowHp"/> -->
+      <Action ID="GoBack" service_name="nav_goal"/>
+      <Action ID="SetTarget" service_name="nav_target" 
+        have_target="{have_target}" 
+        gimbal="{gimbal}" 
+        target_pos="{target_pos}"
+      />
+      <Action ID="RmulGoSupply" service_name="nav_goal"/>
+      <Action ID="SetLeftTarget" service_name="AimTarget_l"/>
+      <Action ID="SetRightTarget" service_name="AimTarget_r"/>
+    </Sequence>
+  </BehaviorTree>
+
+</root>

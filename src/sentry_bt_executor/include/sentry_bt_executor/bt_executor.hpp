@@ -58,6 +58,7 @@ protected:
     rclcpp::Time start_time_;
 
 private:
+    void judgeTarget();
 
     void refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information);
 

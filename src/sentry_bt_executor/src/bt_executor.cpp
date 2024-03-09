@@ -226,6 +226,11 @@ void BtExecutor::executeBehaviorTree()
     bt_->haltAllActions(tree_.rootNode());
 }
 
+void BtExecutor::JudgeTarget()
+{
+    
+}
+
 void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information)
 {
     game_start_ = referee_information->game_start;
@@ -240,7 +245,8 @@ void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::Refere
     for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
         enemy_hp_[i] = referee_information->enemy_hp[i];
 
-    air_force_ = referee_information->air_force;
+    // 裁判系统无敌方无人机信息
+    // air_force_ = referee_information->air_force;
     force_back_ = referee_information->force_back;
 }
 
