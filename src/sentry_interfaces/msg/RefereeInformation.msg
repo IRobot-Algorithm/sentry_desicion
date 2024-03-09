@@ -1,15 +1,18 @@
-#game_start
+# 比赛开始
 bool game_start
-#robot hp
-uint32 red_outpost_hp
-uint32 blue_outpost_hp
-#map point 
-geometry_msgs/Point map_point
-#client point
-geometry_msgs/Point client_point
-#force autoaim
-bool force_autoaim
-#tactics:outpost first/ignore outpost...
-uint32 tactic
-#forced change isInvincible  0根据读取前哨站判断 1强制无敌 2强制不无敌（开始小陀螺）
-uint32 invincible_mode
+# 比赛剩余时间
+uint16 gameover_time
+# 我方机器人信息
+uint16 robot_hp
+uint16 max_hp
+uint16 bullets
+uint16 our_outpost_hp
+uint16 our_base_hp
+uint8 base_shield
+uint16 gold_coins
+
+#enemy hp
+uint16[] enemy_hp
+
+bool air_force
+bool force_back

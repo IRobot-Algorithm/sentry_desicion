@@ -6,9 +6,9 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus outpostSurvives(BT::TreeNode & tree_node){
 
-        auto outpost_survives = tree_node.config().blackboard->get<bool>("outpost_survives");
+        auto our_outpost_hp = tree_node.config().blackboard->get<u_int16_t>("our_outpost_hp_");
 
-        return outpost_survives ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return our_outpost_hp > 0 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

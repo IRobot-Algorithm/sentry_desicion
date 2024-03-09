@@ -9,7 +9,7 @@ namespace sentry_behavior_tree{
 
     void SetTargetService::on_tick()
     {
-        int have_target;
+        u_int8_t have_target;
         bool gimbal;
         geometry_msgs::msg::PointStamped target_pos;
         getInput("have_target", have_target);;
@@ -19,6 +19,7 @@ namespace sentry_behavior_tree{
         std::cout << have_target << std::endl;
         request_->is_lost = have_target == 2;
         request_->gimbal = gimbal;
+        request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;
         request_->pose.pose.position.z = target_pos.point.z;
@@ -50,7 +51,7 @@ namespace sentry_behavior_tree{
     {
         return providedBasicPorts(
         {
-            BT::InputPort<int>("have_target"),
+            BT::InputPort<u_int8_t>("have_target"),
             BT::InputPort<bool>("gimbal"),
             BT::InputPort<geometry_msgs::msg::PointStamped>("target_pos"),
         });

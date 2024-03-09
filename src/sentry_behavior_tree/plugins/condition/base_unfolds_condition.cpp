@@ -6,9 +6,9 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus baseUnfolds(BT::TreeNode & tree_node){
 
-        auto base_unfolds = tree_node.config().blackboard->get<bool>("base_unfolds");
+        auto base_shield = tree_node.config().blackboard->get<u_int8_t>("base_shield");
 
-        return base_unfolds ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return base_shield <= 0 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

@@ -7,18 +7,12 @@
 #include <functional>
 #include <thread>
 
-
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <geometry_msgs/msg/quaternion_stamped.hpp>
-#include <geometry_msgs/msg/twist.hpp>
-#include <geometry_msgs/msg/twist_stamped.hpp>
 #include <geometry_msgs/msg/point_stamped.hpp>
 #include <geometry_msgs/msg/pose.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
-#include <std_msgs/msg/bool.hpp>
-#include <std_msgs/msg/int16.hpp>
-#include <std_msgs/msg/float32.hpp>
 
 #include "sentry_comm/can.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
@@ -72,6 +66,8 @@ class CanCommNode : public CommNode {
 
     /* Callback Group */
     rclcpp::CallbackGroup::SharedPtr send_infomation_callback_group_;
+
+    int my_color_ = -1;
 
 };
 

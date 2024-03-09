@@ -17,12 +17,12 @@
 
 #define CAN_NAME "can0"
 
-#define ROBOT_RECEIVE_ID 0x129       // 机器人状态信息ID
-#define ROBOT_RECEIVE_ID 0x129       // 机器人状态信息ID
 #define COMPETITION_RECEVIE_ID 0x12B // 比赛信息ID
-
-#define CLIENT_RECEIVE_ID 0x134     // 由云台手通过客户端发送的信息
-#define ROBOT_HP_ID 0x135
+#define ROBOT_STATE_RECEIVE_ID 0x129 // 机器人状态信息ID
+#define ARCHITECTRUE_HP_RECEIVE_ID 0x135 // 基地/前哨站血量ID
+#define ECONOMY_RECEIVE_ID 0x137 // 剩余发弹量/金币ID
+#define ENEMY_HP_RECEIVE_ID 0x12A // 敌方血量ID
+#define CLIENT_RECEIVE_ID 0x136  // 由云台手通过客户端发送的信息
 
 namespace transporter
 {

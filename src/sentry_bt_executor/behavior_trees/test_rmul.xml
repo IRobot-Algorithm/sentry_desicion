@@ -15,7 +15,8 @@
         target_pos="{target_pos}"
       />
       <Action ID="RmulGoSupply" service_name="nav_goal"/>
-      <Action ID="RmulPatrol" service_name="nav_goal"/>
+      <Action ID="SetLeftTarget" service_name="AimTarget_l"/>
+      <Action ID="SetRightTarget" service_name="AimTarget_r"/>
     </Sequence>
   </BehaviorTree>
 

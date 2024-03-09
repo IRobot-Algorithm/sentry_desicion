@@ -58,42 +58,39 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(50)); 
 
     /* 哨兵定位信息 */
-    blackboard_->set<bool>("in_patrol_area", in_patrol_area_);
-    blackboard_->set<bool>("in_supply_area", in_supply_area_);
-    blackboard_->set<bool>("in_save_space", in_save_space_);  
     blackboard_->set<double>("leave_time", leave_time_);
 
-    /* 我方机器人信息 */
-    blackboard_->set<int>("robot_hp", robot_hp_);
-    blackboard_->set<int>("bullets", bullets_);
-    blackboard_->set<int>("our_outpost_hp", our_outpost_hp_);
-    blackboard_->set<bool>("outpost_survives", outpost_survives_);
-    blackboard_->set<int>("our_base_hp", our_base_hp_);
-    blackboard_->set<bool>("base_unfolds", base_unfolds_);
-    blackboard_->set<int>("gold_coins", gold_coins_);
-    
     /* 比赛状态信息 */
-    blackboard_->set<bool>("game_start", robot_hp_);
-    blackboard_->set<double>("gameover_time", gameover_time_);
+    blackboard_->set<bool>("game_start", game_start_);
+    blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
 
-    enemy_hp_.resize(14, 300);
+    /* 我方机器人信息 */
+    blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
+    blackboard_->set<u_int16_t>("bullets", bullets_);
+    blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
+    blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
+    blackboard_->set<u_int8_t>("base_shield", base_shield_);
+    blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
+
+    // TODO: 更改初始血量
+    enemy_hp_.resize(8, 300);
     
     /* 敌方机器人血量及自瞄状态 */
-    blackboard_->set<int>("base_hp", enemy_hp_[0]);
-    blackboard_->set<int>("hero_hp", enemy_hp_[1]);
-    blackboard_->set<int>("engineer_hp", enemy_hp_[2]);
-    blackboard_->set<int>("infantry3_hp", enemy_hp_[3]);
-    blackboard_->set<int>("infantry4_hp", enemy_hp_[4]);
-    blackboard_->set<int>("infantry5_hp", enemy_hp_[5]);
-    blackboard_->set<int>("sentry_hp", enemy_hp_[6]);
-    blackboard_->set<int>("outpost_hp", enemy_hp_[7]);
-    blackboard_->set<int>("balance3_hp", enemy_hp_[11]);
-    blackboard_->set<int>("balance4_hp", enemy_hp_[12]);
-    blackboard_->set<int>("balance5_hp", enemy_hp_[13]);
-    blackboard_->set<int>("have_target", have_target_);
-    blackboard_->set<int>("gimbal", gimbal_);
+    blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
+    blackboard_->set<u_int16_t>("hero_hp", enemy_hp_[1]);
+    blackboard_->set<u_int16_t>("engineer_hp", enemy_hp_[2]);
+    blackboard_->set<u_int16_t>("infantry3_hp", enemy_hp_[3]);
+    blackboard_->set<u_int16_t>("infantry4_hp", enemy_hp_[4]);
+    blackboard_->set<u_int16_t>("infantry5_hp", enemy_hp_[5]);
+    blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
+    blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
+    blackboard_->set<u_int16_t>("have_target", have_target_);
+    blackboard_->set<u_int16_t>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
 
+    blackboard_->set<bool>("force_back", force_back_); // 强制回家
+
+    // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
 
     get_parameter("default_bt_xml_filename", default_bt_xml_filename_);
@@ -106,27 +103,14 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     }
 
     /* create callback group */ 
-    this->odometry_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
-    this->armors_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->execute_timer_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
     /* create subscription */
-    auto odometry_sub_options = rclcpp::SubscriptionOptions();
-    odometry_sub_options.callback_group = this->odometry_sub_callback_group_;
-    odometry_sub_ = this->create_subscription<nav_msgs::msg::Odometry>("/Odometry", 5,
-        std::bind(&BtExecutor::odometryCallback, this, _1), odometry_sub_options);
-
     auto referee_information_sub_options = rclcpp::SubscriptionOptions();
     referee_information_sub_options.callback_group = this->referee_information_sub_callback_group_;
     referee_information_sub_ = this->create_subscription<sentry_interfaces::msg::RefereeInformation>("/referee_information", 10,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
-
-    auto armors_sub_options = rclcpp::SubscriptionOptions();
-    armors_sub_options.callback_group = this->armors_sub_callback_group_;
-    armors_sub_ = this->create_subscription<rmos_interfaces::msg::Armors>("/armors", 10,
-        std::bind(&BtExecutor::armorsCallback, this, _1), armors_sub_options);
-
 
     RCLCPP_INFO(get_logger(), "Activating");
 
@@ -177,7 +161,39 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
-        judgeArea();
+        /* 比赛状态信息 */
+        blackboard_->set<bool>("game_start", game_start_);
+        blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
+
+        /* 我方机器人信息 */
+        blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
+        blackboard_->set<u_int16_t>("bullets", bullets_);
+        blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
+        blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
+        blackboard_->set<u_int8_t>("base_shield", base_shield_);
+        blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
+
+        // TODO: 更改初始血量
+        enemy_hp_.resize(8, 300);
+        
+        /* 敌方机器人血量及自瞄状态 */
+        blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
+        blackboard_->set<u_int16_t>("hero_hp", enemy_hp_[1]);
+        blackboard_->set<u_int16_t>("engineer_hp", enemy_hp_[2]);
+        blackboard_->set<u_int16_t>("infantry3_hp", enemy_hp_[3]);
+        blackboard_->set<u_int16_t>("infantry4_hp", enemy_hp_[4]);
+        blackboard_->set<u_int16_t>("infantry5_hp", enemy_hp_[5]);
+        blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
+        blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
+        blackboard_->set<u_int16_t>("have_target", have_target_);
+        blackboard_->set<u_int16_t>("gimbal", gimbal_);
+        blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
+
+        blackboard_->set<bool>("force_back", force_back_); // 强制回家
+
+        // 裁判系统没有的信息
+        blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
+
     };
 
     std::chrono::milliseconds loopTimeout = std::chrono::milliseconds(200);
@@ -210,79 +226,24 @@ void BtExecutor::executeBehaviorTree()
     bt_->haltAllActions(tree_.rootNode());
 }
 
-void BtExecutor::odometryCallback(const nav_msgs::msg::Odometry::SharedPtr odometry)
-{
-    sentry_odom_ = *odometry;
-}
-
 void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information)
 {
+    game_start_ = referee_information->game_start;
+    gameover_time_ = referee_information->gameover_time;
+    robot_hp_ = referee_information->robot_hp;
+    bullets_ = referee_information->bullets;
+    our_outpost_hp_ = referee_information->our_outpost_hp;
+    our_base_hp_ = referee_information->our_base_hp;
+    base_shield_ = referee_information->base_shield;
+    gold_coins_ = referee_information->gold_coins;
 
+    for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
+        enemy_hp_[i] = referee_information->enemy_hp[i];
 
+    air_force_ = referee_information->air_force;
+    force_back_ = referee_information->force_back;
 }
 
-void BtExecutor::armorsCallback(const rmos_interfaces::msg::Armors::SharedPtr armors)
-{
-
-    // std::fill(find_armors_.begin(), find_armors_.end(), false);
-
-    // for (auto &armor: armors->armors)
-    // {
-    //     find_armors_[armor.num_id] = true;
-    // }
-
-    // blackboard_->set<bool>("find_base", find_armors_[0]);
-    // blackboard_->set<bool>("find_hero", find_armors_[1]);
-    // blackboard_->set<bool>("find_engineer", find_armors_[2]);
-    // blackboard_->set<bool>("find_infantry3", find_armors_[3]);
-    // blackboard_->set<bool>("find_infantry4", find_armors_[4]);
-    // blackboard_->set<bool>("find_infantry5", find_armors_[5]);
-    // blackboard_->set<bool>("find_sentry", find_armors_[6]);
-    // blackboard_->set<bool>("find_outpost", find_armors_[7]);
-    // blackboard_->set<bool>("find_balance3", find_armors_[11]);
-    // blackboard_->set<bool>("find_balance4", find_armors_[12]);
-    // blackboard_->set<bool>("find_balance5", find_armors_[13]);
-
-}
-
-void BtExecutor::judgeArea()
-{
-
-    double x = sentry_odom_.pose.pose.position.x;
-    double y = sentry_odom_.pose.pose.position.y;
-
-
-    if (x > -2 && x < 2 && y > -1 && y < 1)
-    {
-        in_patrol_area_ = true;
-    }
-    else
-    {
-        if (in_patrol_area_)
-        {
-            rclcpp::Clock steady_clock{RCL_STEADY_TIME};
-            auto time = steady_clock.now();
-            leave_time_ = time.seconds();
-        }
-        in_patrol_area_ = false;
-    }
-
-    if (x > 7 && x < 8 && y > -5 && y < -4)
-        in_supply_area_ = true;
-    else
-        in_supply_area_ = false;
-
-    if (y < 5)
-        in_save_space_ = true;
-    else
-        in_save_space_ = false;
-
-    blackboard_->set<bool>("in_patrol_area", in_patrol_area_);
-    blackboard_->set<bool>("in_supply_area", in_supply_area_);
-    blackboard_->set<bool>("in_save_space", in_save_space_);
-    blackboard_->set<double>("leave_time", leave_time_);
-
-}
 
 } // namespace sentry_bt_executor
 

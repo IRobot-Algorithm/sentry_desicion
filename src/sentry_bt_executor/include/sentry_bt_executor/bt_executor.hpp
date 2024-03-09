@@ -11,15 +11,11 @@
 #include "nav2_util/simple_action_server.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
-#include "sentry_interfaces/msg/referee_information.hpp"
-#include "rmos_interfaces/msg/armor.hpp"
-#include "rmos_interfaces/msg/armors.hpp"
-
-#include "std_msgs/msg/bool.hpp"
-#include "std_msgs/msg/int16.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
-#include "nav_msgs/msg/odometry.hpp"
+
+#include "sentry_interfaces/msg/referee_information.hpp"
+
 
 namespace sentry_bt_executor{
 
@@ -63,55 +59,38 @@ protected:
 
 private:
 
-    void odometryCallback(const nav_msgs::msg::Odometry::SharedPtr odometry);
-
     void refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information);
 
-    void armorsCallback(const rmos_interfaces::msg::Armors::SharedPtr armors);
-
-    void judgeArea();
-
 private:
-    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odometry_sub_;
     rclcpp::Subscription<sentry_interfaces::msg::RefereeInformation>::SharedPtr referee_information_sub_;
-    rclcpp::Subscription<rmos_interfaces::msg::Armors>::SharedPtr armors_sub_;
 
-    rclcpp::CallbackGroup::SharedPtr odometry_sub_callback_group_;
     rclcpp::CallbackGroup::SharedPtr referee_information_sub_callback_group_;
-    rclcpp::CallbackGroup::SharedPtr armors_sub_callback_group_;
-    rclcpp::CallbackGroup::SharedPtr judge_area_timer_callback_group_;
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;
 
-    rclcpp::TimerBase::SharedPtr judge_area_timer_;
     rclcpp::TimerBase::SharedPtr execute_timer_;
 
-    /* 哨兵定位信息 */
-    nav_msgs::msg::Odometry sentry_odom_;
-    bool in_patrol_area_ = false;
-    bool in_supply_area_ = false;
-    bool in_save_space_ = false;
     double leave_time_ = 0; // 离开巡逻区的时间
 
     /* 我方机器人信息 */
-    int robot_hp_ = 0;
-    int bullets_ = 400;
-    int our_outpost_hp_ = 0;
-    bool outpost_survives_ = true;
-    int our_base_hp_ = 1000;
-    bool base_unfolds_ = false;
-    int gold_coins_ = 0; 
+    u_int16_t robot_hp_ = 0;
+    u_int16_t bullets_ = 400;
+    u_int16_t our_outpost_hp_ = 0;
+    u_int16_t our_base_hp_ = 1000;
+    u_int8_t base_shield_ = 100;
+    u_int16_t gold_coins_ = 0; 
 
     /* 比赛状态信息 */
     bool game_start_ = false;
-    double gameover_time_;
+    u_int16_t gameover_time_;
 
     /* 敌方机器人血量及自瞄状态 */
-    std::vector<int> enemy_hp_;
-    int have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
-    int gimbal_ = -1; // 0 for right, 1 for left, else error
+    std::vector<u_int16_t> enemy_hp_;
+    u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    bool gimbal_; // 0 for right, 1 for left
     geometry_msgs::msg::PointStamped target_pos_;
 
     bool air_force_ = false; // 敌方空中机器人信息
+    bool force_back_ = false; // 强制回家
 
 };
 

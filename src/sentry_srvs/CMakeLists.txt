@@ -36,7 +36,6 @@ set(dependencies
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/NavGoal.srv"
   "srv/NavTarget.srv"
-  "srv/SetTarget.srv"
 
   DEPENDENCIES ${dependencies}
 )
