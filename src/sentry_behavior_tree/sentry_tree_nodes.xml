@@ -3,9 +3,6 @@
 <root>
   <TreeNodesModel>
     <!-- ############################### ACTION NODES ################################# -->
-    <!-- <Action ID="Spin">
-      <input_port name="spin_time">Time to spin</input_port>
-    </Action> -->
 
     <Action ID="GoBack"/>
 
@@ -13,13 +10,18 @@
 
     <Action ID="RmulPatrol"/>
    
-    <Action ID="SetTarget"/>
-
+    <Action ID="SetTarget">
+      <input_port name="have_target"></input_port>
+      <input_port name="gimbal"></input_port>
+      <input_port name="target_pos"></input_port>
+    </Action>
     <!-- ############################### CONDITION NODES ############################## -->
 
     <Condition ID="airForce"/>
 
     <Condition ID="baseUnfolds"/>
+
+    <Condition ID="haveTarget"/>
 
     <Condition ID="lowHp"/>
 

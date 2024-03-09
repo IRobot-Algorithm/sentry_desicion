@@ -9,8 +9,19 @@ namespace sentry_behavior_tree{
 
     void SetTargetService::on_tick()
     {
-        request_->pose.pose.position.x = 0;
-        request_->pose.pose.position.y = 0;
+        int have_target;
+        bool gimbal;
+        geometry_msgs::msg::PointStamped target_pos;
+        getInput("have_target", have_target);;
+        getInput("gimbal", gimbal);
+        getInput("target_pos", target_pos);
+        std::cout << target_pos.point.x << std::endl;
+        std::cout << have_target << std::endl;
+        request_->is_lost = have_target == 2;
+        request_->gimbal = gimbal;
+        request_->pose.pose.position.x = target_pos.point.x;
+        request_->pose.pose.position.y = target_pos.point.y;
+        request_->pose.pose.position.z = target_pos.point.z;
 
         RCLCPP_INFO(node_->get_logger(),"set_target_service on_tick()... ");
     }
@@ -24,6 +35,7 @@ namespace sentry_behavior_tree{
         future_result, server_timeout_);
         if (rc == rclcpp::FutureReturnCode::SUCCESS)
             return BT::NodeStatus::SUCCESS;
+        // TODO : 无法跟随
         else if (rc == rclcpp::FutureReturnCode::TIMEOUT)
         {
             RCLCPP_WARN(
@@ -34,6 +46,15 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
+    BT::PortsList SetTargetService::providedPorts()
+    {
+        return providedBasicPorts(
+        {
+            BT::InputPort<int>("have_target"),
+            BT::InputPort<bool>("gimbal"),
+            BT::InputPort<geometry_msgs::msg::PointStamped>("target_pos"),
+        });
+    }
 
 }
 

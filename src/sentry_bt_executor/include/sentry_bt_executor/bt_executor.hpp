@@ -18,6 +18,7 @@
 #include "std_msgs/msg/bool.hpp"
 #include "std_msgs/msg/int16.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
+#include "geometry_msgs/msg/point_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 
 namespace sentry_bt_executor{
@@ -106,7 +107,9 @@ private:
 
     /* 敌方机器人血量及自瞄状态 */
     std::vector<int> enemy_hp_;
-    std::vector<bool> find_armors_;
+    int have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    int gimbal_ = -1; // 0 for right, 1 for left, else error
+    geometry_msgs::msg::PointStamped target_pos_;
 
     bool air_force_ = false; // 敌方空中机器人信息
 

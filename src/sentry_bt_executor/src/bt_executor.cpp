@@ -35,6 +35,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "set_target_bt_node",
         "air_force_condition_bt_node",
         "base_unfolds_condition_bt_node",
+        "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
@@ -76,7 +77,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<double>("gameover_time", gameover_time_);
 
     enemy_hp_.resize(14, 300);
-    find_armors_.resize(14, false);
+    
     /* 敌方机器人血量及自瞄状态 */
     blackboard_->set<int>("base_hp", enemy_hp_[0]);
     blackboard_->set<int>("hero_hp", enemy_hp_[1]);
@@ -89,7 +90,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<int>("balance3_hp", enemy_hp_[11]);
     blackboard_->set<int>("balance4_hp", enemy_hp_[12]);
     blackboard_->set<int>("balance5_hp", enemy_hp_[13]);
-        
+    blackboard_->set<int>("have_target", have_target_);
+    blackboard_->set<int>("gimbal", gimbal_);
+    blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
+
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
 
     get_parameter("default_bt_xml_filename", default_bt_xml_filename_);
