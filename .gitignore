@@ -9,6 +9,7 @@ srv_gen/
 msg/_*.py
 build_isolated/
 devel_isolated/
+log/
 
 *.log
 .vscode
