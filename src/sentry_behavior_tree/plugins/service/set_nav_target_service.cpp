@@ -1,13 +1,13 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/set_target_service.hpp"
+#include "sentry_behavior_tree/plugins/service/set_nav_target_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    SetTargetService::SetTargetService(const std::string & service_node_name,
+    SetNavTargetService::SetNavTargetService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget>(service_node_name, conf){}
 
-    void SetTargetService::on_tick()
+    void SetNavTargetService::on_tick()
     {
         u_int8_t have_target;
         bool gimbal;
@@ -15,8 +15,6 @@ namespace sentry_behavior_tree{
         getInput("have_target", have_target);;
         getInput("gimbal", gimbal);
         getInput("target_pos", target_pos);
-        std::cout << target_pos.point.x << std::endl;
-        std::cout << have_target << std::endl;
         request_->is_lost = have_target == 2;
         request_->gimbal = gimbal;
         request_->pose.header.stamp = target_pos.header.stamp;
@@ -24,10 +22,10 @@ namespace sentry_behavior_tree{
         request_->pose.pose.position.y = target_pos.point.y;
         request_->pose.pose.position.z = target_pos.point.z;
 
-        RCLCPP_INFO(node_->get_logger(),"set_target_service on_tick()... ");
+        RCLCPP_INFO(node_->get_logger(),"set_nav_target_service on_tick()... ");
     }
 
-    BT::NodeStatus SetTargetService::check_future(
+    BT::NodeStatus SetNavTargetService::check_future(
     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -47,7 +45,7 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
-    BT::PortsList SetTargetService::providedPorts()
+    BT::PortsList SetNavTargetService::providedPorts()
     {
         return providedBasicPorts(
         {
@@ -62,7 +60,7 @@ namespace sentry_behavior_tree{
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::SetTargetService>(
-    "SetTarget");
+  factory.registerNodeType<sentry_behavior_tree::SetNavTargetService>(
+    "SetNavTarget");
     //注意这里""内没有Service 
 }

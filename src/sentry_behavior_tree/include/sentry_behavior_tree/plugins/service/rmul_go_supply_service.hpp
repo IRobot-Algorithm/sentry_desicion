@@ -21,6 +21,7 @@ class RmulGoSupplyService : public nav2_behavior_tree::BtServiceNode<sentry_srvs
         BT::NodeStatus check_future(
         std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result) override;
 
+        static BT::PortsList providedPorts();
     private:
 };
 

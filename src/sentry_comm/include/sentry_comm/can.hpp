@@ -22,6 +22,7 @@
 #define ARCHITECTRUE_HP_RECEIVE_ID 0x135 // 基地/前哨站血量ID
 #define ECONOMY_RECEIVE_ID 0x137 // 剩余发弹量/金币ID
 #define ENEMY_HP_RECEIVE_ID 0x12A // 敌方血量ID
+#define RFID_RECEIVE_ID 0x134 // RFID激活ID
 #define CLIENT_RECEIVE_ID 0x136  // 由云台手通过客户端发送的信息
 
 namespace transporter

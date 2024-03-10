@@ -119,6 +119,11 @@ void CanCommNode::recevieCallBack()
         referee_information_.enemy_hp[5] = hp[3];
         break;
       }
+      case RFID_RECEIVE_ID:
+      {
+        referee_information_.in_supply = (buf[0] & 0x2000) == 0x2000;
+        break;
+      }
       case CLIENT_RECEIVE_ID:
       {
         // TODO: keyward force back

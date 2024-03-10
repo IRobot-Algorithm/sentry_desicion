@@ -32,7 +32,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "go_back_bt_node",
         "rmul_patrol_bt_node",
         "rmul_go_supply_bt_node",
-        "set_target_bt_node",
+        "set_nav_target_bt_node",
         "air_force_condition_bt_node",
         "base_unfolds_condition_bt_node",
         "have_target_condition_bt_node", 
@@ -87,8 +87,14 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int16_t>("have_target", have_target_);
     blackboard_->set<u_int16_t>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
+    blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
 
     blackboard_->set<bool>("force_back", force_back_); // 强制回家
+
+    blackboard_->set<bool>("in_supply", in_supply_);
+
+    // rmul
+    blackboard_->set<double>("supply_time", supply_time_);
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -161,6 +167,8 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
+        blackboard_->set<double>("loop_time", loop_time_);
+
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
         blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
@@ -175,7 +183,7 @@ void BtExecutor::executeBehaviorTree()
 
         // TODO: 更改初始血量
         enemy_hp_.resize(8, 300);
-        
+
         /* 敌方机器人血量及自瞄状态 */
         blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
         blackboard_->set<u_int16_t>("hero_hp", enemy_hp_[1]);
@@ -188,8 +196,14 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("have_target", have_target_);
         blackboard_->set<u_int16_t>("gimbal", gimbal_);
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
+        blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
+
+        blackboard_->set<bool>("in_supply", in_supply_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
+
+        // rmul
+        blackboard_->set<bool>("supply_time", supply_time_);
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -226,9 +240,8 @@ void BtExecutor::executeBehaviorTree()
     bt_->haltAllActions(tree_.rootNode());
 }
 
-void BtExecutor::JudgeTarget()
+void BtExecutor::judgeTarget()
 {
-    
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information)
@@ -248,6 +261,9 @@ void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::Refere
     // 裁判系统无敌方无人机信息
     // air_force_ = referee_information->air_force;
     force_back_ = referee_information->force_back;
+
+    // rmul
+    in_supply_ = referee_information->in_supply;
 }
 
 

@@ -10,11 +10,20 @@
 
     <Action ID="RmulPatrol"/>
    
-    <Action ID="SetTarget">
+    <Action ID="SetNavTarget">
       <input_port name="have_target"></input_port>
       <input_port name="gimbal"></input_port>
       <input_port name="target_pos"></input_port>
     </Action>
+
+    <Action ID="SetLeftTarget">
+      <input_port name="list"></input_port>
+    </Action>
+
+    <Action ID="SetRightTarget">
+      <input_port name="list"></input_port>
+    </Action>
+
     <!-- ############################### CONDITION NODES ############################## -->
 
     <Condition ID="airForce"/>

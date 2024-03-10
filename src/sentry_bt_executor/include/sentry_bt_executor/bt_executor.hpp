@@ -70,6 +70,8 @@ private:
 
     rclcpp::TimerBase::SharedPtr execute_timer_;
 
+    double loop_time_ = 0.01; // sec
+
     double leave_time_ = 0; // 离开巡逻区的时间
 
     /* 我方机器人信息 */
@@ -92,6 +94,13 @@ private:
 
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家
+
+    std::vector<u_int8_t> list_; // 自瞄目标
+
+    bool in_supply_ = false;
+
+    // rmul
+    double supply_time_ = 0;
 
 };
 
