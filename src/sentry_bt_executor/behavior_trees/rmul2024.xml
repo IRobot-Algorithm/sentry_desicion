@@ -23,10 +23,10 @@
         in_supply="{in_supply}"
         supply_time="{supply_time}"
       />
-      <Action ID="SetLeftTarget" service_name="rmos_processer_l/AimTarget_l"
+      <Action ID="SetLeftTarget" service_name="AimTarget_l"
         list="{list}"
       />
-      <Action ID="SetRightTarget" service_name="rmos_processer_r/AimTarget_r"
+      <Action ID="SetRightTarget" service_name="AimTarget_r"
         list="{list}"
       />
     </Sequence>
