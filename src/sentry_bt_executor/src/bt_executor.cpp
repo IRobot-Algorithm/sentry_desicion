@@ -40,6 +40,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
+        "game_about_over_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
         "rmul_can_supply_condition_bt_node", 
     };
@@ -248,6 +249,11 @@ void BtExecutor::executeBehaviorTree()
 
 void BtExecutor::judgeTarget()
 {
+    // for rmul 2024
+    std::vector<u_int8_t> id(8);
+    std::sort(id.begin(), id.end(),
+          [this](size_t a, size_t b){return enemy_hp_[a] > enemy_hp_[b];});
+    list_ = id;
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information)

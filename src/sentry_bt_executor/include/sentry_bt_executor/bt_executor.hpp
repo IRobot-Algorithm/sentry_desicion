@@ -82,7 +82,7 @@ private:
 
     /* 比赛状态信息 */
     bool game_start_ = false;
-    u_int16_t gameover_time_;
+    u_int16_t gameover_time_ = 300;
 
     /* 敌方机器人血量及自瞄状态 */
     std::vector<u_int16_t> enemy_hp_;

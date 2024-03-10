@@ -65,6 +65,9 @@ list(APPEND plugin_libs base_unfolds_condition_bt_node)
 add_library(game_start_condition_bt_node SHARED plugins/condition/game_start_condition.cpp)
 list(APPEND plugin_libs game_start_condition_bt_node)
 
+add_library(game_about_over_condition_bt_node SHARED plugins/condition/game_about_over_condition.cpp)
+list(APPEND plugin_libs game_about_over_condition_bt_node)
+
 add_library(have_target_condition_bt_node SHARED plugins/condition/have_target_condition.cpp)
 list(APPEND plugin_libs have_target_condition_bt_node)
 

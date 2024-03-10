@@ -40,6 +40,8 @@
 
     <Condition ID="gameStart"/>
 
+    <Condition ID="gameAboutOver"/>
+
     <Condition ID="outpostSurvives"/>
 
     <!-- rmul -->
