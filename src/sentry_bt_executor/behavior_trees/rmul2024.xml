@@ -2,7 +2,7 @@
 <root main_tree_to_execute="RMUL2024">
   <!-- ////////// -->
   <BehaviorTree ID="RMUL2024">
-    <Sequence name="Sequence">
+    <Sequence>
       <Condition ID="gameStart"/>
       <Condition ID="lowHp"/>
       <Condition ID="rmulCanSupply"/>

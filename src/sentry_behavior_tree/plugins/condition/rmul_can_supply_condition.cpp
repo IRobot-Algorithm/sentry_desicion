@@ -8,7 +8,7 @@ namespace sentry_behavior_tree
 
         auto supply_time = tree_node.config().blackboard->get<double>("supply_time");
 
-        return supply_time < 8 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return supply_time < 10 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

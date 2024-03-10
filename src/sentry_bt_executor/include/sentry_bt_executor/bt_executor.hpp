@@ -4,7 +4,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <time.h>
 
 #include "nav2_behavior_tree/behavior_tree_engine.hpp"
 #include "nav2_util/lifecycle_node.hpp"
@@ -70,8 +69,7 @@ private:
 
     rclcpp::TimerBase::SharedPtr execute_timer_;
 
-    double loop_time_ = 0.01; // sec
-
+    rclcpp::Time time_ = rclcpp::Clock().now();
     double leave_time_ = 0; // 离开巡逻区的时间
 
     /* 我方机器人信息 */
@@ -98,9 +96,6 @@ private:
     std::vector<u_int8_t> list_; // 自瞄目标
 
     bool in_supply_ = false;
-
-    // rmul
-    double supply_time_ = 0;
 
 };
 

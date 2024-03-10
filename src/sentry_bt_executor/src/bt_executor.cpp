@@ -58,13 +58,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_ = BT::Blackboard::create();
     blackboard_->set<rclcpp::Node::SharedPtr>("node", client_node_); 
     // TODO:time_out修改到合适的值
-    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(50)); 
+    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(10000)); 
 
     /* 哨兵定位信息 */
     blackboard_->set<double>("leave_time", leave_time_);
-
-    // 频率
-    blackboard_->set<double>("loop_time", loop_time_);
 
     /* 比赛状态信息 */
     blackboard_->set<bool>("game_start", game_start_);
@@ -97,10 +94,12 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     blackboard_->set<bool>("force_back", force_back_); // 强制回家
 
+    blackboard_->set<double>("loop_time", 0);
+
     blackboard_->set<bool>("in_supply", in_supply_);
 
     // rmul
-    blackboard_->set<double>("supply_time", supply_time_);
+    blackboard_->set<double>("supply_time", 0);
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -173,6 +172,10 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
+        double loop_time = rclcpp::Clock().now().seconds() + 1e-9 * rclcpp::Clock().now().nanoseconds() - 
+                           time_.seconds() + 1e-9 *  time_.nanoseconds();
+        time_ = rclcpp::Clock().now();
+
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
         blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
@@ -205,6 +208,8 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<bool>("in_supply", in_supply_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
+
+        blackboard_->set<double>("loop_time", loop_time);
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
