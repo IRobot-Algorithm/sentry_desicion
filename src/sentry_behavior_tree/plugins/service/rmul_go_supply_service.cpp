@@ -15,6 +15,11 @@ namespace sentry_behavior_tree{
         getInput("in_supply", in_supply);
         getInput("supply_time", supply_time);
 
+        if (in_supply)
+            supply_time += loop_time;
+
+        setOutput("supply_time", supply_time);
+
         request_->pose.pose.position.x = -3;
         request_->pose.pose.position.y = 6;
 

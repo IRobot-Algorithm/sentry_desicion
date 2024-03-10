@@ -6,7 +6,11 @@
 
     <Action ID="GoBack"/>
 
-    <Action ID="RmulGoSupply"/>
+    <Action ID="RmulGoSupply">
+      <input_port name="loop_time"></input_port>
+      <input_port name="in_supply"></input_port>
+      <input_port name="supply_time"></input_port>
+    </Action>
 
     <Action ID="RmulPatrol"/>
    
@@ -38,6 +42,8 @@
 
     <Condition ID="outpostSurvives"/>
 
+    <!-- rmul -->
+    <Condition ID="rmulCanSupply"/>
 
     <!-- ############################### CONTROL NODES ################################ -->
     <!-- <Control ID="PipelineSequence"/> -->

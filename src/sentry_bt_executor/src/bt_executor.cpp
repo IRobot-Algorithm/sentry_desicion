@@ -33,12 +33,15 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "rmul_patrol_bt_node",
         "rmul_go_supply_bt_node",
         "set_nav_target_bt_node",
+        "set_left_target_bt_node",
+        "set_right_target_bt_node",
         "air_force_condition_bt_node",
         "base_unfolds_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
+        "rmul_can_supply_condition_bt_node", 
     };
 
     // Declare this node's parameters
@@ -59,6 +62,9 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     /* 哨兵定位信息 */
     blackboard_->set<double>("leave_time", leave_time_);
+
+    // 频率
+    blackboard_->set<double>("loop_time", loop_time_);
 
     /* 比赛状态信息 */
     blackboard_->set<bool>("game_start", game_start_);
@@ -167,8 +173,6 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
-        blackboard_->set<double>("loop_time", loop_time_);
-
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
         blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
@@ -201,9 +205,6 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<bool>("in_supply", in_supply_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
-
-        // rmul
-        blackboard_->set<bool>("supply_time", supply_time_);
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息

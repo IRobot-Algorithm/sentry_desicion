@@ -5,6 +5,7 @@
     <Sequence name="Sequence">
       <Condition ID="gameStart"/>
       <Condition ID="lowHp"/>
+      <Condition ID="rmulCanSupply"/>
 
       <!-- <Condition ID="airForce"/>
       <Condition ID="baseUnfolds"/>
@@ -17,7 +18,11 @@
         gimbal="{gimbal}" 
         target_pos="{target_pos}"
       />
-      <Action ID="RmulGoSupply" service_name="nav_goal"/>
+      <Action ID="RmulGoSupply" service_name="nav_goal"
+        loop_time="{loop_time}"
+        in_supply="{in_supply}"
+        supply_time="{supply_time}"
+      />
       <Action ID="SetLeftTarget" service_name="rmos_processer_l/AimTarget_l"
         list="{list}"
       />
