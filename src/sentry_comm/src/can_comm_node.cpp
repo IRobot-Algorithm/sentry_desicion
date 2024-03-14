@@ -17,7 +17,7 @@ CanCommNode::CanCommNode(const rclcpp::NodeOptions &options) : CommNode("sentry_
   this->referee_information_timer_ = this->create_wall_timer
                           (100ms, std::bind(&CanCommNode::sendRefereeInformationCallBack, this), send_infomation_callback_group_);
 
-  this->referee_information_pub_ = this->create_publisher<sentry_interfaces::msg::RefereeInformation>(
+  this->referee_information_pub_ = this->create_publisher<sentry_msgs::msg::RefereeInformation>(
               "/referee_information", 10);
 
   this->recevie_thread_ = std::thread(&CanCommNode::recevieCallBack, this);

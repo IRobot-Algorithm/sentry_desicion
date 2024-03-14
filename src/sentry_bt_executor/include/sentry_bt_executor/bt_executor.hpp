@@ -13,7 +13,7 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
 
-#include "sentry_interfaces/msg/referee_information.hpp"
+#include "sentry_msgs/msg/referee_information.hpp"
 
 
 namespace sentry_bt_executor{
@@ -59,10 +59,10 @@ protected:
 private:
     void judgeTarget();
 
-    void refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information);
+    void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
 
 private:
-    rclcpp::Subscription<sentry_interfaces::msg::RefereeInformation>::SharedPtr referee_information_sub_;
+    rclcpp::Subscription<sentry_msgs::msg::RefereeInformation>::SharedPtr referee_information_sub_;
 
     rclcpp::CallbackGroup::SharedPtr referee_information_sub_callback_group_;
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;

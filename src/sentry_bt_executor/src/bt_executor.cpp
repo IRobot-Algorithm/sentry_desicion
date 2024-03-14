@@ -121,7 +121,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     /* create subscription */
     auto referee_information_sub_options = rclcpp::SubscriptionOptions();
     referee_information_sub_options.callback_group = this->referee_information_sub_callback_group_;
-    referee_information_sub_ = this->create_subscription<sentry_interfaces::msg::RefereeInformation>("/referee_information", 10,
+    referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 10,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
 
     RCLCPP_INFO(get_logger(), "Activating");
@@ -256,7 +256,7 @@ void BtExecutor::judgeTarget()
     list_ = id;
 }
 
-void BtExecutor::refereeInformationCallback(const sentry_interfaces::msg::RefereeInformation::SharedPtr referee_information)
+void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
 {
     game_start_ = referee_information->game_start;
     gameover_time_ = referee_information->gameover_time;

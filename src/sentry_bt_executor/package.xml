@@ -17,7 +17,8 @@
   <depend>behaviortree_cpp_v3</depend>
   <depend>sentry_behavior_tree</depend>
   <depend>sentry_interfaces</depend>
-  <depend>rmos_interfaces</depend>
+  <depend>sentry_srvs</depend>
+  <depend>sentry_msgs</depend>
   <depend>std_msgs</depend>
   <depend>rclcpp_components</depend>
 

@@ -19,6 +19,8 @@ endif()
 find_package(ament_cmake_auto REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(sentry_interfaces REQUIRED)
+find_package(sentry_srvs REQUIRED)
+find_package(sentry_msgs REQUIRED)
 find_package(rmos_interfaces REQUIRED)
 
 # include_directories(

@@ -16,7 +16,7 @@
 
 #include "sentry_comm/can.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
-#include "sentry_interfaces/msg/referee_information.hpp"
+#include "sentry_msgs/msg/referee_information.hpp"
 
 using namespace std::chrono;
 
@@ -31,12 +31,12 @@ class CommNode : public rclcpp::Node {
     {
       RCLCPP_INFO(this->get_logger(), "Start Communicate Node: %s", node_name.c_str());
 
-      this->referee_information_pub_ = this->create_publisher<sentry_interfaces::msg::RefereeInformation>("/referee_information", rclcpp::SensorDataQoS());
+      this->referee_information_pub_ = this->create_publisher<sentry_msgs::msg::RefereeInformation>("/referee_information", rclcpp::SensorDataQoS());
     }
 
   protected:
-    sentry_interfaces::msg::RefereeInformation referee_information_;
-    rclcpp::Publisher<sentry_interfaces::msg::RefereeInformation>::SharedPtr referee_information_pub_;
+    sentry_msgs::msg::RefereeInformation referee_information_;
+    rclcpp::Publisher<sentry_msgs::msg::RefereeInformation>::SharedPtr referee_information_pub_;
 
     std::thread recevie_thread_;
 
