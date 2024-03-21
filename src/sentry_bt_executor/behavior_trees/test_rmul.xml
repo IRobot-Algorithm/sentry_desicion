@@ -27,6 +27,7 @@
       <Action ID="SetRightTarget" service_name="AimTarget_r"
         list="{list}"
       />
+      <!-- <Condition ID="haveTarget"/> -->
     </Sequence>
   </BehaviorTree>
 

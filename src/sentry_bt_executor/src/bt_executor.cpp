@@ -36,9 +36,11 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "set_left_target_bt_node",
         "set_right_target_bt_node",
         "air_force_condition_bt_node",
+        "in_supply_condition_bt_node",
         "base_unfolds_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
+        "enough_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
@@ -116,6 +118,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+    this->rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->execute_timer_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
     /* create subscription */
@@ -123,6 +126,14 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     referee_information_sub_options.callback_group = this->referee_information_sub_callback_group_;
     referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 10,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
+
+    auto rmos_sub_options = rclcpp::SubscriptionOptions();
+    rmos_sub_options.callback_group = this->rmos_sub_callback_group_;
+    right_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_r", rclcpp::SensorDataQoS(),
+        std::bind(&BtExecutor::rightRmosCallback, this, _1), rmos_sub_options);
+    left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", rclcpp::SensorDataQoS(),
+        std::bind(&BtExecutor::leftRmosCallback, this, _1), rmos_sub_options);
+
 
     RCLCPP_INFO(get_logger(), "Activating");
 
@@ -201,6 +212,11 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("infantry5_hp", enemy_hp_[5]);
         blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
         blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
+
+        if (left_target_ > 0 || right_target_ > 0)
+            have_target_ = 1;
+        else
+            have_target_ = 0;
         blackboard_->set<u_int16_t>("have_target", have_target_);
         blackboard_->set<u_int16_t>("gimbal", gimbal_);
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
@@ -276,6 +292,18 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
 
     // rmul
     in_supply_ = referee_information->in_supply;
+}
+
+void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
+{
+    right_target_ = follow_target->have_target;
+    RCLCPP_INFO(get_logger(), "right_target_ : %d", static_cast<int>(right_target_)); 
+}
+
+void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
+{
+    left_target_ = follow_target->have_target;
+    RCLCPP_INFO(get_logger(), "left_target_ : %d", static_cast<int>(left_target_)); 
 }
 
 

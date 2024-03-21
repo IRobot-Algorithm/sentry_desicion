@@ -1,11 +1,26 @@
 <?xml version="1.0"?>
-<root main_tree_to_execute="RMUL2024">
-  <!-- ///// 此树用于2024联盟赛 ///// -->
-  <BehaviorTree ID="RMUL2024">
+<root main_tree_to_execute="BehaviorTree">
+  <!-- ///// 此树用于2024联盟赛测试 ///// -->
+  <BehaviorTree ID="BehaviorTree">
     <Fallback>
       <Sequence>
         <Condition ID="gameStart"/>
         <Fallback>
+          <Sequence>
+            <Condition ID="inSupply"/>
+            <Condition ID="rmulCanSupply"/>
+            <Inverter>
+              <Condition ID="enoughHp"/>
+            </Inverter>
+            <Fallback>
+              <Action ID="RmulGoSupply" service_name="nav_goal"
+                loop_time="{loop_time}"
+                in_supply="{in_supply}"
+                supply_time="{supply_time}"
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
@@ -15,7 +30,7 @@
                 in_supply="{in_supply}"
                 supply_time="{supply_time}"
               />
-            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
           <Sequence>

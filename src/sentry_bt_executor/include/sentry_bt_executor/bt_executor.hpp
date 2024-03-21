@@ -13,6 +13,7 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
 
+#include "sentry_interfaces/msg/follow_target.hpp"
 #include "sentry_msgs/msg/referee_information.hpp"
 
 
@@ -61,10 +62,16 @@ private:
 
     void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
 
+    void rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
+    void leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
+
 private:
     rclcpp::Subscription<sentry_msgs::msg::RefereeInformation>::SharedPtr referee_information_sub_;
+    rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr right_rmos_sub_;
+    rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr left_rmos_sub_;
 
     rclcpp::CallbackGroup::SharedPtr referee_information_sub_callback_group_;
+    rclcpp::CallbackGroup::SharedPtr rmos_sub_callback_group_;
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;
 
     rclcpp::TimerBase::SharedPtr execute_timer_;
@@ -82,11 +89,13 @@ private:
 
     /* 比赛状态信息 */
     bool game_start_ = false;
-    u_int16_t gameover_time_ = 300;
+    u_int16_t gameover_time_;
 
     /* 敌方机器人血量及自瞄状态 */
     std::vector<u_int16_t> enemy_hp_;
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     bool gimbal_; // 0 for right, 1 for left
     geometry_msgs::msg::PointStamped target_pos_;
 

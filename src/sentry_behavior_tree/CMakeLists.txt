@@ -59,6 +59,9 @@ list(APPEND plugin_libs set_right_target_bt_node)
 add_library(air_force_condition_bt_node SHARED plugins/condition/air_force_condition.cpp)
 list(APPEND plugin_libs air_force_condition_bt_node)
 
+add_library(in_supply_condition_bt_node SHARED plugins/condition/in_supply_condition.cpp)
+list(APPEND plugin_libs in_supply_condition_bt_node)
+
 add_library(base_unfolds_condition_bt_node SHARED plugins/condition/base_unfolds_condition.cpp)
 list(APPEND plugin_libs base_unfolds_condition_bt_node)
 
@@ -73,6 +76,9 @@ list(APPEND plugin_libs have_target_condition_bt_node)
 
 add_library(low_hp_condition_bt_node SHARED plugins/condition/low_hp_condition.cpp)
 list(APPEND plugin_libs low_hp_condition_bt_node)
+
+add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
+list(APPEND plugin_libs enough_hp_condition_bt_node)
 
 add_library(outpost_survives_condition_bt_node SHARED plugins/condition/outpost_survives_condition.cpp)
 list(APPEND plugin_libs outpost_survives_condition_bt_node)

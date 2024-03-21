@@ -32,11 +32,15 @@
 
     <Condition ID="airForce"/>
 
+    <Condition ID="inSupply"/>
+
     <Condition ID="baseUnfolds"/>
 
     <Condition ID="haveTarget"/>
 
     <Condition ID="lowHp"/>
+
+    <Condition ID="enoughHp"/>
 
     <Condition ID="gameStart"/>
 
