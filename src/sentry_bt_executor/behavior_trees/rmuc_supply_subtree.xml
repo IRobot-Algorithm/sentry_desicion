@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<root main_tree_to_execute="BehaviorTree">
-  <!-- ///// 此树用于2024联盟赛 ///// -->
-  <BehaviorTree ID="BehaviorTree">
+<root main_tree_to_execute="RmucSupplySubtree">
+  <!-- ///// 此树用于2024分区赛 ///// -->
+  <BehaviorTree ID="RmucSupplySubtree">
     <Fallback>
       <Sequence>
         <Condition ID="gameStart"/>
@@ -12,30 +12,33 @@
             <Inverter>
               <Condition ID="enoughHp"/>
             </Inverter>
-            <AlwaysSuccess>
+            <Fallback>
               <Action ID="RmulGoSupply" service_name="nav_goal"
                 loop_time="{loop_time}"
                 in_supply="{in_supply}"
                 supply_time="{supply_time}"
               />
-            </AlwaysSuccess>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
           </Sequence>
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
-            <AlwaysSuccess>
+            <Fallback>
               <Action ID="RmulGoSupply" service_name="nav_goal"
                 loop_time="{loop_time}"
                 in_supply="{in_supply}"
                 supply_time="{supply_time}"
               />
-            </AlwaysSuccess>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
           </Sequence>
           <Sequence>
             <Condition ID="lowHp"/>
-            <AlwaysSuccess>
+            <Fallback>
               <Action ID="GoBack" service_name="nav_goal"/>
-            </AlwaysSuccess>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
           </Sequence>
           
           <Sequence>
@@ -47,9 +50,10 @@
             />
           </Sequence>
 
-          <AlwaysSuccess>
+          <Fallback>
             <Action ID="RmulPatrol" service_name="nav_goal"/>
-          </AlwaysSuccess>
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          </Fallback>
         </Fallback>
       </Sequence>
 
