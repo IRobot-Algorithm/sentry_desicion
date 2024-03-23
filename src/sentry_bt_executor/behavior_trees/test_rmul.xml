@@ -3,30 +3,8 @@
   <!-- ////////// -->
   <BehaviorTree ID="BehaviorTree">
     <Sequence name="Sequence">
-      <!-- <Condition ID="rmulCanSupply"/> -->
-      <!-- <Condition ID="airForce"/>
-      <Condition ID="baseUnfolds"/>
-      <Condition ID="gameStart"/>
-      <Condition ID="gameAboutOver"/>
-      <Condition ID="outpostSurvives"/>
-      <Condition ID="lowHp"/> -->
-      <Action ID="GoBack" service_name="nav_goal"/>
-      <Action ID="SetNavTarget" service_name="nav_target" 
-        have_target="{have_target}" 
-        gimbal="{gimbal}" 
-        target_pos="{target_pos}"
-      />
-      <Action ID="RmulGoSupply" service_name="nav_goal"
-        loop_time="{loop_time}"
-        in_supply="{in_supply}"
-        supply_time="{supply_time}"
-      />
-      <Action ID="SetLeftTarget" service_name="AimTarget_l"
-        list="{list}"
-      />
-      <Action ID="SetRightTarget" service_name="AimTarget_r"
-        list="{list}"
-      />
+        <!-- <Condition ID="inSupply"/> -->
+        <Condition ID="rmulCanSupply"/>
       <!-- <Condition ID="haveTarget"/> -->
     </Sequence>
   </BehaviorTree>

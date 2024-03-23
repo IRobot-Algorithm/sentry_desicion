@@ -9,17 +9,6 @@ namespace sentry_behavior_tree{
 
     void RmulGoSupplyService::on_tick()
     {
-        double loop_time, supply_time;
-        bool in_supply;
-        getInput("loop_time", loop_time);
-        getInput("in_supply", in_supply);
-        getInput("supply_time", supply_time);
-
-        if (in_supply)
-            supply_time += loop_time;
-
-        setOutput("supply_time", supply_time);
-
         request_->pose.pose.position.x = -1;
         request_->pose.pose.position.y = -1;
 
@@ -49,16 +38,6 @@ namespace sentry_behavior_tree{
             on_wait_for_result();
         }
         return BT::NodeStatus::FAILURE;
-    }
-
-    BT::PortsList RmulGoSupplyService::providedPorts()
-    {
-        return providedBasicPorts(
-        {
-            BT::InputPort<double>("loop_time"),
-            BT::InputPort<bool>("in_supply"),
-            BT::InputPort<double>("supply_time"),
-        });
     }
 
 

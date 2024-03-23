@@ -72,6 +72,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     /* 我方机器人信息 */
     blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
+    blackboard_->set<u_int16_t>("max_hp", max_hp_);
     blackboard_->set<u_int16_t>("bullets", bullets_);
     blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
     blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
@@ -102,7 +103,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<bool>("in_supply", in_supply_);
 
     // rmul
-    blackboard_->set<double>("supply_time", 0);
+    blackboard_->set<double>("supply_time", supply_time_);
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -184,9 +185,15 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
-        double loop_time = rclcpp::Clock().now().seconds() + 1e-9 * rclcpp::Clock().now().nanoseconds() - 
-                           time_.seconds() + 1e-9 *  time_.nanoseconds();
+        double loop_time = rclcpp::Clock().now().seconds() - time_.seconds();
         time_ = rclcpp::Clock().now();
+
+        if (game_start_ && in_supply_ && max_hp_ > robot_hp_ + 60)
+        {
+            supply_time_ += loop_time;
+        }
+
+        std::cout << "supply_time_: " << supply_time_ << std::endl;
 
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
@@ -194,6 +201,7 @@ void BtExecutor::executeBehaviorTree()
 
         /* 我方机器人信息 */
         blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
+        blackboard_->set<u_int16_t>("max_hp", max_hp_);
         blackboard_->set<u_int16_t>("bullets", bullets_);
         blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
         blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
@@ -223,6 +231,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
 
         blackboard_->set<bool>("in_supply", in_supply_);
+        blackboard_->set<double>("supply_time", supply_time_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
 
@@ -277,6 +286,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     game_start_ = referee_information->game_start;
     gameover_time_ = referee_information->gameover_time;
     robot_hp_ = referee_information->robot_hp;
+    max_hp_ = referee_information->max_hp;
     bullets_ = referee_information->bullets;
     our_outpost_hp_ = referee_information->our_outpost_hp;
     our_base_hp_ = referee_information->our_base_hp;

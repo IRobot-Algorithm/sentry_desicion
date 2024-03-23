@@ -13,22 +13,14 @@
               <Condition ID="enoughHp"/>
             </Inverter>
             <AlwaysSuccess>
-              <Action ID="RmulGoSupply" service_name="nav_goal"
-                loop_time="{loop_time}"
-                in_supply="{in_supply}"
-                supply_time="{supply_time}"
-              />
+              <Action ID="RmulGoSupply" service_name="nav_goal"/>
             </AlwaysSuccess>
           </Sequence>
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
             <AlwaysSuccess>
-              <Action ID="RmulGoSupply" service_name="nav_goal"
-                loop_time="{loop_time}"
-                in_supply="{in_supply}"
-                supply_time="{supply_time}"
-              />
+              <Action ID="RmulGoSupply" service_name="nav_goal"/>
             </AlwaysSuccess>
           </Sequence>
           <Sequence>
