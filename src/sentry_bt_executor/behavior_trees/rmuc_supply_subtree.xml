@@ -13,11 +13,7 @@
               <Condition ID="enoughHp"/>
             </Inverter>
             <Fallback>
-              <Action ID="RmulGoSupply" service_name="nav_goal"
-                loop_time="{loop_time}"
-                in_supply="{in_supply}"
-                supply_time="{supply_time}"
-              />
+              <Action ID="RmulGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
@@ -25,11 +21,7 @@
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
             <Fallback>
-              <Action ID="RmulGoSupply" service_name="nav_goal"
-                loop_time="{loop_time}"
-                in_supply="{in_supply}"
-                supply_time="{supply_time}"
-              />
+              <Action ID="RmulGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>

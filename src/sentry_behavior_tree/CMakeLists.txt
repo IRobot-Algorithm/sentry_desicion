@@ -43,6 +43,9 @@ list(APPEND plugin_libs go_back_bt_node)
 add_library(rmul_patrol_bt_node SHARED plugins/service/rmul_patrol_service.cpp)
 list(APPEND plugin_libs rmul_patrol_bt_node)
 
+add_library(rmul_patrol2_bt_node SHARED plugins/service/rmul_patrol2_service.cpp)
+list(APPEND plugin_libs rmul_patrol2_bt_node)
+
 add_library(rmul_go_supply_bt_node SHARED plugins/service/rmul_go_supply_service.cpp)
 list(APPEND plugin_libs rmul_go_supply_bt_node)
 

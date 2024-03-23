@@ -31,6 +31,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     {
         "go_back_bt_node",
         "rmul_patrol_bt_node",
+        "rmul_patrol2_bt_node",
         "rmul_go_supply_bt_node",
         "set_nav_target_bt_node",
         "set_left_target_bt_node",

@@ -40,7 +40,11 @@
           </Sequence>
 
           <AlwaysSuccess>
-            <Action ID="RmulPatrol" service_name="nav_goal"/>
+            <Sequence>
+              <Action ID="RmulPatrol" service_name="nav_goal"/>
+              <Action ID="RmulPatrol2" service_name="nav_goal"/>
+              <Action ID="GoBack" service_name="nav_goal"/>
+            </Sequence>
           </AlwaysSuccess>
         </Fallback>
       </Sequence>
