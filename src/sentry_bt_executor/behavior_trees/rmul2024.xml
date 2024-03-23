@@ -6,6 +6,9 @@
       <Sequence>
         <Condition ID="gameStart"/>
         <Fallback>
+
+
+          <!-- ///// 在补给区 回复够再出门 ///// -->
           <Sequence>
             <Condition ID="inSupply"/>
             <Condition ID="rmulCanSupply"/>
@@ -16,6 +19,8 @@
               <Action ID="RmulGoSupply" service_name="nav_goal"/>
             </AlwaysSuccess>
           </Sequence>
+
+          <!-- ///// 血量低可以补给前往补给区 ///// -->
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
@@ -23,6 +28,8 @@
               <Action ID="RmulGoSupply" service_name="nav_goal"/>
             </AlwaysSuccess>
           </Sequence>
+
+          <!-- ///// 血量低不能补给回家 ///// -->
           <Sequence>
             <Condition ID="lowHp"/>
             <AlwaysSuccess>
@@ -30,6 +37,7 @@
             </AlwaysSuccess>
           </Sequence>
           
+          <!-- ///// 有目标给导航发有目标 ///// -->
           <Sequence>
             <Condition ID="haveTarget"/>
             <Action ID="SetNavTarget" service_name="nav_target" 
@@ -39,13 +47,17 @@
             />
           </Sequence>
 
+          <!-- ///// 三点轮询 ///// -->
           <AlwaysSuccess>
             <Sequence>
               <Action ID="RmulPatrol" service_name="nav_goal"/>
               <Action ID="RmulPatrol2" service_name="nav_goal"/>
               <Action ID="GoBack" service_name="nav_goal"/>
+              <Action ID="RmulPatrol2" service_name="nav_goal"/>
             </Sequence>
           </AlwaysSuccess>
+
+
         </Fallback>
       </Sequence>
 

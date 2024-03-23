@@ -45,6 +45,8 @@
 
     <Condition ID="outpostSurvives"/>
 
+    <Condition ID="outpostLowHp"/>
+
     <!-- rmul -->
     <Condition ID="rmulCanSupply"/>
 
