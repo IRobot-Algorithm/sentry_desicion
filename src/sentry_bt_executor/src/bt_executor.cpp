@@ -40,6 +40,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "in_supply_condition_bt_node",
         "base_unfolds_condition_bt_node",
         "have_target_condition_bt_node", 
+        "low_bullets_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "enough_hp_condition_bt_node", 
         "game_start_condition_bt_node", 

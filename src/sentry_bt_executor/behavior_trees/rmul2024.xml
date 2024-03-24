@@ -36,6 +36,14 @@
               <Action ID="GoBack" service_name="nav_goal"/>
             </AlwaysSuccess>
           </Sequence>
+
+          <!-- ///// 子弹太少回家 ///// -->
+          <Sequence>
+            <Condition ID="lowBullets"/>
+            <AlwaysSuccess>
+              <Action ID="GoBack" service_name="nav_goal"/>
+            </AlwaysSuccess>
+          </Sequence>
           
           <!-- ///// 有目标给导航发有目标 ///// -->
           <Sequence>

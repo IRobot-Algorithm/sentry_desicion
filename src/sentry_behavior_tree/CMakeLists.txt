@@ -77,6 +77,9 @@ list(APPEND plugin_libs game_about_over_condition_bt_node)
 add_library(have_target_condition_bt_node SHARED plugins/condition/have_target_condition.cpp)
 list(APPEND plugin_libs have_target_condition_bt_node)
 
+add_library(low_bullets_condition_bt_node SHARED plugins/condition/low_bullets_condition.cpp)
+list(APPEND plugin_libs low_bullets_condition_bt_node)
+
 add_library(low_hp_condition_bt_node SHARED plugins/condition/low_hp_condition.cpp)
 list(APPEND plugin_libs low_hp_condition_bt_node)
 

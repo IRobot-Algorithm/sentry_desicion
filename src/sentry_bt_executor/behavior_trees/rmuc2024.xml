@@ -9,10 +9,10 @@
 
 
           <!-- ///// 必须回家 ///// -->
-          <Sequence ID="MustBackSequence">
-            <!-- 前哨站存活？ -->
+          <Sequence ID="BaseMustBackSequence">
+            <!-- 前哨站血量太少？ -->
             <Inverter>
-              <Condition ID="outpostSurvives"/>
+              <Condition ID="outpostLowHp"/>
             </Inverter>
             <!-- 基地护甲展开？ -->
             <Inverter>

@@ -35,6 +35,8 @@
 
     <Condition ID="haveTarget"/>
 
+    <Condition ID="lowBullets"/>
+
     <Condition ID="lowHp"/>
 
     <Condition ID="enoughHp"/>
