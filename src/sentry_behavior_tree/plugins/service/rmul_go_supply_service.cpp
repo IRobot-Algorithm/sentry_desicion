@@ -20,7 +20,7 @@ namespace sentry_behavior_tree{
 
         setOutput("supply_time", supply_time);
 
-        request_->pose.pose.position.x = -1;
+        request_->pose.pose.position.x = 0;
         request_->pose.pose.position.y = -1;
 
         RCLCPP_INFO(node_->get_logger(),"rmul_go_supply_service on_tick()... ");

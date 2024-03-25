@@ -40,6 +40,7 @@
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
         </Fallback>
+        
       </Sequence>
 
       <Action ID="GoBack" service_name="nav_goal"/>
