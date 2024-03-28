@@ -15,10 +15,10 @@
             <Inverter>
               <Condition ID="lowBullets"/>
             </Inverter>
-            <Action ID="SetLeftTarget"
+            <Action ID="SetLeftTarget" service_name="aim_target_l"
               list="{list}" 
             />
-            <Action ID="SetRightTarget"
+            <Action ID="SetRightTarget" service_name="aim_target_r"
               list="{list}" 
             />
             <Fallback>
