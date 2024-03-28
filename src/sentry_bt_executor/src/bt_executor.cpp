@@ -32,6 +32,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "go_back_bt_node",
         "rmul_defense_bt_node",
         "rmul_patrol_bt_node",
+        "rmul_go_enemy_base_bt_node",
         "rmul_go_supply_bt_node",
         "set_nav_target_bt_node",
         "set_left_target_bt_node",
@@ -39,6 +40,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "air_force_condition_bt_node",
         "in_supply_condition_bt_node",
         "base_unfolds_condition_bt_node",
+        "base_failed_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "low_bullets_condition_bt_node", 
@@ -63,7 +65,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_ = BT::Blackboard::create();
     blackboard_->set<rclcpp::Node::SharedPtr>("node", client_node_); 
     // TODO:time_out修改到合适的值
-    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(10000)); 
+    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(100)); 
 
     /* 哨兵定位信息 */
     blackboard_->set<double>("leave_time", leave_time_);
@@ -204,9 +206,6 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
         blackboard_->set<u_int8_t>("base_shield", base_shield_);
         blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
-
-        // TODO: 更改初始血量
-        enemy_hp_.resize(8, 300);
 
         /* 敌方机器人血量及自瞄状态 */
         blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);

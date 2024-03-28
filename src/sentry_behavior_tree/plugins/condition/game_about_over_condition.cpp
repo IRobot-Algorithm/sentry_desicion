@@ -6,9 +6,11 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus gameAboutOver(BT::TreeNode & tree_node){
 
+        auto game_start = tree_node.config().blackboard->get<bool>("game_start");
         auto gameover_time = tree_node.config().blackboard->get<u_int16_t>("gameover_time");
+        bool game_about_over = game_start && (gameover_time < 30);
 
-        return gameover_time < 30 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return game_about_over ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

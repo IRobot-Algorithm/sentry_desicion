@@ -84,7 +84,7 @@ private:
     u_int16_t max_hp_ = 0;
     u_int16_t bullets_ = 400;
     u_int16_t our_outpost_hp_ = 0;
-    u_int16_t our_base_hp_ = 1000;
+    u_int16_t our_base_hp_ = 3000;
     u_int8_t base_shield_ = 100;
     u_int16_t gold_coins_ = 0; 
 
@@ -107,7 +107,7 @@ private:
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家
 
-    std::vector<u_int8_t> list_; // 自瞄目标
+    std::vector<u_int8_t> list_ = {0}; // 自瞄目标
 
     bool in_supply_ = false;
     double supply_time_ = 0.0;
