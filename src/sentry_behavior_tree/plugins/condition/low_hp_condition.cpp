@@ -6,9 +6,9 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus lowHp(BT::TreeNode & tree_node){
 
-        auto base_unfolds = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 150;
+        auto low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 150;
 
-        return base_unfolds ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return low_hp ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
 
     }

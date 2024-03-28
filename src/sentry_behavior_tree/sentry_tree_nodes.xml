@@ -6,12 +6,8 @@
 
     <Action ID="GoBack"/>
 
-    <Action ID="RmulGoSupply">
-      <input_port name="loop_time"></input_port>
-      <input_port name="in_supply"></input_port>
-      <input_port name="supply_time"></input_port>
-    </Action>
-
+    <Action ID="RmulGoSupply"/>
+    
     <Action ID="RmulPatrol"/>
    
     <Action ID="SetNavTarget">

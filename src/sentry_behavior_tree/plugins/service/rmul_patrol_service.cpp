@@ -22,8 +22,8 @@ namespace sentry_behavior_tree{
         {
             case 0:
             {
-                request_->pose.pose.position.x = 4.0;
-                request_->pose.pose.position.y = -1.0;
+                request_->pose.pose.position.x = 1.0;
+                request_->pose.pose.position.y = -2.5;
                 break;
             }
             case 1:
@@ -34,8 +34,8 @@ namespace sentry_behavior_tree{
             }
             case 2:
             {
-                request_->pose.pose.position.x = 3.5;
-                request_->pose.pose.position.y = 0.7;
+                request_->pose.pose.position.x = 5.1;
+                request_->pose.pose.position.y = 1.9;
                 break;
             }
 

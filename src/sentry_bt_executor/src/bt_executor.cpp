@@ -90,8 +90,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int16_t>("infantry5_hp", enemy_hp_[5]);
     blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
     blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
-    blackboard_->set<u_int16_t>("have_target", have_target_);
-    blackboard_->set<u_int16_t>("gimbal", gimbal_);
+    blackboard_->set<u_int8_t>("have_target", have_target_);
+    blackboard_->set<bool>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
     blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
 
@@ -102,7 +102,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<bool>("in_supply", in_supply_);
 
     // rmul
-    blackboard_->set<double>("supply_time", 0);
+    blackboard_->set<double>("supply_time", supply_time_);
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -124,7 +124,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     /* create subscription */
     auto referee_information_sub_options = rclcpp::SubscriptionOptions();
     referee_information_sub_options.callback_group = this->referee_information_sub_callback_group_;
-    referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 10,
+    referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 1,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
 
     auto rmos_sub_options = rclcpp::SubscriptionOptions();
@@ -184,9 +184,12 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
-        double loop_time = rclcpp::Clock().now().seconds() + 1e-9 * rclcpp::Clock().now().nanoseconds() - 
-                           time_.seconds() + 1e-9 *  time_.nanoseconds();
+        double loop_time = rclcpp::Clock().now().seconds() - time_.seconds();
         time_ = rclcpp::Clock().now();
+
+        if (in_supply_ && max_hp_ - robot_hp_ >= 100)
+            supply_time_ += loop_time;
+        RCLCPP_INFO(get_logger(), "supply_time: %f", supply_time_);
 
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
@@ -213,20 +216,32 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
         blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
 
-        if (left_target_ > 0 || right_target_ > 0)
-            have_target_ = 1;
+        if (right_target_ > 0)
+        {
+            have_target_ = right_target_;
+            gimbal_ = 0;
+            target_pos_ = right_target_pos_;
+        }
+        else if (left_target_ > 0)
+        {
+            have_target_ = left_target_;
+            gimbal_ = 1;
+            target_pos_ = left_target_pos_;
+
+        }
         else
             have_target_ = 0;
-        blackboard_->set<u_int16_t>("have_target", have_target_);
-        blackboard_->set<u_int16_t>("gimbal", gimbal_);
+
+        blackboard_->set<u_int8_t>("have_target", have_target_);
+        blackboard_->set<bool>("gimbal", gimbal_);
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
         blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
 
         blackboard_->set<bool>("in_supply", in_supply_);
+        blackboard_->set<double>("supply_time", supply_time_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
 
-        blackboard_->set<double>("loop_time", loop_time);
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -277,6 +292,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     game_start_ = referee_information->game_start;
     gameover_time_ = referee_information->gameover_time;
     robot_hp_ = referee_information->robot_hp;
+    max_hp_ = referee_information->max_hp;
     bullets_ = referee_information->bullets;
     our_outpost_hp_ = referee_information->our_outpost_hp;
     our_base_hp_ = referee_information->our_base_hp;
@@ -297,13 +313,15 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
 void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
 {
     right_target_ = follow_target->have_target;
-    RCLCPP_INFO(get_logger(), "right_target_ : %d", static_cast<int>(right_target_)); 
+    right_target_pos_ = follow_target->target;
+    // RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
 }
 
 void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
 {
     left_target_ = follow_target->have_target;
-    RCLCPP_INFO(get_logger(), "left_target_ : %d", static_cast<int>(left_target_)); 
+    left_target_pos_ = follow_target->target;
+    // RCLCPP_INFO(get_logger(), "left_target_ : %d", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
 }
 
 
