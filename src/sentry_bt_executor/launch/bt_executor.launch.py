@@ -14,7 +14,7 @@ def generate_launch_description():
         name='bt_executor',
         #注意树的名称
         parameters=[{'default_bt_xml_filename': os.path.join(get_package_share_directory('sentry_bt_executor'), \
-                     'behavior_trees/rmul2024test.xml')}],
+                     'behavior_trees/rmul2024test2.xml')}],
         output='screen',
     )
 

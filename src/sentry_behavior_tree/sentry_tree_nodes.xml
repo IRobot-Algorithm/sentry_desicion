@@ -20,6 +20,12 @@
       <input_port name="target_pos"></input_port>
     </Action>
 
+    <Action ID="SetStaticNavTarget">
+      <input_port name="have_target"></input_port>
+      <input_port name="gimbal"></input_port>
+      <input_port name="target_pos"></input_port>
+    </Action>
+
     <Action ID="SetLeftTarget">
       <input_port name="list"></input_port>
     </Action>
@@ -37,6 +43,8 @@
     <Condition ID="baseUnfolds"/>
 
     <Condition ID="baseFailed"/>
+
+    <Condition ID="baseWinned"/>
 
     <Condition ID="haveTarget"/>
 
