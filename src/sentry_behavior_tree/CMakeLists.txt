@@ -43,6 +43,9 @@ list(APPEND plugin_libs go_back_bt_node)
 add_library(rmul_patrol_bt_node SHARED plugins/service/rmul_patrol_service.cpp)
 list(APPEND plugin_libs rmul_patrol_bt_node)
 
+add_library(rmul_defense_bt_node SHARED plugins/service/rmul_defense_service.cpp)
+list(APPEND plugin_libs rmul_defense_bt_node)
+
 add_library(rmul_go_supply_bt_node SHARED plugins/service/rmul_go_supply_service.cpp)
 list(APPEND plugin_libs rmul_go_supply_bt_node)
 
@@ -76,6 +79,9 @@ list(APPEND plugin_libs have_target_condition_bt_node)
 
 add_library(low_hp_condition_bt_node SHARED plugins/condition/low_hp_condition.cpp)
 list(APPEND plugin_libs low_hp_condition_bt_node)
+
+add_library(low_bullets_condition_bt_node SHARED plugins/condition/low_bullets_condition.cpp)
+list(APPEND plugin_libs low_bullets_condition_bt_node)
 
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)

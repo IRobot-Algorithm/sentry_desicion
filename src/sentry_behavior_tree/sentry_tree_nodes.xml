@@ -10,6 +10,8 @@
     
     <Action ID="RmulPatrol"/>
    
+    <Action ID="RmulDefense"/>
+   
     <Action ID="SetNavTarget">
       <input_port name="have_target"></input_port>
       <input_port name="gimbal"></input_port>
@@ -35,6 +37,8 @@
     <Condition ID="haveTarget"/>
 
     <Condition ID="lowHp"/>
+
+    <Condition ID="lowBullets"/>
 
     <Condition ID="enoughHp"/>
 

@@ -1,41 +1,42 @@
 <?xml version="1.0"?>
-<root main_tree_to_execute="BehaviorTree">
-  <!-- ///// 此树用于2024联盟赛测试 ///// -->
-  <BehaviorTree ID="BehaviorTree">
+<root main_tree_to_execute="RMUL2024">
+  <!-- ///// 此树用于2024联盟赛 ///// -->
+  <BehaviorTree ID="RMUL2024">
     <Fallback>
       <Sequence>
+
         <Condition ID="gameStart"/>
+
         <Fallback>
-          <Sequence>
-            <Condition ID="inSupply"/>
-            <Condition ID="rmulCanSupply"/>
-            <Inverter>
-              <Condition ID="enoughHp"/>
-            </Inverter>
-            <Fallback>
-              <Action ID="RmulGoSupply" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-          </Sequence>
+
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
             <Fallback>
               <Action ID="RmulGoSupply" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
+
           <Sequence>
             <Condition ID="lowHp"/>
             <Fallback>
-              <Action ID="GoBack" service_name="nav_goal"/>
+              <Action ID="RmulDefense" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
-          
+
+          <Sequence>
+            <Condition ID="lowBullets"/>
+            <Fallback>
+              <Action ID="RmulDefense" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+
           <Sequence>
             <Condition ID="haveTarget"/>
-            <Action ID="SetNavTarget" service_name="nav_target" 
+            <Action ID="SetNavTarget" service_name="nav_target"
               have_target="{have_target}" 
               gimbal="{gimbal}" 
               target_pos="{target_pos}"
@@ -46,7 +47,9 @@
             <Action ID="RmulPatrol" service_name="nav_goal"/>
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
+
         </Fallback>
+        
       </Sequence>
 
       <Action ID="GoBack" service_name="nav_goal"/>

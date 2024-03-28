@@ -30,6 +30,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     const std::vector<std::string> plugin_libs = 
     {
         "go_back_bt_node",
+        "rmul_defense_bt_node",
         "rmul_patrol_bt_node",
         "rmul_go_supply_bt_node",
         "set_nav_target_bt_node",
@@ -40,6 +41,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "base_unfolds_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
+        "low_bullets_condition_bt_node", 
         "enough_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
@@ -216,21 +218,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
         blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
 
-        if (right_target_ > 0)
-        {
-            have_target_ = right_target_;
-            gimbal_ = 0;
-            target_pos_ = right_target_pos_;
-        }
-        else if (left_target_ > 0)
-        {
-            have_target_ = left_target_;
-            gimbal_ = 1;
-            target_pos_ = left_target_pos_;
-
-        }
-        else
-            have_target_ = 0;
+        judgeTarget();
 
         blackboard_->set<u_int8_t>("have_target", have_target_);
         blackboard_->set<bool>("gimbal", gimbal_);
@@ -280,11 +268,42 @@ void BtExecutor::executeBehaviorTree()
 
 void BtExecutor::judgeTarget()
 {
+
     // for rmul 2024
-    std::vector<u_int8_t> id(8);
-    std::sort(id.begin(), id.end(),
-          [this](size_t a, size_t b){return enemy_hp_[a] > enemy_hp_[b];});
-    list_ = id;
+    if (right_id_ == 1 && right_target_ > 0)
+    {
+        have_target_ = right_target_;
+        gimbal_ = 0;
+        target_pos_ = right_target_pos_;
+    }
+    else if (left_id_ == 1 && left_target_ > 0)
+    {
+        have_target_ = left_target_;
+        gimbal_ = 1;
+        target_pos_ = left_target_pos_;
+    }
+    else
+    {
+        if (right_target_ > 0)
+        {
+            have_target_ = right_target_;
+            gimbal_ = 0;
+            target_pos_ = right_target_pos_;
+        }
+        else if (left_target_ > 0)
+        {
+            have_target_ = left_target_;
+            gimbal_ = 1;
+            target_pos_ = left_target_pos_;
+        }
+        else
+            have_target_ = 0;
+    }
+
+    // std::vector<u_int8_t> id(8);
+    // std::sort(id.begin(), id.end(),
+    //       [this](size_t a, size_t b){return enemy_hp_[a] > enemy_hp_[b];});
+    // list_ = id;
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
@@ -314,14 +333,16 @@ void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::S
 {
     right_target_ = follow_target->have_target;
     right_target_pos_ = follow_target->target;
-    // RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
+    right_id_ = follow_target->priority;
+    RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
 }
 
 void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
 {
     left_target_ = follow_target->have_target;
     left_target_pos_ = follow_target->target;
-    // RCLCPP_INFO(get_logger(), "left_target_ : %d", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
+    left_id_ = follow_target->priority;
+    RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
 }
 
 

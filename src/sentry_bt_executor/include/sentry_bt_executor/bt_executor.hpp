@@ -97,6 +97,8 @@ private:
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    u_int8_t left_id_ = 0;
+    u_int8_t right_id_ = 0;
     geometry_msgs::msg::PointStamped left_target_pos_;
     geometry_msgs::msg::PointStamped right_target_pos_;
     bool gimbal_; // 0 for right, 1 for left
