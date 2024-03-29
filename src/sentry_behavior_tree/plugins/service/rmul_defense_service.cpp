@@ -9,7 +9,7 @@ namespace sentry_behavior_tree{
 
     void RmulDefenseService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 8)
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 6)
         {
             last_time_ = rclcpp::Clock().now();
             defense_id_++;
