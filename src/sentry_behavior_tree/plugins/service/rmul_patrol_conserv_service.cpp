@@ -28,8 +28,8 @@ namespace sentry_behavior_tree{
             }
             default:
             {
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 3.65;
+                request_->pose.pose.position.x = 2.5;
+                request_->pose.pose.position.y = -1.75;
                 break;
             }
 
