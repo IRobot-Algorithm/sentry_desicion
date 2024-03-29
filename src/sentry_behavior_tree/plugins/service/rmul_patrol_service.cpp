@@ -9,33 +9,39 @@ namespace sentry_behavior_tree{
 
     void RmulPatrolService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 15)
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 10)
         {
             last_time_ = rclcpp::Clock().now();
             patrol_id_++;
         }
 
-        if (patrol_id_ > 2)
+        if (patrol_id_ > 3)
             patrol_id_ = 0;
 
         switch (patrol_id_)
         {
             case 0:
             {
-                request_->pose.pose.position.x = 1.0;
-                request_->pose.pose.position.y = -2.5;
+                request_->pose.pose.position.x = 0.0;
+                request_->pose.pose.position.y = 0.0;
                 break;
             }
             case 1:
             {
                 request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 0.0;
+                request_->pose.pose.position.y = 3.65;
+                break;
+            }
+            case 2:
+            {
+                request_->pose.pose.position.x = 4.48;
+                request_->pose.pose.position.y = 3.65;
                 break;
             }
             default:
             {
-                request_->pose.pose.position.x = 5.1;
-                request_->pose.pose.position.y = 1.9;
+                request_->pose.pose.position.x = 0.0;
+                request_->pose.pose.position.y = 3.65;
                 break;
             }
 

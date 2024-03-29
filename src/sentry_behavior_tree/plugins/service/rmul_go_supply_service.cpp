@@ -10,8 +10,8 @@ namespace sentry_behavior_tree{
     void RmulGoSupplyService::on_tick()
     {
 
-        request_->pose.pose.position.x = -1.7;
-        request_->pose.pose.position.y = -2.0;
+        request_->pose.pose.position.x = -2.5;
+        request_->pose.pose.position.y = 3.45;
 
         RCLCPP_INFO(node_->get_logger(),"rmul_go_supply_service on_tick()... ");
     }

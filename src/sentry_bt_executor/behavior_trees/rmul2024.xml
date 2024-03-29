@@ -7,6 +7,17 @@
         <Condition ID="gameStart"/>
         <Fallback>
           <Sequence>
+            <Condition ID="inSupply"/>
+            <Condition ID="rmulCanSupply"/>
+            <Inverter>
+              <Condition ID="enoughHp"/>
+            </Inverter>
+            <Fallback>
+              <Action ID="RmulGoSupply" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
             <Fallback>

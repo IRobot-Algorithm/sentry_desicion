@@ -23,13 +23,13 @@ namespace sentry_behavior_tree{
             case 0:
             {
                 request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = -1.0;
+                request_->pose.pose.position.y = 3.65;
                 break;
             }
             default:
             {
                 request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 1.0;
+                request_->pose.pose.position.y = 0.0;
                 break;
             }
 
