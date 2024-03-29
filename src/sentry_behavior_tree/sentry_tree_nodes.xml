@@ -12,6 +12,8 @@
     
     <Action ID="RmulPatrol"/>
    
+    <Action ID="RmulPatrolConserv"/>
+
     <Action ID="RmulDefense"/>
    
     <Action ID="SetNavTarget">

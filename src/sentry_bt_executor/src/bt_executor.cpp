@@ -32,6 +32,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "go_back_bt_node",
         "rmul_defense_bt_node",
         "rmul_patrol_bt_node",
+        "rmul_patrol_conserv_bt_node",
         "rmul_go_enemy_base_bt_node",
         "rmul_go_our_base_bt_node",
         "rmul_go_supply_bt_node",
