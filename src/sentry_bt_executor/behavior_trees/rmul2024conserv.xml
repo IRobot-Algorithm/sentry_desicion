@@ -39,6 +39,7 @@
           </Sequence>
 
           <Sequence>
+            <Condition ID="lowHp"/>
             <Condition ID="haveTarget"/>
             <Action ID="SetStaticNavTarget" service_name="nav_target"
               have_target="{have_target}" 
@@ -47,8 +48,25 @@
             />
           </Sequence>
 
+          <Sequence>
+            <Condition ID="haveTarget"/>
+            <Action ID="SetNavTarget" service_name="nav_target"
+              have_target="{have_target}" 
+              gimbal="{gimbal}" 
+              target_pos="{target_pos}"
+            />
+          </Sequence>
+
+          <Sequence>
+            <Condition ID="lowHp"/>
+            <Fallback>
+              <Action ID="RmulDefense" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+
           <Fallback>
-            <Action ID="RmulPatrolConserv" service_name="nav_goal"/>
+            <Action ID="RmulPatrol" service_name="nav_goal"/>
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
 

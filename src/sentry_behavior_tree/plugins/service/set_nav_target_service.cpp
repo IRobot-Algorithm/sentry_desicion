@@ -33,7 +33,13 @@ namespace sentry_behavior_tree{
         node_,
         future_result, server_timeout_);
         if (rc == rclcpp::FutureReturnCode::SUCCESS)
-            return BT::NodeStatus::SUCCESS;
+        {
+            auto result = future_result.get();
+            if (result->success)
+                return BT::NodeStatus::SUCCESS;
+            else
+                return BT::NodeStatus::FAILURE;
+        }
         // TODO : 无法跟随
         else if (rc == rclcpp::FutureReturnCode::TIMEOUT)
         {
