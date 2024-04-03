@@ -22,6 +22,8 @@ class RmulPatrolService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::
         std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result) override;
     
     private:
+        int patrol_id_ = 0;
+        rclcpp::Time last_time_;
 };
 
 

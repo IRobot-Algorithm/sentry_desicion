@@ -1,13 +1,13 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/rmul_patrol_service.hpp"
+#include "sentry_behavior_tree/plugins/service/rmul_patrol_conserv_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    RmulPatrolService::RmulPatrolService(const std::string & service_node_name,
+    RmulPatrolConservService::RmulPatrolConservService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void RmulPatrolService::on_tick()
+    void RmulPatrolConservService::on_tick()
     {
         if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 10)
         {
@@ -15,7 +15,7 @@ namespace sentry_behavior_tree{
             patrol_id_++;
         }
 
-        if (patrol_id_ > 3)
+        if (patrol_id_ > 1)
             patrol_id_ = 0;
 
         switch (patrol_id_)
@@ -26,30 +26,18 @@ namespace sentry_behavior_tree{
                 request_->pose.pose.position.y = 0.0;
                 break;
             }
-            case 1:
-            {
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 3.65;
-                break;
-            }
-            case 2:
-            {
-                request_->pose.pose.position.x = 4.48;
-                request_->pose.pose.position.y = 3.65;
-                break;
-            }
             default:
             {
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 3.65;
+                request_->pose.pose.position.x = 2.5;
+                request_->pose.pose.position.y = -1.75;
                 break;
             }
 
         }   
-        RCLCPP_INFO(node_->get_logger(),"rmul_patrol_service on_tick()... ");
+        RCLCPP_INFO(node_->get_logger(),"rmul_patrol_conserv_service on_tick()... ");
     }
 
-    BT::NodeStatus RmulPatrolService::check_future(
+    BT::NodeStatus RmulPatrolConservService::check_future(
     std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -84,7 +72,7 @@ namespace sentry_behavior_tree{
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::RmulPatrolService>(
-    "RmulPatrol");
+  factory.registerNodeType<sentry_behavior_tree::RmulPatrolConservService>(
+    "RmulPatrolConserv");
     //注意这里""内没有Service 
 }

@@ -1,13 +1,13 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/set_nav_target_service.hpp"
+#include "sentry_behavior_tree/plugins/service/set_static_nav_target_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    SetNavTargetService::SetNavTargetService(const std::string & service_node_name,
+    SetStaticNavTargetService::SetStaticNavTargetService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavTarget>(service_node_name, conf){}
 
-    void SetNavTargetService::on_tick()
+    void SetStaticNavTargetService::on_tick()
     {
         u_int8_t have_target;
         bool gimbal;
@@ -20,12 +20,12 @@ namespace sentry_behavior_tree{
         request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;
-        request_->pose.pose.position.z = target_pos.point.z;
+        request_->pose.pose.position.z = -100.0;
 
-        RCLCPP_INFO(node_->get_logger(),"set_nav_target_service on_tick()... ");
+        RCLCPP_INFO(node_->get_logger(),"set_static_nav_target_service on_tick()... ");
     }
 
-    BT::NodeStatus SetNavTargetService::check_future(
+    BT::NodeStatus SetStaticNavTargetService::check_future(
     std::shared_future<sentry_srvs::srv::NavTarget::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -33,13 +33,7 @@ namespace sentry_behavior_tree{
         node_,
         future_result, server_timeout_);
         if (rc == rclcpp::FutureReturnCode::SUCCESS)
-        {
-            auto result = future_result.get();
-            if (result->success)
-                return BT::NodeStatus::SUCCESS;
-            else
-                return BT::NodeStatus::FAILURE;
-        }
+            return BT::NodeStatus::SUCCESS;
         // TODO : 无法跟随
         else if (rc == rclcpp::FutureReturnCode::TIMEOUT)
         {
@@ -51,7 +45,7 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
-    BT::PortsList SetNavTargetService::providedPorts()
+    BT::PortsList SetStaticNavTargetService::providedPorts()
     {
         return providedBasicPorts(
         {
@@ -66,7 +60,7 @@ namespace sentry_behavior_tree{
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::SetNavTargetService>(
-    "SetNavTarget");
+  factory.registerNodeType<sentry_behavior_tree::SetStaticNavTargetService>(
+    "SetStaticNavTarget");
     //注意这里""内没有Service 
 }

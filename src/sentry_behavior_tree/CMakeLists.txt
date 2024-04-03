@@ -43,11 +43,26 @@ list(APPEND plugin_libs go_back_bt_node)
 add_library(rmul_patrol_bt_node SHARED plugins/service/rmul_patrol_service.cpp)
 list(APPEND plugin_libs rmul_patrol_bt_node)
 
+add_library(rmul_patrol_conserv_bt_node SHARED plugins/service/rmul_patrol_conserv_service.cpp)
+list(APPEND plugin_libs rmul_patrol_conserv_bt_node)
+
+add_library(rmul_defense_bt_node SHARED plugins/service/rmul_defense_service.cpp)
+list(APPEND plugin_libs rmul_defense_bt_node)
+
+add_library(rmul_go_enemy_base_bt_node SHARED plugins/service/rmul_go_enemy_base_service.cpp)
+list(APPEND plugin_libs rmul_go_enemy_base_bt_node)
+
+add_library(rmul_go_our_base_bt_node SHARED plugins/service/rmul_go_our_base_service.cpp)
+list(APPEND plugin_libs rmul_go_our_base_bt_node)
+
 add_library(rmul_go_supply_bt_node SHARED plugins/service/rmul_go_supply_service.cpp)
 list(APPEND plugin_libs rmul_go_supply_bt_node)
 
 add_library(set_nav_target_bt_node SHARED plugins/service/set_nav_target_service.cpp)
 list(APPEND plugin_libs set_nav_target_bt_node)
+
+add_library(set_static_nav_target_bt_node SHARED plugins/service/set_static_nav_target_service.cpp)
+list(APPEND plugin_libs set_static_nav_target_bt_node)
 
 add_library(set_left_target_bt_node SHARED plugins/service/set_left_target_service.cpp)
 list(APPEND plugin_libs set_left_target_bt_node)
@@ -65,6 +80,12 @@ list(APPEND plugin_libs in_supply_condition_bt_node)
 add_library(base_unfolds_condition_bt_node SHARED plugins/condition/base_unfolds_condition.cpp)
 list(APPEND plugin_libs base_unfolds_condition_bt_node)
 
+add_library(base_failed_condition_bt_node SHARED plugins/condition/base_failed_condition.cpp)
+list(APPEND plugin_libs base_failed_condition_bt_node)
+
+add_library(base_winned_condition_bt_node SHARED plugins/condition/base_winned_condition.cpp)
+list(APPEND plugin_libs base_winned_condition_bt_node)
+
 add_library(game_start_condition_bt_node SHARED plugins/condition/game_start_condition.cpp)
 list(APPEND plugin_libs game_start_condition_bt_node)
 
@@ -76,6 +97,9 @@ list(APPEND plugin_libs have_target_condition_bt_node)
 
 add_library(low_hp_condition_bt_node SHARED plugins/condition/low_hp_condition.cpp)
 list(APPEND plugin_libs low_hp_condition_bt_node)
+
+add_library(low_bullets_condition_bt_node SHARED plugins/condition/low_bullets_condition.cpp)
+list(APPEND plugin_libs low_bullets_condition_bt_node)
 
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)

@@ -81,9 +81,10 @@ private:
 
     /* 我方机器人信息 */
     u_int16_t robot_hp_ = 0;
+    u_int16_t max_hp_ = 0;
     u_int16_t bullets_ = 400;
     u_int16_t our_outpost_hp_ = 0;
-    u_int16_t our_base_hp_ = 1000;
+    u_int16_t our_base_hp_ = 3000;
     u_int8_t base_shield_ = 100;
     u_int16_t gold_coins_ = 0; 
 
@@ -96,15 +97,20 @@ private:
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
+    u_int8_t left_id_ = 0;
+    u_int8_t right_id_ = 0;
+    geometry_msgs::msg::PointStamped left_target_pos_;
+    geometry_msgs::msg::PointStamped right_target_pos_;
     bool gimbal_; // 0 for right, 1 for left
     geometry_msgs::msg::PointStamped target_pos_;
 
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家
 
-    std::vector<u_int8_t> list_; // 自瞄目标
+    std::vector<u_int8_t> list_ = {0}; // 自瞄目标
 
     bool in_supply_ = false;
+    double supply_time_ = 0.0;
 
 };
 

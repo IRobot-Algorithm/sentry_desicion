@@ -1,22 +1,22 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/rmul_go_supply_service.hpp"
+#include "sentry_behavior_tree/plugins/service/rmul_go_our_base_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    RmulGoSupplyService::RmulGoSupplyService(const std::string & service_node_name,
+    RmulGoOurBaseService::RmulGoOurBaseService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void RmulGoSupplyService::on_tick()
+    void RmulGoOurBaseService::on_tick()
     {
 
-        request_->pose.pose.position.x = -2.5;
-        request_->pose.pose.position.y = 3.45;
+        request_->pose.pose.position.x = -0.45;
+        request_->pose.pose.position.y = -0.45;
 
-        RCLCPP_INFO(node_->get_logger(),"rmul_go_supply_service on_tick()... ");
+        RCLCPP_INFO(node_->get_logger(),"rmul_go_our_base_service on_tick()... ");
     }
 
-    BT::NodeStatus RmulGoSupplyService::check_future(
+    BT::NodeStatus RmulGoOurBaseService::check_future(
     std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -47,7 +47,7 @@ namespace sentry_behavior_tree{
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::RmulGoSupplyService>(
-    "RmulGoSupply");
+  factory.registerNodeType<sentry_behavior_tree::RmulGoOurBaseService>(
+    "RmulGoOurBase");
     //注意这里""内没有Service 
 }

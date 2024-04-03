@@ -6,15 +6,23 @@
 
     <Action ID="GoBack"/>
 
-    <Action ID="RmulGoSupply">
-      <input_port name="loop_time"></input_port>
-      <input_port name="in_supply"></input_port>
-      <input_port name="supply_time"></input_port>
-    </Action>
-
+    <Action ID="RmulGoSupply"/>
+    
+    <Action ID="RmulGoEnemyBase"/>
+    
     <Action ID="RmulPatrol"/>
    
+    <Action ID="RmulPatrolConserv"/>
+
+    <Action ID="RmulDefense"/>
+   
     <Action ID="SetNavTarget">
+      <input_port name="have_target"></input_port>
+      <input_port name="gimbal"></input_port>
+      <input_port name="target_pos"></input_port>
+    </Action>
+
+    <Action ID="SetStaticNavTarget">
       <input_port name="have_target"></input_port>
       <input_port name="gimbal"></input_port>
       <input_port name="target_pos"></input_port>
@@ -36,9 +44,15 @@
 
     <Condition ID="baseUnfolds"/>
 
+    <Condition ID="baseFailed"/>
+
+    <Condition ID="baseWinned"/>
+
     <Condition ID="haveTarget"/>
 
     <Condition ID="lowHp"/>
+
+    <Condition ID="lowBullets"/>
 
     <Condition ID="enoughHp"/>
 

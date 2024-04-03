@@ -4,8 +4,11 @@
   <BehaviorTree ID="RMUL2024">
     <Fallback>
       <Sequence>
+
         <Condition ID="gameStart"/>
+
         <Fallback>
+
           <Sequence>
             <Condition ID="inSupply"/>
             <Condition ID="rmulCanSupply"/>
@@ -17,6 +20,7 @@
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
+
           <Sequence>
             <Condition ID="lowHp"/>
             <Condition ID="rmulCanSupply"/>
@@ -25,14 +29,39 @@
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
+
           <Sequence>
             <Condition ID="lowHp"/>
             <Fallback>
-              <Action ID="GoBack" service_name="nav_goal"/>
+              <Action ID="RmulDefense" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
-          
+
+          <Sequence>
+            <Condition ID="lowBullets"/>
+            <Fallback>
+              <Action ID="RmulDefense" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+
+          <Sequence>
+            <Condition ID="baseWinned"/>
+            <Fallback>
+              <Sequence>
+                <Condition ID="haveTarget"/>
+                <Action ID="SetStaticNavTarget" service_name="nav_target"
+                  have_target="{have_target}" 
+                  gimbal="{gimbal}" 
+                  target_pos="{target_pos}"
+                />
+              </Sequence>
+              <Action ID="RmulGoOurBase" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+
           <Sequence>
             <Condition ID="haveTarget"/>
             <Action ID="SetNavTarget" service_name="nav_target"
@@ -46,6 +75,7 @@
             <Action ID="RmulPatrol" service_name="nav_goal"/>
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
+
         </Fallback>
         
       </Sequence>
