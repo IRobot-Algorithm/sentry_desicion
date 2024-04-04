@@ -30,6 +30,9 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     const std::vector<std::string> plugin_libs = 
     {
         "go_back_bt_node",
+        "rmuc_go_enemy_outpost_bt_node",
+        "rmuc_go_supply_bt_node",
+        "rmuc_avoid_bt_node",
         "rmul_defense_bt_node",
         "rmul_patrol_bt_node",
         "rmul_patrol_conserv_bt_node",
@@ -51,6 +54,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "enough_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
+        "outpost_low_hp_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
         "rmul_can_supply_condition_bt_node", 
     };

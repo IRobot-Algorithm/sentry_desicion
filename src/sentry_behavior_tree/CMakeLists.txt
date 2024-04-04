@@ -40,6 +40,15 @@ set(dependencies
 add_library(go_back_bt_node SHARED plugins/service/go_back_service.cpp)
 list(APPEND plugin_libs go_back_bt_node)
 
+add_library(rmuc_go_enemy_outpost_bt_node SHARED plugins/service/rmuc_go_enemy_outpost_service.cpp)
+list(APPEND plugin_libs rmuc_go_enemy_outpost_bt_node)
+
+add_library(rmuc_go_supply_bt_node SHARED plugins/service/rmuc_go_supply_service.cpp)
+list(APPEND plugin_libs rmuc_go_supply_bt_node)
+
+add_library(rmuc_avoid_bt_node SHARED plugins/service/rmuc_avoid_service.cpp)
+list(APPEND plugin_libs rmuc_avoid_bt_node)
+
 add_library(rmul_patrol_bt_node SHARED plugins/service/rmul_patrol_service.cpp)
 list(APPEND plugin_libs rmul_patrol_bt_node)
 
@@ -103,6 +112,9 @@ list(APPEND plugin_libs low_bullets_condition_bt_node)
 
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)
+
+add_library(outpost_low_hp_condition_bt_node SHARED plugins/condition/outpost_low_hp_condition.cpp)
+list(APPEND plugin_libs outpost_low_hp_condition_bt_node)
 
 add_library(outpost_survives_condition_bt_node SHARED plugins/condition/outpost_survives_condition.cpp)
 list(APPEND plugin_libs outpost_survives_condition_bt_node)

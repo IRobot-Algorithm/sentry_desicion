@@ -6,6 +6,12 @@
 
     <Action ID="GoBack"/>
 
+    <Action ID="RmucGoEnemyOutpost"/>
+
+    <Action ID="RmucGoSupply"/>
+
+    <Action ID="RmulAvoid"/>
+
     <Action ID="RmulGoSupply"/>
     
     <Action ID="RmulGoEnemyBase"/>
@@ -59,6 +65,8 @@
     <Condition ID="gameStart"/>
 
     <Condition ID="gameAboutOver"/>
+
+    <Condition ID="outpostLowHp"/>
 
     <Condition ID="outpostSurvives"/>
 
