@@ -56,6 +56,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "game_about_over_condition_bt_node", 
         "outpost_low_hp_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
+        "target_can_follow_condition_bt_node", 
         "rmul_can_supply_condition_bt_node", 
     };
 

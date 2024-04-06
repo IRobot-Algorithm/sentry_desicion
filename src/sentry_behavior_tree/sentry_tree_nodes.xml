@@ -70,6 +70,8 @@
 
     <Condition ID="outpostSurvives"/>
 
+    <Condition ID="targetCanFollow"/>
+
     <!-- rmul -->
     <Condition ID="rmulCanSupply"/>
 
