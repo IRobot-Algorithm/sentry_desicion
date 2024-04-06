@@ -9,8 +9,34 @@ namespace sentry_behavior_tree{
 
     void SetRightTargetService::on_tick()
     {
-        std::vector<u_int8_t> list;
-        getInput("list", list);
+        std::vector<u_int8_t> low_hp_list;
+        getInput("low_hp_list", low_hp_list);
+
+        std::string list_name;
+        if (!getInput<std::string>("list_name", list_name))
+            RCLCPP_WARN(node_->get_logger(),"Can not get list name !!!");
+        std::vector<uint8_t> list = getList(list_name);
+
+        size_t i = 0;
+        for (auto it1 = list.begin(); it1 != list.end();)
+        {
+            auto it2 = std::find(low_hp_list.begin(), low_hp_list.end(), *it1);
+            if (it2 != low_hp_list.end())
+            {
+                if (i < low_hp_list.size())
+                {
+                    std::swap(*(low_hp_list.begin() + i), *it2);
+                    i++;
+                }
+                it1 = list.erase(it1);
+            }
+            else
+            {
+                it1++;
+            }
+        }
+        list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
+
         request_->list = list;
 
         RCLCPP_INFO(node_->get_logger(),"set_right_target_service on_tick()... ");
@@ -39,8 +65,20 @@ namespace sentry_behavior_tree{
     {
         return providedBasicPorts(
         {
-            BT::InputPort<std::vector<u_int8_t>>("list"),
+            BT::InputPort<std::vector<u_int8_t>>("low_hp_list"),
         });
+    }
+
+    std::vector<uint8_t> SetRightTargetService::getList(const std::string& list_name)
+    {
+        if (list_name == "OutpostOnly")
+        {
+            return {1, 2, 3};
+        }
+        else
+        {
+            return {};
+        }
     }
 
 }

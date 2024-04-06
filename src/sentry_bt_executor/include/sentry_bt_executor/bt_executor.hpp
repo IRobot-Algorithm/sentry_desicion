@@ -97,8 +97,8 @@ private:
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
-    u_int8_t left_id_ = 0;
-    u_int8_t right_id_ = 0;
+    u_int8_t left_priority_;
+    u_int8_t right_priority_;
     geometry_msgs::msg::PointStamped left_target_pos_;
     geometry_msgs::msg::PointStamped right_target_pos_;
     bool gimbal_; // 0 for right, 1 for left
@@ -107,7 +107,7 @@ private:
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家
 
-    std::vector<u_int8_t> list_ = {0}; // 自瞄目标
+    std::vector<u_int8_t> low_hp_list_; // 自瞄目标
 
     bool in_supply_ = false;
     double supply_time_ = 0.0;

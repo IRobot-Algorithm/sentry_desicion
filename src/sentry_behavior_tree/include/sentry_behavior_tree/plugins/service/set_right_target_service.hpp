@@ -23,7 +23,9 @@ class SetRightTargetService : public nav2_behavior_tree::BtServiceNode<sentry_in
         std::shared_future<sentry_interfaces::srv::AimTarget::Response::SharedPtr> future_result) override;
     
         static BT::PortsList providedPorts();
+
     private:
+        std::vector<uint8_t> getList(const std::string& list_name);
 };
 
 

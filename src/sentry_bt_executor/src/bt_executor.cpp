@@ -106,7 +106,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int8_t>("have_target", have_target_);
     blackboard_->set<bool>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
-    blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
+    blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
 
     blackboard_->set<bool>("force_back", force_back_); // 强制回家
 
@@ -226,18 +226,18 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
         blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
 
+        blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
+
         judgeTarget();
 
         blackboard_->set<u_int8_t>("have_target", have_target_);
         blackboard_->set<bool>("gimbal", gimbal_);
-        blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
-        blackboard_->set<std::vector<u_int8_t>>("list", list_); // 自瞄目标
+        blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);
 
         blackboard_->set<bool>("in_supply", in_supply_);
         blackboard_->set<double>("supply_time", supply_time_);
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
-
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -277,41 +277,38 @@ void BtExecutor::executeBehaviorTree()
 void BtExecutor::judgeTarget()
 {
 
-    // for rmul 2024
-    if (right_id_ == 1 && right_target_ > 0)
-    {
-        have_target_ = right_target_;
-        gimbal_ = 0;
-        target_pos_ = right_target_pos_;
-    }
-    else if (left_id_ == 1 && left_target_ > 0)
+    if (left_target_ > 0  && right_target_ == 0) // 左有右无
     {
         have_target_ = left_target_;
-        gimbal_ = 1;
+        gimbal_ = 0;
         target_pos_ = left_target_pos_;
     }
-    else
+    else if (left_target_ == 0 && right_target_ > 0) // 右有左无
     {
-        if (right_target_ > 0)
-        {
-            have_target_ = right_target_;
-            gimbal_ = 0;
-            target_pos_ = right_target_pos_;
-        }
-        else if (left_target_ > 0)
+        have_target_ = right_target_;
+        gimbal_ = 1;
+        target_pos_ = right_target_pos_;
+    }
+    else if (left_target_ > 0 && right_target_ > 0) // 都有
+    {
+        if (right_priority_ > left_priority_) // 左边更优先
         {
             have_target_ = left_target_;
-            gimbal_ = 1;
+            gimbal_ = 0;
             target_pos_ = left_target_pos_;
         }
-        else
-            have_target_ = 0;
+        else // 右边更优先
+        {
+            have_target_ = right_target_;
+            gimbal_ = 1;
+            target_pos_ = right_target_pos_;
+        }
+    }
+    else // 都没有
+    {
+        have_target_ = 0;
     }
 
-    // std::vector<u_int8_t> id(8);
-    // std::sort(id.begin(), id.end(),
-    //       [this](size_t a, size_t b){return enemy_hp_[a] > enemy_hp_[b];});
-    // list_ = id;
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
@@ -326,8 +323,13 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     base_shield_ = referee_information->base_shield;
     gold_coins_ = referee_information->gold_coins;
 
+    low_hp_list_.clear();
     for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
+    {
         enemy_hp_[i] = referee_information->enemy_hp[i];
+        if (enemy_hp_[i] <= 100 && enemy_hp_[i] != 0)
+            low_hp_list_.emplace_back(i);
+    }
 
     // 裁判系统无敌方无人机信息
     // air_force_ = referee_information->air_force;
@@ -352,7 +354,7 @@ void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::S
 {
     right_target_ = follow_target->have_target;
     right_target_pos_ = follow_target->target;
-    right_id_ = follow_target->priority;
+    right_priority_ = follow_target->priority;
     // RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
 }
 
@@ -360,7 +362,7 @@ void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::Sh
 {
     left_target_ = follow_target->have_target;
     left_target_pos_ = follow_target->target;
-    left_id_ = follow_target->priority;
+    left_priority_ = follow_target->priority;
     // RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
 }
 
