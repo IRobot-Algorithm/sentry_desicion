@@ -7,9 +7,7 @@
           list_name="OutpostOnly" 
         /> -->
       <Condition ID="leaveTooLong"/>
-      <Action ID="GoBack" service_name="nav_goal"
-        leave_time="{leave_time}" 
-      />
+      <Action ID="GoBack" service_name="nav_goal"/>
     </Sequence>
   </BehaviorTree>
 

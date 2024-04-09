@@ -26,12 +26,12 @@ namespace sentry_behavior_tree{
         {
             auto result = future_result.get();
             if (result->is_arrive)
-            {
-                double leave_time = rclcpp::Clock().now().seconds();
-                RCLCPP_INFO(node_->get_logger()," leave_time : %lf", leave_time);
-                setOutput("leave_time", leave_time);
+            // {
+            //     double leave_time = rclcpp::Clock().now().seconds();
+            //     RCLCPP_INFO(node_->get_logger()," leave_time : %lf", leave_time);
+            //     setOutput("leave_time", leave_time);
                 return BT::NodeStatus::SUCCESS;
-            }
+            // }
             else
                 return BT::NodeStatus::FAILURE;
         }
@@ -45,13 +45,13 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
-    BT::PortsList GoBackService::providedPorts()
-    {
-        return providedBasicPorts(
-        {
-            BT::OutputPort<double>("leave_time"),
-        });
-    }
+    // BT::PortsList GoBackService::providedPorts()
+    // {
+    //     return providedBasicPorts(
+    //     {
+    //         BT::OutputPort<double>("leave_time"),
+    //     });
+    // }
 
 
 }

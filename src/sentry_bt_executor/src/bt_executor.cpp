@@ -117,6 +117,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<double>("loop_time", 0);
 
     blackboard_->set<bool>("in_supply", in_supply_);
+    blackboard_->set<bool>("in_patrol", in_patrol_);
 
     /*
     // rmul
@@ -219,6 +220,10 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<double>("supply_time", supply_time_);
         */
 
+        if (in_patrol_)
+            leave_time_ = rclcpp::Clock().now().seconds();
+        blackboard_->set<double>("leave_time", leave_time_);
+
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
         blackboard_->set<u_int16_t>("gameover_time", gameover_time_);
@@ -250,6 +255,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);
 
         blackboard_->set<bool>("in_supply", in_supply_);
+        blackboard_->set<bool>("in_patrol", in_patrol_);
 
         /*
         // rmul
@@ -354,8 +360,9 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     // air_force_ = referee_information->air_force;
     force_back_ = referee_information->force_back;
 
-    // rmul
-    in_supply_ = referee_information->in_supply;
+    // rmuc
+    in_supply_ = getBit(referee_information->rfid_status, 13);
+    in_patrol_ = getBit(referee_information->rfid_status, 14);
 
     // RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
     //             static_cast<int>(game_start_), 
@@ -383,6 +390,31 @@ void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::Sh
     left_target_pos_ = follow_target->target;
     left_priority_ = follow_target->priority;
     // RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
+}
+
+
+inline void BtExecutor::setBit(uint32_t& data, int pos)
+{
+    data |= (static_cast<uint32_t>(1) << pos);
+}
+
+inline void BtExecutor::clearBit(uint32_t& data, int pos)
+{
+    data &= (static_cast<uint32_t>(0) << pos);
+}
+
+inline bool BtExecutor::getBit(const uint32_t& data, int pos)
+{
+    return (data >> pos) & static_cast<uint32_t>(1);
+}
+
+void BtExecutor::setBitsRange(uint32_t &data, int start, int end, uint32_t value)
+{
+    uint32_t mask = (~static_cast<uint32_t>(0) << start) | ((static_cast<uint32_t>(1) << (end + 1)) - 1);
+    data &= mask;
+    
+    value <<= start;
+    data |= value;
 }
 
 

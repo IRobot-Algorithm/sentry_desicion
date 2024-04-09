@@ -65,6 +65,26 @@ private:
     void rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
     void leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
 
+	/*
+	* @brief uint32 pos位赋值1
+	*/
+    inline void setBit(uint32_t& data, int pos);
+
+	/*
+	* @brief uint32 pos位赋值0
+	*/
+    inline void clearBit(uint32_t& data, int pos);
+
+	/*
+	* @brief 获得 uint32 pos位
+	*/
+    inline bool getBit(const uint32_t& data, int pos);
+
+	/*
+	* @brief uint32 start到end位赋值为value
+	*/
+    void setBitsRange(uint32_t &data, int start, int end, uint32_t value);
+
 private:
     rclcpp::Subscription<sentry_msgs::msg::RefereeInformation>::SharedPtr referee_information_sub_;
     rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr right_rmos_sub_;
@@ -110,6 +130,7 @@ private:
     std::vector<u_int8_t> low_hp_list_; // 自瞄目标
 
     bool in_supply_ = false;
+    bool in_patrol_ = false;
     double supply_time_ = 0.0;
 
 };

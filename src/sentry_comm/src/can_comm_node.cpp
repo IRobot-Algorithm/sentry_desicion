@@ -121,7 +121,7 @@ void CanCommNode::recevieCallBack()
       }
       case RFID_RECEIVE_ID:
       {
-        referee_information_.in_supply = (buf[0] & 0x2000) == 0x2000;
+        // referee_information_.in_supply = (buf[0] & 0x2000) == 0x2000;
         break;
       }
       case CLIENT_RECEIVE_ID:
