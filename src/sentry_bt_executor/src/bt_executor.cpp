@@ -51,6 +51,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "low_bullets_condition_bt_node", 
+        "leave_too_long_condition_bt_node", 
         "enough_hp_condition_bt_node", 
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
@@ -75,6 +76,9 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<rclcpp::Node::SharedPtr>("node", client_node_); 
     // TODO:time_out修改到合适的值
     blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(1000)); 
+
+    double now_time = rclcpp::Clock().now().seconds();    
+    blackboard_->set<double>("now_time", now_time);
 
     /* 哨兵定位信息 */
     blackboard_->set<double>("leave_time", leave_time_);
@@ -114,8 +118,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     blackboard_->set<bool>("in_supply", in_supply_);
 
+    /*
     // rmul
     blackboard_->set<double>("supply_time", supply_time_);
+    */
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -197,12 +203,21 @@ void BtExecutor::executeBehaviorTree()
 
     auto on_loop = [&]()
     {
-        double loop_time = rclcpp::Clock().now().seconds() - time_.seconds();
+        double now_time = rclcpp::Clock().now().seconds();
+        double loop_time = now_time - time_.seconds();
         time_ = rclcpp::Clock().now();
+        
+        blackboard_->set<double>("now_time", now_time);
+        RCLCPP_INFO(get_logger()," now_time : %lf", now_time);
 
+        /*
+        // rmul
         if (in_supply_ && max_hp_ - robot_hp_ >= 100)
             supply_time_ += loop_time;
         RCLCPP_INFO(get_logger(), "supply_time: %f", supply_time_);
+
+        blackboard_->set<double>("supply_time", supply_time_);
+        */
 
         /* 比赛状态信息 */
         blackboard_->set<bool>("game_start", game_start_);
@@ -235,7 +250,11 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);
 
         blackboard_->set<bool>("in_supply", in_supply_);
+
+        /*
+        // rmul
         blackboard_->set<double>("supply_time", supply_time_);
+        */
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
 

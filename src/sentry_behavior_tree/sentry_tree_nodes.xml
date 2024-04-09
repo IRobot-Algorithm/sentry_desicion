@@ -60,6 +60,8 @@
 
     <Condition ID="lowBullets"/>
 
+    <Condition ID="leaveTooLong"/>
+
     <Condition ID="enoughHp"/>
 
     <Condition ID="gameStart"/>

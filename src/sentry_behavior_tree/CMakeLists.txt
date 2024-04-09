@@ -110,6 +110,9 @@ list(APPEND plugin_libs low_hp_condition_bt_node)
 add_library(low_bullets_condition_bt_node SHARED plugins/condition/low_bullets_condition.cpp)
 list(APPEND plugin_libs low_bullets_condition_bt_node)
 
+add_library(leave_too_long_condition_bt_node SHARED plugins/condition/leave_too_long_condition.cpp)
+list(APPEND plugin_libs leave_too_long_condition_bt_node)
+
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)
 

@@ -2,11 +2,15 @@
 <root main_tree_to_execute="BehaviorTree">
   <!-- ////////// -->
   <BehaviorTree ID="BehaviorTree">
-    <Fallback>
-        <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
+    <Sequence>
+        <!-- <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
           list_name="OutpostOnly" 
-        />
-    </Fallback>
+        /> -->
+      <Condition ID="leaveTooLong"/>
+      <Action ID="GoBack" service_name="nav_goal"
+        leave_time="{leave_time}" 
+      />
+    </Sequence>
   </BehaviorTree>
 
 </root>
