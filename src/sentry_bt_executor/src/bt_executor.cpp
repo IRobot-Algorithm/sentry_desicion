@@ -93,6 +93,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
     blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
     blackboard_->set<u_int8_t>("base_shield", base_shield_);
+    blackboard_->set<bool>("base_unfolds", base_unfolds_);
     blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
 
     // TODO: 更改初始血量
@@ -235,6 +236,16 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
         blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
         blackboard_->set<u_int8_t>("base_shield", base_shield_);
+
+        if (!game_start_)
+        {
+            base_unfolds_ = false;
+        }
+        else if (our_outpost_hp_ <= 0 && robot_hp_ <= 0)
+        {
+            base_unfolds_ = true;
+        }
+        blackboard_->set<bool>("base_unfolds", base_unfolds_);
         blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
 
         /* 敌方机器人血量及自瞄状态 */
