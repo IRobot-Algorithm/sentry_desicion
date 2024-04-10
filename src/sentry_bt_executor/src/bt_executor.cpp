@@ -431,7 +431,7 @@ inline bool BtExecutor::getBit(const uint32_t& data, int pos)
 
 void BtExecutor::setBitsRange(uint32_t &data, int start, int end, uint32_t value)
 {
-    uint32_t mask = (~static_cast<uint32_t>(0) << start) | ((static_cast<uint32_t>(1) << (end + 1)) - 1);
+    uint32_t mask = ~((~static_cast<uint32_t>(0) << start) & ((static_cast<uint32_t>(1) << (end + 1)) - 1));
     data &= mask;
     
     value <<= start;

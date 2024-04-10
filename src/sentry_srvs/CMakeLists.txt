@@ -34,6 +34,7 @@ set(dependencies
 ) 
 
 rosidl_generate_interfaces(${PROJECT_NAME}
+  "srv/BuyBullets.srv"
   "srv/NavGoal.srv"
   "srv/NavTarget.srv"
 
