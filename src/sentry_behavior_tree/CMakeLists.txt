@@ -101,6 +101,9 @@ list(APPEND plugin_libs center_patrol_condition_bt_node)
 add_library(counter_outpost_condition_bt_node SHARED plugins/condition/counter_outpost_condition.cpp)
 list(APPEND plugin_libs counter_outpost_condition_bt_node)
 
+add_library(enemy_area_patrol_condition_bt_node SHARED plugins/condition/enemy_area_patrol_condition.cpp)
+list(APPEND plugin_libs enemy_area_patrol_condition_bt_node)
+
 add_library(game_start_condition_bt_node SHARED plugins/condition/game_start_condition.cpp)
 list(APPEND plugin_libs game_start_condition_bt_node)
 

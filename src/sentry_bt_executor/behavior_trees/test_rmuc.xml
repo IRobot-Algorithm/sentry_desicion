@@ -8,8 +8,9 @@
         /> -->
       <!-- <Condition ID="leaveTooLong"/>
       <Action ID="GoBack" service_name="nav_goal"/> -->
-      <Condition ID="counterOutpost"/>
+      <!-- <Condition ID="counterOutpost"/> -->
       <!-- <Condition ID="centerPatrol"/> -->
+      <Condition ID="enemyAreaPatrol"/>
 
     </Sequence>
   </BehaviorTree>

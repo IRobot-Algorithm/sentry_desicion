@@ -58,6 +58,8 @@
 
     <Condition ID="counterOutpost"/>
 
+    <Condition ID="enemyAreaPatrol"/>
+
     <Condition ID="haveTarget"/>
 
     <Condition ID="lowHp"/>
