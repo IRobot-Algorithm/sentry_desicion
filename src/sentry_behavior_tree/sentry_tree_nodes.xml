@@ -54,6 +54,8 @@
 
     <Condition ID="baseWinned"/>
 
+    <Condition ID="centerPatrol"/>
+
     <Condition ID="counterOutpost"/>
 
     <Condition ID="haveTarget"/>
