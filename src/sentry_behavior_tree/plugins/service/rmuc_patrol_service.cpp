@@ -1,24 +1,24 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/rmuc_avoid_service.hpp"
+#include "sentry_behavior_tree/plugins/service/rmuc_patrol_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    RmucAvoidService::RmucAvoidService(const std::string & service_node_name,
+    RmucPatrolService::RmucPatrolService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void RmucAvoidService::on_tick()
+    void RmucPatrolService::on_tick()
     {
         if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 6)
         {
             last_time_ = rclcpp::Clock().now();
-            avoid_id_++;
+            id_++;
         }
 
-        if (avoid_id_ > 1)
-            avoid_id_ = 0;
+        if (id_ > 1)
+            id_ = 0;
 
-        switch (avoid_id_)
+        switch (id_)
         {
             case 0:
             {
@@ -34,10 +34,10 @@ namespace sentry_behavior_tree{
             }
 
         }   
-        RCLCPP_INFO(node_->get_logger(),"rmuc_avoid_service on_tick()... ");
+        RCLCPP_INFO(node_->get_logger(),"rmuc_patrol_service on_tick()... ");
     }
 
-    BT::NodeStatus RmucAvoidService::check_future(
+    BT::NodeStatus RmucPatrolService::check_future(
     std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -50,7 +50,7 @@ namespace sentry_behavior_tree{
             if (result->is_arrive)
             {
                 last_time_ = rclcpp::Clock().now();
-                avoid_id_++;
+                id_++;
                 return BT::NodeStatus::SUCCESS;
             }
             else
@@ -72,7 +72,7 @@ namespace sentry_behavior_tree{
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::RmucAvoidService>(
-    "RmucAvoid");
+  factory.registerNodeType<sentry_behavior_tree::RmucPatrolService>(
+    "RmucPatrol");
     //注意这里""内没有Service 
 }

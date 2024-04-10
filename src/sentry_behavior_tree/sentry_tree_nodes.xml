@@ -10,6 +10,14 @@
 
     <Action ID="RmucGoSupply"/>
 
+    <Action ID="RmucBasePatrol"/>
+
+    <Action ID="RmucPatrol"/>
+
+    <Action ID="RmucCenterPatrol"/>
+
+    <Action ID="RmucEnemyAreaPatrol"/>
+
     <Action ID="RmulAvoid"/>
 
     <Action ID="RmulGoSupply"/>
@@ -71,6 +79,8 @@
     <Condition ID="leaveTooLong"/>
 
     <Condition ID="enoughHp"/>
+
+    <Condition ID="forceBack"/>
 
     <Condition ID="gameStart"/>
 

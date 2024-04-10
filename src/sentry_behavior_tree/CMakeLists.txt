@@ -46,8 +46,17 @@ list(APPEND plugin_libs rmuc_go_enemy_outpost_bt_node)
 add_library(rmuc_go_supply_bt_node SHARED plugins/service/rmuc_go_supply_service.cpp)
 list(APPEND plugin_libs rmuc_go_supply_bt_node)
 
-add_library(rmuc_avoid_bt_node SHARED plugins/service/rmuc_avoid_service.cpp)
-list(APPEND plugin_libs rmuc_avoid_bt_node)
+add_library(rmuc_base_patrol_bt_node SHARED plugins/service/rmuc_base_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_base_patrol_bt_node)
+
+add_library(rmuc_patrol_bt_node SHARED plugins/service/rmuc_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_patrol_bt_node)
+
+add_library(rmuc_center_patrol_bt_node SHARED plugins/service/rmuc_center_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_center_patrol_bt_node)
+
+add_library(rmuc_enemy_area_patrol_bt_node SHARED plugins/service/rmuc_enemy_area_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_enemy_area_patrol_bt_node)
 
 add_library(rmul_patrol_bt_node SHARED plugins/service/rmul_patrol_service.cpp)
 list(APPEND plugin_libs rmul_patrol_bt_node)
@@ -127,6 +136,9 @@ list(APPEND plugin_libs leave_too_long_condition_bt_node)
 
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)
+
+add_library(force_back_condition_bt_node SHARED plugins/condition/force_back_condition.cpp)
+list(APPEND plugin_libs force_back_condition_bt_node)
 
 add_library(outpost_low_hp_condition_bt_node SHARED plugins/condition/outpost_low_hp_condition.cpp)
 list(APPEND plugin_libs outpost_low_hp_condition_bt_node)

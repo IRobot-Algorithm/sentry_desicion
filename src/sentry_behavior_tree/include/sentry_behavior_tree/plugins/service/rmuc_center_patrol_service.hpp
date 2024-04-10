@@ -1,5 +1,5 @@
-#ifndef SENTRY_BEHAVIOR_TREE__PLUGINS__SERVICE__RMUC_AVOID_HPP_
-#define SENTRY_BEHAVIOR_TREE__PLUGINS__SERVICE__RMUC_AVOID_HPP_
+#ifndef SENTRY_BEHAVIOR_TREE__PLUGINS__SERVICE__RMUC_CENTER_PATROL_HPP_
+#define SENTRY_BEHAVIOR_TREE__PLUGINS__SERVICE__RMUC_CENTER_PATROL_HPP_
 
 #include "nav2_behavior_tree/bt_service_node.hpp"
 #include "sentry_srvs/srv/nav_goal.hpp"
@@ -7,13 +7,13 @@
 namespace sentry_behavior_tree{
 
 /*
-* @brief rmuc躲避巡逻
+* @brief rmuc在大资源岛周围巡逻
 * @auther wyq
 */
-class RmucAvoidService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>{
+class RmucCenterPatrolService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>{
 
     public:
-        RmucAvoidService(const std::string & service_node_name,
+        RmucCenterPatrolService(const std::string & service_node_name,
             const BT::NodeConfiguration & conf);
 
         void on_tick() override;
@@ -22,7 +22,7 @@ class RmucAvoidService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::s
         std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result) override;
     
     private:
-        int avoid_id_ = 0;
+        int id_ = 0;
         rclcpp::Time last_time_;
 };
 

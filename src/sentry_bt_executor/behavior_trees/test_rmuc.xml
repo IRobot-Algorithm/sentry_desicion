@@ -12,13 +12,18 @@
       <!-- <Condition ID="centerPatrol"/> -->
       <!-- <Condition ID="enemyAreaPatrol"/> -->
       <!-- <Condition ID="enemyOutpostSurvives"/> -->
-      <Action ID="GoBack" service_name="nav_goal"/>
+      <!-- <Condition ID="forceBack"/> -->
+      <!-- <Action ID="GoBack" service_name="nav_goal"/>
       <Action ID="SetNavTarget" service_name="nav_target"
         have_target="{have_target}" 
         gimbal="{gimbal}" 
         target_pos="{target_pos}"
       />
-      <Action ID="BuyBullets" service_name="buy_bullets"/>
+      <Action ID="BuyBullets" service_name="buy_bullets"/> -->
+      <!-- <Action ID="RmucPatrol" service_name="nav_goal"/> -->
+      <!-- <Action ID="RmucBasePatrol" service_name="nav_goal"/> -->
+      <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
+      <!-- <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/> -->
 
     </Sequence>
   </BehaviorTree>
