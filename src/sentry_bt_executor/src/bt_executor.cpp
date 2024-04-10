@@ -222,6 +222,7 @@ void BtExecutor::executeBehaviorTree()
 
         if (in_patrol_)
             leave_time_ = rclcpp::Clock().now().seconds();
+            
         blackboard_->set<double>("leave_time", leave_time_);
 
         /* 比赛状态信息 */
