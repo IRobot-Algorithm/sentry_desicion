@@ -59,6 +59,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
         "outpost_low_hp_condition_bt_node", 
+        "enemy_outpost_survives_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
         "target_can_follow_condition_bt_node", 
         "rmul_can_supply_condition_bt_node", 
@@ -100,7 +101,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
 
     // TODO: 更改初始血量
-    enemy_hp_.resize(8, 300);
+    enemy_hp_.resize(8, 0);
     
     /* 敌方机器人血量及自瞄状态 */
     blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);

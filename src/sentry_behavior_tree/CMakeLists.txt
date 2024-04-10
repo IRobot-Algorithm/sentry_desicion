@@ -128,6 +128,9 @@ list(APPEND plugin_libs enough_hp_condition_bt_node)
 add_library(outpost_low_hp_condition_bt_node SHARED plugins/condition/outpost_low_hp_condition.cpp)
 list(APPEND plugin_libs outpost_low_hp_condition_bt_node)
 
+add_library(enemy_outpost_survives_condition_bt_node SHARED plugins/condition/enemy_outpost_survives_condition.cpp)
+list(APPEND plugin_libs enemy_outpost_survives_condition_bt_node)
+
 add_library(outpost_survives_condition_bt_node SHARED plugins/condition/outpost_survives_condition.cpp)
 list(APPEND plugin_libs outpost_survives_condition_bt_node)
 
