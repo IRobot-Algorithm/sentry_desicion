@@ -17,10 +17,11 @@ namespace sentry_behavior_tree{
         getInput("target_pos", target_pos);
         request_->is_lost = have_target == 2;
         request_->gimbal = gimbal;
+        request_->is_dynamic = false;
         request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;
-        request_->pose.pose.position.z = -100.0;
+        request_->pose.pose.position.z = target_pos.point.z;
 
         RCLCPP_INFO(node_->get_logger(),"set_static_nav_target_service on_tick()... ");
     }

@@ -17,6 +17,7 @@ namespace sentry_behavior_tree{
         getInput("target_pos", target_pos);
         request_->is_lost = have_target == 2;
         request_->gimbal = gimbal;
+        request_->is_dynamic = true;
         request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;
