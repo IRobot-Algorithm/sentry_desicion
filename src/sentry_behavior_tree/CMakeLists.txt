@@ -95,6 +95,9 @@ list(APPEND plugin_libs base_failed_condition_bt_node)
 add_library(base_winned_condition_bt_node SHARED plugins/condition/base_winned_condition.cpp)
 list(APPEND plugin_libs base_winned_condition_bt_node)
 
+add_library(counter_outpost_condition_bt_node SHARED plugins/condition/counter_outpost_condition.cpp)
+list(APPEND plugin_libs counter_outpost_condition_bt_node)
+
 add_library(game_start_condition_bt_node SHARED plugins/condition/game_start_condition.cpp)
 list(APPEND plugin_libs game_start_condition_bt_node)
 

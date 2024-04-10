@@ -48,6 +48,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "base_unfolds_condition_bt_node",
         "base_failed_condition_bt_node",
         "base_winned_condition_bt_node",
+        "counter_outpost_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "low_bullets_condition_bt_node", 
@@ -114,6 +115,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
 
     blackboard_->set<bool>("force_back", force_back_); // 强制回家
+    blackboard_->set<bool>("keep_patrol", keep_patrol_); // 保守巡逻
+    blackboard_->set<uint8_t>("mode", mode_);
 
     blackboard_->set<double>("loop_time", 0);
 
@@ -210,7 +213,7 @@ void BtExecutor::executeBehaviorTree()
         time_ = rclcpp::Clock().now();
         
         blackboard_->set<double>("now_time", now_time);
-        RCLCPP_INFO(get_logger()," now_time : %lf", now_time);
+        // RCLCPP_INFO(get_logger()," now_time : %lf", now_time);
 
         /*
         // rmul
@@ -275,6 +278,8 @@ void BtExecutor::executeBehaviorTree()
         */
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
+        blackboard_->set<bool>("keep_patrol", keep_patrol_); // 保守巡逻
+        blackboard_->set<uint8_t>("mode", mode_);
 
         // 裁判系统没有的信息
         blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -375,6 +380,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     // rmuc
     in_supply_ = getBit(referee_information->rfid_status, 13);
     in_patrol_ = getBit(referee_information->rfid_status, 14);
+    mode_ = referee_information->normal_mode;
 
     // RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
     //             static_cast<int>(game_start_), 

@@ -127,6 +127,8 @@ private:
 
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家
+    bool keep_patrol_ = false; // 保守巡逻
+    uint8_t mode_ = 0; 
 
     std::vector<u_int8_t> low_hp_list_; // 自瞄目标
 
