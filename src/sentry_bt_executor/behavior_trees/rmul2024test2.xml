@@ -26,7 +26,7 @@
             <Condition ID="rmulCanSupply"/>
             <Fallback>
               <Action ID="RmulGoSupply" service_name="nav_goal"/>
-            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
 

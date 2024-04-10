@@ -9,7 +9,7 @@ namespace sentry_behavior_tree
 * @brief 判断敌方前哨站是否存活
 * @auther wyq
 */
-BT::NodeStatus EnemyOutpostSurvives(BT::TreeNode & tree_node);
+BT::NodeStatus enemyOutpostSurvives(BT::TreeNode & tree_node);
 
 }
 

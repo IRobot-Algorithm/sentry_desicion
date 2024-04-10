@@ -11,7 +11,14 @@
       <!-- <Condition ID="counterOutpost"/> -->
       <!-- <Condition ID="centerPatrol"/> -->
       <!-- <Condition ID="enemyAreaPatrol"/> -->
-      <Condition ID="enemyOutpostSurvives"/>
+      <!-- <Condition ID="enemyOutpostSurvives"/> -->
+      <Action ID="GoBack" service_name="nav_goal"/>
+      <Action ID="SetNavTarget" service_name="nav_target"
+        have_target="{have_target}" 
+        gimbal="{gimbal}" 
+        target_pos="{target_pos}"
+      />
+      <Action ID="BuyBullets" service_name="buy_bullets"/>
 
     </Sequence>
   </BehaviorTree>

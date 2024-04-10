@@ -67,6 +67,9 @@ list(APPEND plugin_libs rmul_go_our_base_bt_node)
 add_library(rmul_go_supply_bt_node SHARED plugins/service/rmul_go_supply_service.cpp)
 list(APPEND plugin_libs rmul_go_supply_bt_node)
 
+add_library(buy_bullets_bt_node SHARED plugins/service/buy_bullets_service.cpp)
+list(APPEND plugin_libs buy_bullets_bt_node)
+
 add_library(set_nav_target_bt_node SHARED plugins/service/set_nav_target_service.cpp)
 list(APPEND plugin_libs set_nav_target_bt_node)
 
