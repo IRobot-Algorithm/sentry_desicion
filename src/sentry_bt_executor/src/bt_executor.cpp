@@ -106,6 +106,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<bool>("base_unfolds", base_unfolds_);
     blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
 
+    // 弹丸
+    blackboard_->set<bool>("can_buy_bullets", can_buy_bullets_);
+    blackboard_->set<u_int16_t>("buy_bullets", buy_bullets_);
+
     // TODO: 更改初始血量
     enemy_hp_.resize(8, 0);
     
@@ -261,6 +265,11 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<bool>("base_unfolds", base_unfolds_);
         blackboard_->set<u_int16_t>("gold_coins", gold_coins_);
 
+        // 弹丸
+        judgeBullets();
+        blackboard_->set<bool>("can_buy_bullets", can_buy_bullets_);
+        blackboard_->set<u_int16_t>("buy_bullets", buy_bullets_);
+        
         /* 敌方机器人血量及自瞄状态 */
         blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
         blackboard_->set<u_int16_t>("hero_hp", enemy_hp_[1]);
@@ -365,8 +374,19 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    if (in_supply_)
-        
+    // first : judge how many bullets can buy
+    int n = (gold_coins_ - 200) / 50;
+    if (n > 0 && bought_bullets_ < 300)
+    {
+        can_buy_bullets_ = true;
+        buy_bullets_ = bought_bullets_ + n * 50;
+        if (buy_bullets_ > 300)
+            buy_bullets_ = 300;
+    }
+    else
+    {
+        can_buy_bullets_ = false;
+    }
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
@@ -380,6 +400,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     our_base_hp_ = referee_information->our_base_hp;
     base_shield_ = referee_information->base_shield;
     gold_coins_ = referee_information->gold_coins;
+    bought_bullets_ = referee_information->bought_bullets;
 
     low_hp_list_.clear();
     for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)

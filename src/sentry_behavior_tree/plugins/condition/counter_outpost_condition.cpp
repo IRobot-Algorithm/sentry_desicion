@@ -7,7 +7,7 @@ namespace sentry_behavior_tree
 
         auto mode = tree_node.config().blackboard->get<uint8_t>("mode");
 
-        return mode == 0 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return mode == 3 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

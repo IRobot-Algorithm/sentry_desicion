@@ -67,7 +67,7 @@ private:
 	* @brief 与购买弹丸相关决策
     * @details 计算购买的弹丸量是实时进行的 但只在检测到rfid才更新串口协议
 	*/
-    void judgeBullets()
+    void judgeBullets();
 
     void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
 
@@ -141,6 +141,10 @@ private:
     uint8_t mode_ = 0; 
 
     std::vector<u_int8_t> low_hp_list_; // 自瞄目标
+
+    // 购买弹丸
+    u_int16_t buy_bullets_ = 0;
+    bool can_buy_bullets_ = false;
 
     bool in_supply_ = false;
     bool in_patrol_ = false;
