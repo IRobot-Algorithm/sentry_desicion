@@ -58,7 +58,15 @@ protected:
     rclcpp::Time start_time_;
 
 private:
+    /*
+	* @brief 与导航跟随自瞄目标相关决策
+	*/
     void judgeTarget();
+
+    /*
+	* @brief 与购买弹丸相关决策
+    * @details 计算购买的弹丸量是实时进行的 但只在检测到rfid才更新串口协议
+	*/
     void judgeBullets()
 
     void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
@@ -104,7 +112,7 @@ private:
     u_int16_t robot_hp_ = 0;
     u_int16_t max_hp_ = 0;
     u_int16_t bullets_ = 400;
-    u_int32_t bought_bullets_ = 0;
+    u_int16_t bought_bullets_ = 0;
     u_int16_t our_outpost_hp_ = 0; // default
     u_int16_t our_base_hp_ = 3000;
     u_int8_t base_shield_ = 100;

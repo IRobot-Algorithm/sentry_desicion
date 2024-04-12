@@ -9,7 +9,7 @@ namespace sentry_behavior_tree{
 
     void BuyBulletsService::on_tick()
     {
-        u_int32_t bought_bullets;
+        u_int16_t bought_bullets;
         getInput("bought_bullets", bought_bullets);
         request_->bullets = bought_bullets;
 
@@ -39,7 +39,7 @@ namespace sentry_behavior_tree{
     {
         return providedBasicPorts(
         {
-            BT::InputPort<u_int8_t>("bought_bullets"),
+            BT::InputPort<u_int16_t>("bought_bullets"),
         });
     }
 
