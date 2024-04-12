@@ -59,6 +59,7 @@ protected:
 
 private:
     void judgeTarget();
+    void judgeBullets()
 
     void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
 
@@ -103,6 +104,7 @@ private:
     u_int16_t robot_hp_ = 0;
     u_int16_t max_hp_ = 0;
     u_int16_t bullets_ = 400;
+    u_int32_t bought_bullets_ = 0;
     u_int16_t our_outpost_hp_ = 0; // default
     u_int16_t our_base_hp_ = 3000;
     u_int8_t base_shield_ = 100;

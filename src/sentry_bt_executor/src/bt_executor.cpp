@@ -99,6 +99,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     /* 我方机器人信息 */
     blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
     blackboard_->set<u_int16_t>("bullets", bullets_);
+    blackboard_->set<u_int32_t>("bought_bullets", bought_bullets_);
     blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
     blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
     blackboard_->set<u_int8_t>("base_shield", base_shield_);
@@ -244,6 +245,7 @@ void BtExecutor::executeBehaviorTree()
         /* 我方机器人信息 */
         blackboard_->set<u_int16_t>("robot_hp", robot_hp_);
         blackboard_->set<u_int16_t>("bullets", bullets_);
+        blackboard_->set<u_int32_t>("bought_bullets", bought_bullets_);
         blackboard_->set<u_int16_t>("our_outpost_hp", our_outpost_hp_);
         blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
         blackboard_->set<u_int8_t>("base_shield", base_shield_);
@@ -359,6 +361,12 @@ void BtExecutor::judgeTarget()
         have_target_ = 0;
     }
 
+}
+
+void BtExecutor::judgeBullets()
+{
+    if (in_supply_)
+        
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)

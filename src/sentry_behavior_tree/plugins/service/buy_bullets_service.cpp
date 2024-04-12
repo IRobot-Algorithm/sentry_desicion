@@ -9,13 +9,9 @@ namespace sentry_behavior_tree{
 
     void BuyBulletsService::on_tick()
     {
-        // request_->is_lost = have_target == 2;
-        // request_->gimbal = gimbal;
-        // request_->is_dynamic = true;
-        // request_->pose.header.stamp = target_pos.header.stamp;
-        // request_->pose.pose.position.x = target_pos.point.x;
-        // request_->pose.pose.position.y = target_pos.point.y;
-        // request_->pose.pose.position.z = target_pos.point.z;
+        u_int32_t bought_bullets;
+        getInput("bought_bullets", bought_bullets);
+        request_->bullets = bought_bullets;
 
         RCLCPP_INFO(node_->get_logger(),"buy_bullets_service on_tick()... ");
     }
@@ -28,14 +24,7 @@ namespace sentry_behavior_tree{
         node_,
         future_result, server_timeout_);
         if (rc == rclcpp::FutureReturnCode::SUCCESS)
-        {
-            auto result = future_result.get();
-            if (result->success)
-                return BT::NodeStatus::SUCCESS;
-            else
-                return BT::NodeStatus::FAILURE;
-        }
-        // TODO : 无法跟随
+            return BT::NodeStatus::SUCCESS;
         else if (rc == rclcpp::FutureReturnCode::TIMEOUT)
         {
             RCLCPP_WARN(
@@ -50,9 +39,7 @@ namespace sentry_behavior_tree{
     {
         return providedBasicPorts(
         {
-            // BT::InputPort<u_int8_t>("have_target"),
-            // BT::InputPort<bool>("gimbal"),
-            // BT::InputPort<geometry_msgs::msg::PointStamped>("target_pos"),
+            BT::InputPort<u_int8_t>("bought_bullets"),
         });
     }
 
