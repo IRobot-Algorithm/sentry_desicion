@@ -9,9 +9,9 @@ namespace sentry_behavior_tree{
 
     void BuyBulletsService::on_tick()
     {
-        u_int16_t bought_bullets;
-        getInput("bought_bullets", bought_bullets);
-        request_->bullets = bought_bullets;
+        u_int16_t buy_bullets;
+        getInput("buy_bullets", buy_bullets);
+        request_->bullets = buy_bullets;
 
         RCLCPP_INFO(node_->get_logger(),"buy_bullets_service on_tick()... ");
     }
@@ -39,7 +39,7 @@ namespace sentry_behavior_tree{
     {
         return providedBasicPorts(
         {
-            BT::InputPort<u_int16_t>("bought_bullets"),
+            BT::InputPort<u_int16_t>("buy_bullets"),
         });
     }
 

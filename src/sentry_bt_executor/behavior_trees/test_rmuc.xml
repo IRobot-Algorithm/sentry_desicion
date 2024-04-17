@@ -2,7 +2,15 @@
 <root main_tree_to_execute="BehaviorTree">
   <!-- ////////// -->
   <BehaviorTree ID="BehaviorTree">
-    <Sequence>
+    <Fallback>
+        <Sequence name="Sequence">
+          <Condition ID="haveTarget"/>
+          <Action ID="SetStaticNavTarget" service_name="nav_target" 
+            have_target="{have_target}" 
+            gimbal="{gimbal}" 
+            target_pos="{target_pos}"
+          />
+      </Sequence>
         <!-- <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
           list_name="OutpostOnly" 
         /> -->
@@ -25,7 +33,7 @@
       <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
       <!-- <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/> -->
 
-    </Sequence>
+    </Fallback>
   </BehaviorTree>
 
 </root>

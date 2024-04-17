@@ -375,11 +375,11 @@ void BtExecutor::judgeTarget()
 void BtExecutor::judgeBullets()
 {
     // first : judge how many bullets can buy
-    int n = (gold_coins_ - 200) / 50;
-    if (n > 0 && bought_bullets_ < 300)
+    uint16_t more_bullets = (gold_coins_ - 200);
+    if (more_bullets > 0 && bought_bullets_ < 300)
     {
         can_buy_bullets_ = true;
-        buy_bullets_ = bought_bullets_ + n * 50;
+        buy_bullets_ = bought_bullets_ + more_bullets;
         if (buy_bullets_ > 300)
             buy_bullets_ = 300;
     }
