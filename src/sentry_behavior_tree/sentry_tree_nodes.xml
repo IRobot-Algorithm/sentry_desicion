@@ -64,6 +64,8 @@
 
     <Condition ID="baseWinned"/>
 
+    <Condition ID="canBuyBullets"/>
+
     <Condition ID="centerPatrol"/>
 
     <Condition ID="counterOutpost"/>

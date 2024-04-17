@@ -107,6 +107,9 @@ list(APPEND plugin_libs base_failed_condition_bt_node)
 add_library(base_winned_condition_bt_node SHARED plugins/condition/base_winned_condition.cpp)
 list(APPEND plugin_libs base_winned_condition_bt_node)
 
+add_library(can_buy_bullets_condition_bt_node SHARED plugins/condition/can_buy_bullets_condition.cpp)
+list(APPEND plugin_libs can_buy_bullets_condition_bt_node)
+
 add_library(center_patrol_condition_bt_node SHARED plugins/condition/center_patrol_condition.cpp)
 list(APPEND plugin_libs center_patrol_condition_bt_node)
 

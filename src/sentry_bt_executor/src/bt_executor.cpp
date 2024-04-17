@@ -53,6 +53,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "base_failed_condition_bt_node",
         "base_winned_condition_bt_node",
         "enemy_area_patrol_condition_bt_node",
+        "can_buy_bullets_condition_bt_node",
         "center_patrol_condition_bt_node",
         "counter_outpost_condition_bt_node",
         "have_target_condition_bt_node", 
