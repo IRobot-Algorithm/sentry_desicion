@@ -13,7 +13,7 @@ namespace sentry_behavior_tree{
         request_->pose.pose.position.x = -2.5;
         request_->pose.pose.position.y = 3.45;
 
-        RCLCPP_INFO(node_->get_logger(),"rmuc_go_supply_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"rmuc_go_supply_service on_tick()... ");
     }
 
     BT::NodeStatus RmucGoSupplyService::check_future(

@@ -39,7 +39,7 @@ namespace sentry_behavior_tree{
 
         request_->list = list;
 
-        RCLCPP_INFO(node_->get_logger(),"set_left_target_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"set_left_target_service on_tick()... ");
     }
 
     BT::NodeStatus SetLeftTargetService::check_future(

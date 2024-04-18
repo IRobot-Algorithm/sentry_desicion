@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+#include "behaviortree_cpp_v3/loggers/bt_cout_logger.h"
+#include "behaviortree_cpp_v3/loggers/bt_file_logger.h"
 #include "nav2_behavior_tree/behavior_tree_engine.hpp"
 #include "nav2_util/lifecycle_node.hpp"
 #include "nav2_util/simple_action_server.hpp"
@@ -104,6 +106,10 @@ private:
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;
 
     rclcpp::TimerBase::SharedPtr execute_timer_;
+
+    /* 日志 */
+    // BT::StdCoutLogger* cout_logger_;
+    // BT::FileLogger* file_logger_;
 
     rclcpp::Time time_ = rclcpp::Clock().now();
     double leave_time_ = 0; // 离开巡逻区的时间

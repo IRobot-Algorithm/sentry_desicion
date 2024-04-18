@@ -156,6 +156,11 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         // return
     }
 
+    // BT::StdCoutLogger cout_logger(tree_);
+    // cout_logger_ = &cout_logger;
+    // BT::FileLogger file_logger(tree_, "/home/niuoruo/workspace/sentry/ws/sentry_desicion");
+    // file_logger_ = &file_logger;
+
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
@@ -173,7 +178,6 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         std::bind(&BtExecutor::rightRmosCallback, this, _1), rmos_sub_options);
     left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", rclcpp::SensorDataQoS(),
         std::bind(&BtExecutor::leftRmosCallback, this, _1), rmos_sub_options);
-
 
     RCLCPP_INFO(get_logger(), "Activating");
 
@@ -212,6 +216,8 @@ bool BtExecutor::loadBehaviorTree(const std::string &bt_xml_filename)
 
 void BtExecutor::executeBehaviorTree()
 {
+
+    BT::StdCoutLogger cout_logger(tree_);
 
     auto is_canceling = [this]()
     {

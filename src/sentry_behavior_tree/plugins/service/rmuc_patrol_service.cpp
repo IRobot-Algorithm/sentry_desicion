@@ -34,7 +34,7 @@ namespace sentry_behavior_tree{
             }
 
         }   
-        RCLCPP_INFO(node_->get_logger(),"rmuc_patrol_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"rmuc_patrol_service on_tick()... ");
     }
 
     BT::NodeStatus RmucPatrolService::check_future(

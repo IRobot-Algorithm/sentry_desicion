@@ -24,7 +24,7 @@ namespace sentry_behavior_tree{
         request_->pose.pose.position.y = target_pos.point.y;
         request_->pose.pose.position.z = target_pos.point.z;
 
-        RCLCPP_INFO(node_->get_logger(),"set_static_nav_target_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"set_static_nav_target_service on_tick()... ");
     }
 
     BT::NodeStatus SetStaticNavTargetService::check_future(

@@ -12,7 +12,7 @@ namespace sentry_behavior_tree{
         request_->pose.pose.position.x = 0;
         request_->pose.pose.position.y = 0;
 
-        RCLCPP_INFO(node_->get_logger(),"go_back_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"go_back_service on_tick()... ");
     }
 
     BT::NodeStatus GoBackService::check_future(
@@ -28,7 +28,7 @@ namespace sentry_behavior_tree{
             if (result->is_arrive)
             // {
             //     double leave_time = rclcpp::Clock().now().seconds();
-            //     RCLCPP_INFO(node_->get_logger()," leave_time : %lf", leave_time);
+            //     // RCLCPP_INFO(node_->get_logger()," leave_time : %lf", leave_time);
             //     setOutput("leave_time", leave_time);
                 return BT::NodeStatus::SUCCESS;
             // }

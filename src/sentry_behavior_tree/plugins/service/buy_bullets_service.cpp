@@ -13,7 +13,7 @@ namespace sentry_behavior_tree{
         getInput("buy_bullets", buy_bullets);
         request_->bullets = buy_bullets;
 
-        RCLCPP_INFO(node_->get_logger(),"buy_bullets_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"buy_bullets_service on_tick()... ");
     }
 
     BT::NodeStatus BuyBulletsService::check_future(

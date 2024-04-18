@@ -13,7 +13,7 @@ namespace sentry_behavior_tree{
         request_->pose.pose.position.x = 6.61;
         request_->pose.pose.position.y = 3.65;
 
-        RCLCPP_INFO(node_->get_logger(),"rmul_go_enemy_base_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"rmul_go_enemy_base_service on_tick()... ");
     }
 
     BT::NodeStatus RmulGoEnemyBaseService::check_future(

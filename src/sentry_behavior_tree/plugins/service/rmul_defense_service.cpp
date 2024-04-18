@@ -34,7 +34,7 @@ namespace sentry_behavior_tree{
             }
 
         }   
-        RCLCPP_INFO(node_->get_logger(),"rmul_defense_service on_tick()... ");
+        // RCLCPP_INFO(node_->get_logger(),"rmul_defense_service on_tick()... ");
     }
 
     BT::NodeStatus RmulDefenseService::check_future(
