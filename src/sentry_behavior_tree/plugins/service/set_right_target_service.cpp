@@ -71,13 +71,18 @@ namespace sentry_behavior_tree{
 
     std::vector<uint8_t> SetRightTargetService::getList(const std::string& list_name)
     {
-        if (list_name == "OutpostOnly")
-        {
-            return {1, 2, 3};
-        }
+        if (list_name == "All")
+            return {1, 6, 3, 4, 5, 2};
+        else if (list_name == "ExceptSentry")
+            return {1, 3, 4, 5, 2};
+        else if (list_name == "None")
+            return {};
+        else if (list_name == "OnlyOutpost")
+            return {7};
         else
         {
-            return {};
+            return {100}; // ERROR!!!
+            RCLCPP_WARN(node_->get_logger(), "ERROR AIMMING TARGET!!!");
         }
     }
 
