@@ -136,6 +136,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<double>("loop_time", 0);
 
     blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
+    blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
     blackboard_->set<bool>("in_supply", in_supply_);
     blackboard_->set<bool>("in_patrol", in_patrol_);
 
@@ -299,10 +300,17 @@ void BtExecutor::executeBehaviorTree()
 
         if (game_start_ && robot_hp_ <= 0) // 解锁发射机构
             need_unlock_ = true;
-        if (in_supply_)
+        else if (in_supply_)
             need_unlock_ = false;
 
         blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
+
+        if (!game_start_)
+            count_outpost_ = true;
+        else if (bullets_ < 250)
+            count_outpost_ = false;
+
+        blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
         blackboard_->set<bool>("in_supply", in_supply_);
         blackboard_->set<bool>("in_patrol", in_patrol_);
 

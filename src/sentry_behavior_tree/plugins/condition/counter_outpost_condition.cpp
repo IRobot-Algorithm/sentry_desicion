@@ -6,8 +6,9 @@ namespace sentry_behavior_tree
     BT::NodeStatus counterOutpost(BT::TreeNode & tree_node){
 
         auto mode = tree_node.config().blackboard->get<uint8_t>("mode");
+        auto count_outpost = tree_node.config().blackboard->get<bool>("count_outpost");
 
-        return mode == 3 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return ((mode == 3) && count_outpost) ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 
