@@ -143,6 +143,9 @@ list(APPEND plugin_libs enough_hp_condition_bt_node)
 add_library(force_back_condition_bt_node SHARED plugins/condition/force_back_condition.cpp)
 list(APPEND plugin_libs force_back_condition_bt_node)
 
+add_library(need_unlock_condition_bt_node SHARED plugins/condition/need_unlock_condition.cpp)
+list(APPEND plugin_libs need_unlock_condition_bt_node)
+
 add_library(outpost_low_hp_condition_bt_node SHARED plugins/condition/outpost_low_hp_condition.cpp)
 list(APPEND plugin_libs outpost_low_hp_condition_bt_node)
 

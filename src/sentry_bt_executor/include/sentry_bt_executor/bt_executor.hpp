@@ -146,6 +146,7 @@ private:
     u_int16_t buy_bullets_ = 0;
     bool can_buy_bullets_ = false;
 
+    bool need_unlock_ = false;
     bool in_supply_ = false;
     bool in_patrol_ = false;
     double supply_time_ = 0.0;

@@ -62,6 +62,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "leave_too_long_condition_bt_node", 
         "enough_hp_condition_bt_node", 
         "force_back_condition_bt_node",
+        "need_unlock_condition_bt_node",
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
         "outpost_low_hp_condition_bt_node", 
@@ -91,7 +92,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<double>("now_time", now_time);
 
     /* 哨兵定位信息 */
-    blackboard_->set<double>("leave_time", leave_time_);
+    blackboard_->set<double>("leave_time", now_time);
 
     /* 比赛状态信息 */
     blackboard_->set<bool>("game_start", game_start_);
@@ -134,6 +135,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     blackboard_->set<double>("loop_time", 0);
 
+    blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
     blackboard_->set<bool>("in_supply", in_supply_);
     blackboard_->set<bool>("in_patrol", in_patrol_);
 
@@ -239,7 +241,7 @@ void BtExecutor::executeBehaviorTree()
         */
 
         if (in_patrol_)
-            leave_time_ = rclcpp::Clock().now().seconds();
+            leave_time_ = now_time;
             
         blackboard_->set<double>("leave_time", leave_time_);
 
@@ -255,7 +257,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("our_base_hp", our_base_hp_);
         blackboard_->set<u_int8_t>("base_shield", base_shield_);
 
-        if (!game_start_)
+        if (!game_start_) // 基地护甲展开
         {
             base_unfolds_ = false;
         }
@@ -289,6 +291,12 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<bool>("gimbal", gimbal_);
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);
 
+        if (game_start_ && robot_hp_ <= 0) // 解锁发射机构
+            need_unlock_ = true;
+        if (in_supply_)
+            need_unlock_ = false;
+
+        blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
         blackboard_->set<bool>("in_supply", in_supply_);
         blackboard_->set<bool>("in_patrol", in_patrol_);
 
@@ -375,18 +383,17 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    // first : judge how many bullets can buy
-    uint16_t more_bullets = (gold_coins_ - 200);
-    if (more_bullets > 0 && bought_bullets_ < 300)
+    if (gold_coins_ - 400 > 0 && bought_bullets_ < 300)
     {
         can_buy_bullets_ = true;
-        buy_bullets_ = bought_bullets_ + more_bullets;
+        buy_bullets_ = bought_bullets_ + 100;
         if (buy_bullets_ > 300)
             buy_bullets_ = 300;
     }
     else
     {
         can_buy_bullets_ = false;
+        buy_bullets_ = bought_bullets_;
     }
 }
 
@@ -414,6 +421,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     // 裁判系统无敌方无人机信息
     // air_force_ = referee_information->air_force;
     force_back_ = referee_information->force_back;
+    keep_patrol_ = referee_information->keep_patrol;
 
     // rmuc
     in_supply_ = getBit(referee_information->rfid_status, 13);

@@ -84,6 +84,8 @@
 
     <Condition ID="forceBack"/>
 
+    <Condition ID="needUnlock"/>
+
     <Condition ID="gameStart"/>
 
     <Condition ID="gameAboutOver"/>

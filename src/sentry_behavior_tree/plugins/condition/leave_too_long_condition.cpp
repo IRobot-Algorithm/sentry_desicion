@@ -9,8 +9,8 @@ namespace sentry_behavior_tree
         auto leave_time = tree_node.config().blackboard->get<double>("leave_time");
         auto now_time = tree_node.config().blackboard->get<double>("now_time");
         
-        std::cout << now_time << " " << leave_time << std::endl;
-        return now_time - leave_time > 15 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        // std::cout << now_time << " " << leave_time << std::endl;
+        return now_time - leave_time > 20 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
     }
 
 
