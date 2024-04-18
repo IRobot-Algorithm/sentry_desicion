@@ -109,9 +109,6 @@
           <!-- 八、如果没弹丸且不可以补弹——乱跑 -->
           <Sequence>
             <Condition ID="lowBullets"/>
-            <Inverter>
-              <Condition ID="canBuyBullets"/>
-            </Inverter>
             <Fallback>
               <Action ID="RmucPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
