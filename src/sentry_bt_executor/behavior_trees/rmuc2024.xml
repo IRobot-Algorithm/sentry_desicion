@@ -119,7 +119,25 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 九、如果有目标——停下打 -->
+          <!-- 九、如果需要反前哨站——到台阶上 如果到台阶了且有目标——打 -->
+          <Sequence>
+            <Condition ID="counterOutpost"/>
+            <Fallback>
+              <Sequence>
+                <Action ID="RmucGoEnemyOutpost" service_name="nav_goal"/>
+                <Condition ID="haveTarget"/>
+                <Action ID="SetStaticNavTarget" service_name="nav_target"
+                  have_target="{have_target}" 
+                  gimbal="{gimbal}" 
+                  target_pos="{target_pos}"
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 十、如果有目标——停下打 -->
           <Sequence>
             <Condition ID="haveTarget"/>
             <Action ID="SetStaticNavTarget" service_name="nav_target"
@@ -130,10 +148,12 @@
           </Sequence>
           <!-- ///////////////// -->
 
+          <!-- 十一、巡逻 -->
           <Fallback>
             <Action ID="RmulPatrol" service_name="nav_goal"/>
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
+          <!-- ///////////////// -->
 
         </Fallback>
         
