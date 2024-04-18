@@ -75,7 +75,7 @@ namespace sentry_behavior_tree{
         {
             return {1, 2, 3};
         }
-        else
+        else if (list_name == "None")
         {
             return {};
         }
