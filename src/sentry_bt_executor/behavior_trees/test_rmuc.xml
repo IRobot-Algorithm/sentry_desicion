@@ -33,8 +33,17 @@
       <!-- <Action ID="RmucBasePatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucCenterPatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/> -->
-                    <Action ID="SetRmosTarget" service_name="aim_target"
+                    <!-- <Action ID="SetRmosTarget" service_name="aim_target"
                       list_name="ExceptSentry" 
+                    />
+                    <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="None" 
+                    /> -->
+                    <!-- <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="OnlyOutpost" 
+                    /> -->
+                    <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="All" 
                     />
     </Fallback>
   </BehaviorTree>

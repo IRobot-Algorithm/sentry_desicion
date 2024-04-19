@@ -63,7 +63,7 @@
               <Action ID="SetRmosTarget" service_name="aim_target"
                 list_name="None" 
               />
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <Condition ID="gameStart"/>6 <!-- TODO : 强制正确 -->
             </Fallback>
             <Fallback>
               <Action ID="GoBack" service_name="nav_goal"/>

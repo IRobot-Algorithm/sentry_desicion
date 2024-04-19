@@ -1,4 +1,5 @@
 #include "sentry_bt_executor/rmos_forwarder.hpp"
+#include <chrono> 
 
 namespace sentry_bt_executor
 {
@@ -8,10 +9,10 @@ RmosForwarder::RmosForwarder(const rclcpp::NodeOptions &options) : Node("rmos_fo
 {
   RCLCPP_INFO(this->get_logger(), "RmosForwarder Start");
 
-list_service_ = this->create_service<sentry_interfaces::srv::AimTarget>(
-    "aim_target",
-    std::bind(&RmosForwarder::listServiceCallback, this,
-              std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+  list_service_ = this->create_service<sentry_interfaces::srv::AimTarget>(
+      "aim_target",
+      std::bind(&RmosForwarder::listServiceCallback, this,
+                std::placeholders::_1, std::placeholders::_2));
 
   client_l_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_l/AimTarget_l");
   client_r_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_r/AimTarget_r");
@@ -24,7 +25,6 @@ list_service_ = this->create_service<sentry_interfaces::srv::AimTarget>(
 }
 
 void RmosForwarder::listServiceCallback(
-    [[maybe_unused]] const std::shared_ptr<rmw_request_id_t> request_header,
     const std::shared_ptr<sentry_interfaces::srv::AimTarget::Request> request,
     std::shared_ptr<sentry_interfaces::srv::AimTarget::Response> response) 
 {
@@ -51,18 +51,6 @@ void RmosForwarder::forwardList()
 
   auto future_l = client_l_->async_send_request(request);
   auto future_r = client_r_->async_send_request(request);
-
-  rclcpp::spin_until_future_complete(this->get_node_base_interface(), future_l);
-  rclcpp::spin_until_future_complete(this->get_node_base_interface(), future_r);
-
-  if (future_l.get()->success && future_r.get()->success)
-  {
-    RCLCPP_INFO(this->get_logger(), "Data forwarded to both services successfully");
-  }
-  else 
-  {
-    RCLCPP_WARN(this->get_logger(), "Failed to forward data to one or both services");
-  }
 }
 
 
