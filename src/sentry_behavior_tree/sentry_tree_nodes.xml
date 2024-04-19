@@ -8,6 +8,8 @@
 
     <Action ID="RmucGoEnemyOutpost"/>
 
+    <Action ID="RmucGoOutpost"/>
+
     <Action ID="RmucGoSupply"/>
 
     <Action ID="RmucBasePatrol"/>

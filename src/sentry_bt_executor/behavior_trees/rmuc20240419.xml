@@ -300,7 +300,7 @@
               </Fallback>
             <!-- </RateController> -->
             <Fallback>
-              <Action ID="RmulPatrol" service_name="nav_goal"/>
+              <Action ID="RmucPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>

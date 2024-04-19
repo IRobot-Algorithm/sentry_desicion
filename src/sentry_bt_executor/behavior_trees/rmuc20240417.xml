@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<root main_tree_to_execute="RMUL2024">
-  <!-- ///// 此树用于2024联盟赛 ///// -->
-  <BehaviorTree ID="RMUL2024">
+<root main_tree_to_execute="RMUC2024">
+  <!-- ///// 此树用于2024分区赛 ///// -->
+  <BehaviorTree ID="RMUC2024">
     <Fallback>
       <Sequence>
 
@@ -115,7 +115,7 @@
           </Sequence>
 
           <Fallback>
-            <Action ID="RmulPatrol" service_name="nav_goal"/>
+            <Action ID="RmucPatrol" service_name="nav_goal"/>
             <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
           </Fallback>
 
