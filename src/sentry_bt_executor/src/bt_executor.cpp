@@ -433,7 +433,7 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     bought_bullets_ = referee_information->bought_bullets;
 
     low_hp_list_.clear();
-    for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
+    for (unsigned int i = 1 /* no base */; i < referee_information->enemy_hp.size(); i++)
     {
         enemy_hp_[i] = referee_information->enemy_hp[i];
         if (enemy_hp_[i] <= 100 && enemy_hp_[i] != 0)

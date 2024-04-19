@@ -235,6 +235,27 @@
                 /> 
               </Sequence>
             </Fallback>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
+                  list_name="ExceptSentry" 
+                />
+                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
+                  list_name="ExceptSentry" 
+                /> 
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
+                  list_name="All" 
+                />
+                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
+                  list_name="All" 
+                /> 
+              </Sequence>
+            </Fallback>
           </Sequence>
           <!-- ///////////////// -->
 
