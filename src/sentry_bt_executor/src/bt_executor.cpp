@@ -13,6 +13,7 @@
 #include <cstring>
 
 #include "nav2_behavior_tree/bt_conversions.hpp"
+#include "nav2_behavior_tree/plugins/decorator/rate_controller.hpp"
 #include "sentry_bt_executor/bt_executor.hpp"
 
 using namespace std::placeholders;
@@ -52,6 +53,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "set_right_target_bt_node",
         "air_force_condition_bt_node",
         "in_supply_condition_bt_node",
+        "in_patrol_condition_bt_node",
         "base_unfolds_condition_bt_node",
         "base_failed_condition_bt_node",
         "base_winned_condition_bt_node",
@@ -73,6 +75,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "outpost_survives_condition_bt_node", 
         "target_can_follow_condition_bt_node", 
         "rmul_can_supply_condition_bt_node", 
+        "nav2_rate_controller_bt_node", 
     };
 
     // Declare this node's parameters
@@ -169,7 +172,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     struct tm *timeinfo = localtime(&now);
     strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
     file_logger_ = std::make_unique<BT::FileLogger>(tree_, 
-        ("/home/niuoruo/workspace/sentry/ws/sentry_desicion/" + std::string(buffer) + ".fbl").c_str());
+        ("/home/nuc/workspace/sentry_desicion/LOG/" + std::string(buffer) + ".fbl").c_str());
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
@@ -371,13 +374,13 @@ void BtExecutor::judgeTarget()
     if (left_target_ > 0  && right_target_ == 0) // 左有右无
     {
         have_target_ = left_target_;
-        gimbal_ = 0;
+        gimbal_ = 1; // 1 for left
         target_pos_ = left_target_pos_;
     }
     else if (left_target_ == 0 && right_target_ > 0) // 右有左无
     {
         have_target_ = right_target_;
-        gimbal_ = 1;
+        gimbal_ = 0; // 0 for right
         target_pos_ = right_target_pos_;
     }
     else if (left_target_ > 0 && right_target_ > 0) // 都有
@@ -385,13 +388,13 @@ void BtExecutor::judgeTarget()
         if (right_priority_ > left_priority_) // 左边更优先
         {
             have_target_ = left_target_;
-            gimbal_ = 0;
+            gimbal_ = 1; // 1 for left
             target_pos_ = left_target_pos_;
         }
         else // 右边更优先
         {
             have_target_ = right_target_;
-            gimbal_ = 1;
+            gimbal_ = 0; // 0 for right
             target_pos_ = right_target_pos_;
         }
     }

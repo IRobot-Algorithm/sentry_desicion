@@ -98,6 +98,9 @@ list(APPEND plugin_libs air_force_condition_bt_node)
 add_library(in_supply_condition_bt_node SHARED plugins/condition/in_supply_condition.cpp)
 list(APPEND plugin_libs in_supply_condition_bt_node)
 
+add_library(in_patrol_condition_bt_node SHARED plugins/condition/in_patrol_condition.cpp)
+list(APPEND plugin_libs in_patrol_condition_bt_node)
+
 add_library(base_unfolds_condition_bt_node SHARED plugins/condition/base_unfolds_condition.cpp)
 list(APPEND plugin_libs base_unfolds_condition_bt_node)
 

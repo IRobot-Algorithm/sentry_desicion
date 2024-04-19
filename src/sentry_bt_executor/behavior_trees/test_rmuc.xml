@@ -3,13 +3,14 @@
   <!-- ////////// -->
   <BehaviorTree ID="BehaviorTree">
     <Fallback>
-        <!-- <Sequence name="Sequence">
-          <Condition ID="haveTarget"/>
-          <Action ID="SetStaticNavTarget" service_name="nav_target" 
-            have_target="{have_target}" 
-            gimbal="{gimbal}" 
-            target_pos="{target_pos}"
-          />
+
+      <!-- <Sequence name="Sequence">
+        <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
+          list_name="ExceptSentry" 
+        />
+        <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
+          list_name="ExceptSentry" 
+        /> 
       </Sequence> -->
         <!-- <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
           list_name="OutpostOnly" 
@@ -19,8 +20,8 @@
       <!-- <Condition ID="counterOutpost"/> -->
       <!-- <Condition ID="centerPatrol"/> -->
       <!-- <Condition ID="enemyAreaPatrol"/> -->
-      <Condition ID="enemyOutpostSurvives"/>
-      <Condition ID="forceBack"/>
+      <!-- <Condition ID="enemyOutpostSurvives"/>
+      <Condition ID="forceBack"/> -->
       <!-- <Action ID="GoBack" service_name="nav_goal"/>
       <Action ID="SetNavTarget" service_name="nav_target"
         have_target="{have_target}" 
@@ -32,7 +33,14 @@
       <!-- <Action ID="RmucBasePatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucCenterPatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/> -->
-
+      <Sequence>
+        <Condition ID="haveTarget"/>
+        <Action ID="SetStaticNavTarget" service_name="nav_target" 
+          have_target="{have_target}" 
+          gimbal="{gimbal}" 
+          target_pos="{target_pos}"
+        />
+      </Sequence>
     </Fallback>
   </BehaviorTree>
 

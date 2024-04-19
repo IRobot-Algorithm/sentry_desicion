@@ -58,6 +58,8 @@
 
     <Condition ID="inSupply"/>
 
+    <Condition ID="inPatrol"/>
+
     <Condition ID="baseUnfolds"/>
 
     <Condition ID="baseFailed"/>

@@ -10,6 +10,9 @@ msg/_*.py
 build_isolated/
 devel_isolated/
 log/
+LOG/
+LOG
+/LOG
 
 *.log
 .vscode
