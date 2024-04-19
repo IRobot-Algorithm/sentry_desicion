@@ -51,6 +51,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "set_static_nav_target_bt_node",
         "set_left_target_bt_node",
         "set_right_target_bt_node",
+        "set_rmos_target_bt_node",
         "air_force_condition_bt_node",
         "in_supply_condition_bt_node",
         "in_patrol_condition_bt_node",
@@ -242,7 +243,7 @@ void BtExecutor::executeBehaviorTree()
     auto on_loop = [&]()
     {
         double now_time = rclcpp::Clock().now().seconds();
-        double loop_time = now_time - time_.seconds();
+        [[maybe_unused]] double loop_time = now_time - time_.seconds();
         time_ = rclcpp::Clock().now();
         
         blackboard_->set<double>("now_time", now_time);

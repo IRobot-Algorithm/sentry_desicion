@@ -33,14 +33,9 @@
       <!-- <Action ID="RmucBasePatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucCenterPatrol" service_name="nav_goal"/> -->
       <!-- <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/> -->
-      <Sequence>
-        <Condition ID="haveTarget"/>
-        <Action ID="SetStaticNavTarget" service_name="nav_target" 
-          have_target="{have_target}" 
-          gimbal="{gimbal}" 
-          target_pos="{target_pos}"
-        />
-      </Sequence>
+                    <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="ExceptSentry" 
+                    />
     </Fallback>
   </BehaviorTree>
 

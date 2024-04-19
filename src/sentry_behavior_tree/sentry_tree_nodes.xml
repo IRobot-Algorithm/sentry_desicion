@@ -52,6 +52,10 @@
       <input_port name="list"></input_port>
     </Action>
 
+    <Action ID="SetRmosTarget">
+      <input_port name="list"></input_port>
+    </Action>
+
     <!-- ############################### CONDITION NODES ############################## -->
 
     <Condition ID="airForce"/>

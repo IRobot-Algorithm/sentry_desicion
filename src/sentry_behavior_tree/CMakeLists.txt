@@ -91,6 +91,9 @@ list(APPEND plugin_libs set_left_target_bt_node)
 add_library(set_right_target_bt_node SHARED plugins/service/set_right_target_service.cpp)
 list(APPEND plugin_libs set_right_target_bt_node)
 
+add_library(set_rmos_target_bt_node SHARED plugins/service/set_rmos_target_service.cpp)
+list(APPEND plugin_libs set_rmos_target_bt_node)
+
 # condition
 add_library(air_force_condition_bt_node SHARED plugins/condition/air_force_condition.cpp)
 list(APPEND plugin_libs air_force_condition_bt_node)

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<root main_tree_to_execute="RMUL2024">
-  <!-- ///// 此树用于2024联盟赛 ///// -->
-  <BehaviorTree ID="RMUL2024">
+<root main_tree_to_execute="RMUC2024">
+  <!-- ///// 此树用于2024分区赛 ///// -->
+  <BehaviorTree ID="RMUC2024">
     <Fallback>
       <Sequence>
 
@@ -14,29 +14,22 @@
             <Condition ID="forceBack"/>
             <Fallback>
               <!-- 1-设置目标 -->
-              <!-- <RateController hz="1.0"> -->
-                <Fallback>
-                  <!-- 敌方前哨站存活——ExceptSentry -->
-                  <Sequence>
-                    <Condition ID="enemyOutpostSurvives"/>
-                    <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                      list_name="ExceptSentry" 
-                    />
-                    <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                      list_name="ExceptSentry" 
-                    /> 
-                  </Sequence>
-                  <!-- 所有 -->
-                  <Sequence>
-                    <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                      list_name="All" 
-                    />
-                    <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                      list_name="All" 
-                    /> 
-                  </Sequence>
-                </Fallback>
-              <!-- </RateController> -->
+              <Fallback>
+                <!-- 敌方前哨站存活——ExceptSentry -->
+                <Sequence>
+                  <Condition ID="enemyOutpostSurvives"/>
+                  <Action ID="SetRmosTarget" service_name="aim_target"
+                    list_name="ExceptSentry" 
+                  />
+                </Sequence>
+                <!-- 所有 -->
+                <Sequence>
+                  <Action ID="SetRmosTarget" service_name="aim_target"
+                    list_name="All" 
+                  />
+                </Sequence>
+                <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              </Fallback>
               <!-- ^^^^^^^^^^^^^^^^^^^ -->
               <!-- 2-在巡逻区 有目标 -->
               <Sequence>
@@ -66,16 +59,12 @@
               <Condition ID="baseUnfolds"/>
             </Inverter>
             <Condition ID="leaveTooLong"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="All" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="All" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="GoBack" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -87,16 +76,12 @@
           <Sequence>
             <Condition ID="inSupply"/>
             <Condition ID="canBuyBullets"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Action ID="BuyBullets" service_name="buy_bullets"
               buy_bullets="{buy_bullets}" 
             />
@@ -109,16 +94,12 @@
             <Inverter>
               <Condition ID="enoughHp"/>
             </Inverter>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmucGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -129,16 +110,12 @@
           <!-- 五、如果需要解锁发射机构——回补给区 -->
           <Sequence>
             <Condition ID="needUnlock"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmucGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -154,16 +131,12 @@
               <Condition ID="outpostSurvives"/>
               <Condition ID="baseUnfolds"/>
             </Fallback>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmucGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -174,16 +147,12 @@
           <!-- 七、如果血少——回补给区 -->
           <Sequence>
             <Condition ID="lowHp"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmucGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -194,16 +163,12 @@
           <!-- 八、如果没弹丸——乱跑 -->
           <Sequence>
             <Condition ID="lowBullets"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="None" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="None" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="None" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmucPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -215,16 +180,12 @@
           <Sequence>
             <Condition ID="counterOutpost"/>
             <Condition ID="enemyOutpostSurvives"/>
-            <!-- <RateController hz="1.0"> -->
-              <Sequence>
-                <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                  list_name="OnlyOutpost" 
-                />
-                <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                  list_name="OnlyOutpost" 
-                /> 
-              </Sequence>
-            <!-- </RateController> -->
+            <Fallback>
+              <Action ID="SetRmosTarget" service_name="aim_target"
+                list_name="OnlyOutpost" 
+              />
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Sequence>
                 <Action ID="RmucGoEnemyOutpost" service_name="nav_goal"/>
@@ -240,7 +201,45 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十、如果有目标——停下打 -->
+          <!-- 十一、如果有目标且（前哨站幸存或基地展开）—— 动态跟随 如果动态跟随失败——静态跟随-->
+          <Sequence>
+            <Condition ID="haveTarget"/>
+            <Fallback>
+              <Condition ID="outpostSurvives"/>
+              <Condition ID="baseUnfolds"/>
+            </Fallback>
+            <Fallback>
+              <Action ID="SetNavTarget" service_name="nav_target"
+                have_target="{have_target}" 
+                gimbal="{gimbal}" 
+                target_pos="{target_pos}"
+              />
+              <Action ID="SetStaticNavTarget" service_name="nav_target"
+                have_target="{have_target}" 
+                gimbal="{gimbal}" 
+                target_pos="{target_pos}"
+              />
+            </Fallback>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 十一、如果有目标——停下打 -->
           <Sequence>
             <Condition ID="haveTarget"/>
             <Action ID="SetStaticNavTarget" service_name="nav_target"
@@ -248,57 +247,69 @@
               gimbal="{gimbal}" 
               target_pos="{target_pos}"
             />
-            <!-- <RateController hz="1.0"> -->
-              <Fallback>
-                <!-- 敌方前哨站存活——ExceptSentry -->
-                <Sequence>
-                  <Condition ID="enemyOutpostSurvives"/>
-                  <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                    list_name="ExceptSentry" 
-                  />
-                  <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                    list_name="ExceptSentry" 
-                  /> 
-                </Sequence>
-                <!-- 所有 -->
-                <Sequence>
-                  <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                    list_name="All" 
-                  />
-                  <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                    list_name="All" 
-                  /> 
-                </Sequence>
-              </Fallback>
-            <!-- </RateController> -->
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十一、巡逻 -->
+          <!-- 十二、前哨站幸存——前哨站附近巡逻 -->
           <Sequence>
-            <!-- <RateController hz="1.0"> -->
-              <Fallback>
-                <!-- 敌方前哨站存活——ExceptSentry -->
-                <Sequence>
-                  <Condition ID="enemyOutpostSurvives"/>
-                  <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                    list_name="ExceptSentry" 
-                  />
-                  <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                    list_name="ExceptSentry" 
-                  /> 
-                </Sequence>
-                <!-- 所有 -->
-                <Sequence>
-                  <Action ID="SetLeftTarget" service_name="/rmos_processer_l/AimTarget_l"
-                    list_name="All" 
-                  />
-                  <Action ID="SetRightTarget" service_name="/rmos_processer_r/AimTarget_r"
-                    list_name="All" 
-                  /> 
-                </Sequence>
-              </Fallback>
-            <!-- </RateController> -->
+            <Condition ID="outpostSurvives"/>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+            <Fallback>
+              <Action ID="RmulPatrol" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 十三、巡逻 -->
+          <Sequence>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
             <Fallback>
               <Action ID="RmulPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
