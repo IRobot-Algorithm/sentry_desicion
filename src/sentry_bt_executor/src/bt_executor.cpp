@@ -8,6 +8,9 @@
 #include <exception>
 #include <chrono>
 #include <functional>
+#include <iostream>
+#include <ctime>
+#include <cstring>
 
 #include "nav2_behavior_tree/bt_conversions.hpp"
 #include "sentry_bt_executor/bt_executor.hpp"
@@ -157,10 +160,16 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         // return
     }
 
-    // BT::StdCoutLogger cout_logger(tree_);
-    // cout_logger_ = &cout_logger;
-    // BT::FileLogger file_logger(tree_, "/home/niuoruo/workspace/sentry/ws/sentry_desicion");
-    // file_logger_ = &file_logger;
+    // 输出日志
+    cout_logger_ = std::make_unique<BT::StdCoutLogger>(tree_);
+    
+    // 文件日志
+    char buffer[80];
+    std::time_t now = std::time(nullptr);
+    struct tm *timeinfo = localtime(&now);
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
+    file_logger_ = std::make_unique<BT::FileLogger>(tree_, 
+        ("/home/niuoruo/workspace/sentry/ws/sentry_desicion/" + std::string(buffer) + ".fbl").c_str());
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
@@ -217,8 +226,6 @@ bool BtExecutor::loadBehaviorTree(const std::string &bt_xml_filename)
 
 void BtExecutor::executeBehaviorTree()
 {
-
-    BT::StdCoutLogger cout_logger(tree_);
 
     auto is_canceling = [this]()
     {
@@ -397,10 +404,11 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    if (gold_coins_ - 400 > 0 && bought_bullets_ < 300)
+    int n = gold_coins_ - 350;
+    if (n > 0 && bought_bullets_ < 300)
     {
         can_buy_bullets_ = true;
-        buy_bullets_ = bought_bullets_ + 100;
+        buy_bullets_ = bought_bullets_ + n;
         if (buy_bullets_ > 300)
             buy_bullets_ = 300;
     }

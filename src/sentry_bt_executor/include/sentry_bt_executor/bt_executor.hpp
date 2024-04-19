@@ -108,8 +108,8 @@ private:
     rclcpp::TimerBase::SharedPtr execute_timer_;
 
     /* 日志 */
-    // BT::StdCoutLogger* cout_logger_;
-    // BT::FileLogger* file_logger_;
+    std::unique_ptr<BT::StdCoutLogger> cout_logger_;
+    std::unique_ptr<BT::FileLogger> file_logger_;
 
     rclcpp::Time time_ = rclcpp::Clock().now();
     double leave_time_ = 0; // 离开巡逻区的时间
