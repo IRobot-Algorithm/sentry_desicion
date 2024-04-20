@@ -35,12 +35,7 @@ void RmosForwarder::listServiceCallback(
 
 void RmosForwarder::forwardList() 
 {
-  if (!client_l_->service_is_ready() || !client_r_->service_is_ready()) 
-  {
-    RCLCPP_WARN(this->get_logger(), "One of the services is not available");
-    return;
-  }
-  if (rclcpp::Clock().now().seconds() - last_receive_time_.seconds() > 5.0)
+  if (rclcpp::Clock().now().seconds() - last_receive_time_.seconds() > 1.0)
   {
     RCLCPP_WARN(this->get_logger(), "Last receive too long");
     return;
@@ -49,8 +44,24 @@ void RmosForwarder::forwardList()
   auto request = std::make_shared<sentry_interfaces::srv::AimTarget::Request>();
   request->list = received_list_;
 
-  auto future_l = client_l_->async_send_request(request);
-  auto future_r = client_r_->async_send_request(request);
+  if (client_l_->service_is_ready()) 
+  {
+    auto future_l = client_l_->async_send_request(request);
+  }
+  else
+  {
+    RCLCPP_WARN(this->get_logger(), "Left services is not available");
+  }
+
+  if (client_r_->service_is_ready()) 
+  {
+    auto future_r = client_r_->async_send_request(request);
+  }
+  else
+  {
+    RCLCPP_WARN(this->get_logger(), "Right services is not available");
+  }
+
 }
 
 
