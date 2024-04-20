@@ -297,7 +297,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十三、前哨站幸存——前哨站附近巡逻 -->
+          <!-- 十三、前哨站幸存——去前哨站附近 -->
           <Sequence>
             <Condition ID="outpostSurvives"/>
             <Fallback>

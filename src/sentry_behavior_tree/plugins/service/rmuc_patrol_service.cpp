@@ -51,18 +51,19 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
-    std::pair<double, double> RmucPatrolService::generateRandomPoint() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    
-    std::uniform_real_distribution<> dis_x(-2.45, 2.45);
-    std::uniform_real_distribution<> dis_y(-1.52, 0.9);
-    
-    double x = dis_x(gen);
-    double y = dis_y(gen);
-    
-    return std::make_pair(x, y);
-}
+    std::pair<double, double> RmucPatrolService::generateRandomPoint()
+    {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        
+        std::uniform_real_distribution<> dis_x(-1.52, 0.9);
+        std::uniform_real_distribution<> dis_y(-2.45, 2.45);
+        
+        double x = dis_x(gen);
+        double y = dis_y(gen);
+        
+        return std::make_pair(x, y);
+    }
 
 
 }

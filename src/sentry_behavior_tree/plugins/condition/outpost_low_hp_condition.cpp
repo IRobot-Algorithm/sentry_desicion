@@ -6,7 +6,7 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus outpostLowHp(BT::TreeNode & tree_node){
 
-        auto our_outpost_hp = tree_node.config().blackboard->get<u_int16_t>("our_outpost_hp_");
+        auto our_outpost_hp = tree_node.config().blackboard->get<u_int16_t>("our_outpost_hp");
 
         return our_outpost_hp < 750 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
