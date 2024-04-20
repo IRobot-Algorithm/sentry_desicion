@@ -94,7 +94,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_ = BT::Blackboard::create();
     blackboard_->set<rclcpp::Node::SharedPtr>("node", client_node_); 
     // TODO:time_out修改到合适的值
-    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(1000)); 
+    blackboard_->set<std::chrono::milliseconds>("server_timeout", std::chrono::milliseconds(2000)); 
 
     double now_time = rclcpp::Clock().now().seconds();    
     blackboard_->set<double>("now_time", now_time);
@@ -319,7 +319,7 @@ void BtExecutor::executeBehaviorTree()
 
         if (!game_start_)
             count_outpost_ = true;
-        else if (bullets_ < 250)
+        else if (bullets_ < 200)
             count_outpost_ = false;
 
         blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
