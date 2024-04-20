@@ -10,8 +10,8 @@ namespace sentry_behavior_tree{
     void RmucGoEnemyOutpostService::on_tick()
     {
 
-        request_->pose.pose.position.x = 4.25;
-        request_->pose.pose.position.y = 2.85;
+        request_->pose.pose.position.x = 7.11;
+        request_->pose.pose.position.y = 6.81;
 
         // RCLCPP_INFO(node_->get_logger(),"rmuc_go_enemy_outpost_service on_tick()... ");
     }
