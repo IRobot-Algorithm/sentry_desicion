@@ -14,7 +14,7 @@ def generate_launch_description():
         name='bt_executor',
         #注意树的名称
         parameters=[{'default_bt_xml_filename': os.path.join(get_package_share_directory('sentry_bt_executor'), \
-                     'behavior_trees/test_rmuc.xml')}],
+                     'behavior_trees/rmuc2024.xml')}],
         output='screen',
     )
     rmos_forwarder_node_ = Node(

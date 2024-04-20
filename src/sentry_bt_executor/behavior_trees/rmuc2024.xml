@@ -266,7 +266,36 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、前哨站幸存——前哨站附近巡逻 -->
+          <!-- 十二、如果前哨站血量不低并且模式二 -->
+          <Sequence>
+            <Inverter>
+              <Condition ID="outpostLowHp"/>
+            </Inverter>
+            <Condition ID="centerPatrol"/>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+            <Fallback>
+              <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 十三、前哨站幸存——前哨站附近巡逻 -->
           <Sequence>
             <Condition ID="outpostSurvives"/>
             <Fallback>
@@ -292,7 +321,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十三、巡逻 -->
+          <!-- 十四、巡逻 -->
           <Sequence>
             <Fallback>
               <!-- 敌方前哨站存活——ExceptSentry -->
