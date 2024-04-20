@@ -1,5 +1,6 @@
 #include <string>
 #include "sentry_behavior_tree/plugins/service/rmuc_patrol_service.hpp"
+#include <random>
 
 namespace sentry_behavior_tree{
 
@@ -12,28 +13,12 @@ namespace sentry_behavior_tree{
         if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 6)
         {
             last_time_ = rclcpp::Clock().now();
-            id_++;
+            point_ = generateRandomPoint();
         }
 
-        if (id_ > 1)
-            id_ = 0;
+        request_->pose.pose.position.x = point_.first;
+        request_->pose.pose.position.y = point_.second;
 
-        switch (id_)
-        {
-            case 0:
-            {
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 3.65;
-                break;
-            }
-            default:
-            {
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 0.0;
-                break;
-            }
-
-        }   
         // RCLCPP_INFO(node_->get_logger(),"rmuc_patrol_service on_tick()... ");
     }
 
@@ -50,7 +35,7 @@ namespace sentry_behavior_tree{
             if (result->is_arrive)
             {
                 last_time_ = rclcpp::Clock().now();
-                id_++;
+                point_ = generateRandomPoint();
                 return BT::NodeStatus::SUCCESS;
             }
             else
@@ -65,6 +50,19 @@ namespace sentry_behavior_tree{
         }
         return BT::NodeStatus::FAILURE;
     }
+
+    std::pair<double, double> RmucPatrolService::generateRandomPoint() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    std::uniform_real_distribution<> dis_x(-2.45, 2.45);
+    std::uniform_real_distribution<> dis_y(-1.52, 0.9);
+    
+    double x = dis_x(gen);
+    double y = dis_y(gen);
+    
+    return std::make_pair(x, y);
+}
 
 
 }
