@@ -10,7 +10,7 @@ namespace sentry_behavior_tree{
 
     void RmucPatrolService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 6)
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 5)
         {
             last_time_ = rclcpp::Clock().now();
             point_ = generateRandomPoint();
@@ -57,11 +57,25 @@ namespace sentry_behavior_tree{
         std::mt19937 gen(rd());
         
         std::uniform_real_distribution<> dis_x(-1.52, 0.9);
-        std::uniform_real_distribution<> dis_y(-2.45, 2.45);
+        std::uniform_real_distribution<> dis_y(0.45, 2.45);
         
         double x = dis_x(gen);
         double y = dis_y(gen);
         
+        // be trust
+        if (x < -1.52)
+            x = -1.52;
+        else if (x > 0.9)
+            x = 0.9;
+        if (y < 0.45)
+            y = 0.45;
+        else if (y > 2.45)
+            y = 2.45;
+
+        if (!direction_)
+            y = -y;
+        direction_ = direction_ ? false : true;
+
         return std::make_pair(x, y);
     }
 

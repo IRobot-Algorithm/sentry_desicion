@@ -26,6 +26,7 @@ class RmucPatrolService : public nav2_behavior_tree::BtServiceNode<sentry_srvs::
         std::pair<double, double> generateRandomPoint();
 
         std::pair<double, double> point_ = {0.0, 0.0};
+        bool direction_ = false;
         rclcpp::Time last_time_;
 };
 
