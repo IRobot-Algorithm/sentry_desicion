@@ -37,6 +37,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "rmuc_go_enemy_outpost_bt_node",
         "rmuc_go_outpost_bt_node",
         "rmuc_go_supply_bt_node",
+        "rmuc_go_left_bt_node",
+        "rmuc_go_right_bt_node",
         "rmuc_base_patrol_bt_node",
         "rmuc_is_save_bt_node",
         "rmuc_patrol_bt_node",
