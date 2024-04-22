@@ -49,6 +49,9 @@ list(APPEND plugin_libs rmuc_go_outpost_bt_node)
 add_library(rmuc_go_supply_bt_node SHARED plugins/service/rmuc_go_supply_service.cpp)
 list(APPEND plugin_libs rmuc_go_supply_bt_node)
 
+add_library(rmuc_is_save_bt_node SHARED plugins/service/rmuc_is_save_service.cpp)
+list(APPEND plugin_libs rmuc_is_save_bt_node)
+
 add_library(rmuc_base_patrol_bt_node SHARED plugins/service/rmuc_base_patrol_service.cpp)
 list(APPEND plugin_libs rmuc_base_patrol_bt_node)
 

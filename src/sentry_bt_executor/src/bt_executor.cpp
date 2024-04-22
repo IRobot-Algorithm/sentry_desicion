@@ -38,6 +38,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "rmuc_go_outpost_bt_node",
         "rmuc_go_supply_bt_node",
         "rmuc_base_patrol_bt_node",
+        "rmuc_is_save_bt_node",
         "rmuc_patrol_bt_node",
         "rmuc_center_patrol_bt_node",
         "rmuc_enemy_area_patrol_bt_node",
@@ -199,7 +200,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     // TODO：可重入？？
     //0.01s
 
-    execute_timer_ = this->create_wall_timer(10ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
+    execute_timer_ = this->create_wall_timer(20ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
 }
 
 BtExecutor::~BtExecutor()
@@ -321,6 +322,8 @@ void BtExecutor::executeBehaviorTree()
             count_outpost_ = true;
         else if (bullets_ < 200)
             count_outpost_ = false;
+        else if (bullets_ < 350 && enemy_hp_[7] > 1400)
+            count_outpost_ = false;
 
         blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
         blackboard_->set<bool>("in_supply", in_supply_);
@@ -409,13 +412,27 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    int n = gold_coins_ - 350;
-    if (n > 0 && bought_bullets_ < 300)
+    // int n = gold_coins_ - 350;
+    // if (n > 0 && bought_bullets_ < 300)
+    // {
+    //     can_buy_bullets_ = true;
+    //     buy_bullets_ = bought_bullets_ + n;
+    //     if (buy_bullets_ > 300)
+    //         buy_bullets_ = 300;
+    // }
+    // else
+    // {
+    //     can_buy_bullets_ = false;
+    //     buy_bullets_ = bought_bullets_;
+    // }
+    /* test */
+    int n = gold_coins_ - 100;
+    if (n > 0 && bought_bullets_ < 50)
     {
         can_buy_bullets_ = true;
         buy_bullets_ = bought_bullets_ + n;
-        if (buy_bullets_ > 300)
-            buy_bullets_ = 300;
+        if (buy_bullets_ > 50)
+            buy_bullets_ = 50;
     }
     else
     {
