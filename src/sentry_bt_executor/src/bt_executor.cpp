@@ -202,7 +202,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     // TODO：可重入？？
     //0.01s
 
-    execute_timer_ = this->create_wall_timer(20ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
+    execute_timer_ = this->create_wall_timer(15ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
 }
 
 BtExecutor::~BtExecutor()
