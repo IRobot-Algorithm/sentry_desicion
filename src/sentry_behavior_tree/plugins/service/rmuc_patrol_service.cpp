@@ -57,7 +57,7 @@ namespace sentry_behavior_tree{
         std::mt19937 gen(rd());
         
         std::uniform_real_distribution<> dis_x(-1.52, 0.9);
-        std::uniform_real_distribution<> dis_y(0.45, 2.45);
+        std::uniform_real_distribution<> dis_y(0.45, 2.2);
         
         double x = dis_x(gen);
         double y = dis_y(gen);
@@ -69,8 +69,8 @@ namespace sentry_behavior_tree{
             x = 0.9;
         if (y < 0.45)
             y = 0.45;
-        else if (y > 2.45)
-            y = 2.45;
+        else if (y > 2.2)
+            y = 2.2;
 
         if (!direction_)
             y = -y;
