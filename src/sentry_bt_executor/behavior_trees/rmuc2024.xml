@@ -371,7 +371,9 @@
         <Condition ID="counterOutpost"/>
         <Fallback>
           <Action ID="RmucGoLeft" service_name="nav_goal"/>
-          <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          <Inverter>
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          </Inverter>
         </Fallback>
       </Sequence>
 
@@ -382,11 +384,13 @@
         </Fallback>        
         <Fallback>
           <Action ID="RmucGoRight" service_name="nav_goal"/>
-          <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          <Inverter>
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          </Inverter>
         </Fallback>        
       </Sequence>
 
-      <Action ID="Goback" service_name="nav_goal"/>
+      <Action ID="GoBack" service_name="nav_goal"/>
     </Fallback>
   </BehaviorTree>
 
