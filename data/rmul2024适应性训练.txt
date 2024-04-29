@@ -1,0 +1,3837 @@
+game_start: False
+gameover_time: 99
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 97
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 95
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 92
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 90
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 88
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 86
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 84
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 82
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 80
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 78
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 75
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 73
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 552, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 71
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 48, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 69
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 67
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 65
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 63
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 61
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 58
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 56
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 54
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 52
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 50
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 48
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 46
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 44
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 41
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 39
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 37
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 35
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 33
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 31
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 29
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 27
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 25
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 22
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 20
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 18
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 16
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 14
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 12
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 10
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 10
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 7
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 5
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 3
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 1
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 14
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 576, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 12
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 264, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 10
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 8
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 6
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 4
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 1
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 4
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 408, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 2
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 576, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 298
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 576, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 296
+robot_hp: 600
+max_hp: 600
+bullets: 744
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 198, 0, 0, 486, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 294
+robot_hp: 600
+max_hp: 600
+bullets: 744
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 198, 0, 0, 372, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 291
+robot_hp: 600
+max_hp: 600
+bullets: 729
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 198, 0, 0, 306, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 289
+robot_hp: 600
+max_hp: 600
+bullets: 712
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 222, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 287
+robot_hp: 600
+max_hp: 600
+bullets: 692
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 120, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 285
+robot_hp: 600
+max_hp: 600
+bullets: 672
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 200
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 60, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 283
+robot_hp: 600
+max_hp: 600
+bullets: 652
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 50
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 12, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 281
+robot_hp: 600
+max_hp: 600
+bullets: 632
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 279
+robot_hp: 600
+max_hp: 600
+bullets: 613
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 277
+robot_hp: 600
+max_hp: 600
+bullets: 595
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 274
+robot_hp: 600
+max_hp: 600
+bullets: 574
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 272
+robot_hp: 600
+max_hp: 600
+bullets: 554
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 270
+robot_hp: 600
+max_hp: 600
+bullets: 535
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 268
+robot_hp: 600
+max_hp: 600
+bullets: 514
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 266
+robot_hp: 600
+max_hp: 600
+bullets: 494
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 200, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 264
+robot_hp: 600
+max_hp: 600
+bullets: 474
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 262
+robot_hp: 600
+max_hp: 600
+bullets: 454
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 100, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 259
+robot_hp: 533
+max_hp: 600
+bullets: 434
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 257
+robot_hp: 293
+max_hp: 600
+bullets: 414
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 250, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 255
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 253
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 251
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 249
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 247
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 245
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 242
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 5
+in_supply: False
+enemy_hp: [1500, 300, 0, 175, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 240
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 244, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 238
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 275, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 236
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 234
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 232
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 290, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 230
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 227
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 225
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 223
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 205
+in_supply: False
+enemy_hp: [1500, 300, 0, 280, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 221
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 250, 0, 280, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 219
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 4
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 170, 0, 280, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 217
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 150, 0, 280, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 215
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1480
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 140, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 213
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1455
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 90, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 210
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 90, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 208
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 90, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 206
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1500, 90, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 204
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1300, 90, 0, 270, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 202
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [1100, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 200
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [900, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 198
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 196
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 193
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 191
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 75, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 189
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 103, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 187
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 130
+in_supply: False
+enemy_hp: [700, 163, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 185
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 55
+in_supply: False
+enemy_hp: [700, 223, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 183
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 55
+in_supply: False
+enemy_hp: [700, 300, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 181
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 55
+in_supply: False
+enemy_hp: [700, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 179
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 255
+in_supply: False
+enemy_hp: [700, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 176
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 255
+in_supply: False
+enemy_hp: [700, 300, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 174
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 255
+in_supply: False
+enemy_hp: [700, 285, 0, 240, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 172
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 285, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 170
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 285, 0, 300, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 168
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 166
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 164
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 161
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 258, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 159
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 324, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 157
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 155
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 153
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 310, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 151
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 308, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 149
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 147
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 225, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 144
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 142
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 140
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 138
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 136
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 134
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 306, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 132
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 129
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 127
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 155
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 125
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 123
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 121
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 119
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 117
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 115
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 304, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 112
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 204, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 110
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 104, 0, 125, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 108
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 104, 0, 150, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 106
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 4, 0, 150, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 104
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 4, 0, 150, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 102
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 4, 0, 150, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 100
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 220, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 98
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 290, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 95
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 93
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 91
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 89
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 325, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 87
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 85
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 350
+in_supply: False
+enemy_hp: [700, 179, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 83
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 200
+in_supply: False
+enemy_hp: [700, 179, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 81
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 179, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 78
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 179, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 76
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 4
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 74
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 72
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 70
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 68
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 66
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 64
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [700, 79, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 61
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 50
+in_supply: False
+enemy_hp: [300, 204, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 59
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [300, 454, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 57
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [300, 500, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 55
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [300, 500, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 53
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [300, 500, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 51
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [300, 500, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 49
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 350, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 47
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 375, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 45
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 375, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 43
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 375, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 40
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 38
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 36
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 34
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 32
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 30
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 28
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 26
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [100, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: True
+gameover_time: 25
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [0, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [0, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 0
+max_hp: 600
+bullets: 400
+our_outpost_hp: 0
+our_base_hp: 1425
+base_shield: 0
+gold_coins: 350
+in_supply: False
+enemy_hp: [0, 500, 0, 400, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 600, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 100, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 98, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 94, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 94, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 348, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 92, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+game_start: False
+gameover_time: 0
+robot_hp: 600
+max_hp: 600
+bullets: 750
+our_outpost_hp: 0
+our_base_hp: 1500
+base_shield: 0
+gold_coins: 0
+in_supply: False
+enemy_hp: [1500, 150, 0, 90, 0, 0, 0, 0]
+air_force: False
+force_back: False
+---
+                                                                                                                                                                                                                                            
