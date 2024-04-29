@@ -414,20 +414,20 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    // int n = gold_coins_ - 350;
-    // if (n > 0 && bought_bullets_ < 300)
-    // {
-    //     can_buy_bullets_ = true;
-    //     buy_bullets_ = bought_bullets_ + n;
-    //     if (buy_bullets_ > 300)
-    //         buy_bullets_ = 300;
-    // }
-    // else
-    // {
-    //     can_buy_bullets_ = false;
-    //     buy_bullets_ = bought_bullets_;
-    // }
-    /* test */
+    int n = gold_coins_ - 350;
+    if (n > 0 && bought_bullets_ < 300)
+    {
+        can_buy_bullets_ = true;
+        buy_bullets_ = bought_bullets_ + n;
+        if (buy_bullets_ > 300)
+            buy_bullets_ = 300;
+    }
+    else
+    {
+        can_buy_bullets_ = false;
+        buy_bullets_ = bought_bullets_;
+    }
+    /* test 
     int n = gold_coins_ - 100;
     if (n > 0 && bought_bullets_ < 50)
     {
@@ -441,6 +441,7 @@ void BtExecutor::judgeBullets()
         can_buy_bullets_ = false;
         buy_bullets_ = bought_bullets_;
     }
+    */
 }
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
