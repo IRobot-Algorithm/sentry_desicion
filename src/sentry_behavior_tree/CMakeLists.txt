@@ -67,6 +67,9 @@ list(APPEND plugin_libs rmuc_patrol_bt_node)
 add_library(rmuc_center_patrol_bt_node SHARED plugins/service/rmuc_center_patrol_service.cpp)
 list(APPEND plugin_libs rmuc_center_patrol_bt_node)
 
+add_library(rmuc_enemy_patrol_bt_node SHARED plugins/service/rmuc_enemy_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_enemy_patrol_bt_node)
+
 add_library(rmuc_enemy_area_patrol_bt_node SHARED plugins/service/rmuc_enemy_area_patrol_service.cpp)
 list(APPEND plugin_libs rmuc_enemy_area_patrol_bt_node)
 

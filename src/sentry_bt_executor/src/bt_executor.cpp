@@ -43,6 +43,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "rmuc_is_save_bt_node",
         "rmuc_patrol_bt_node",
         "rmuc_center_patrol_bt_node",
+        "rmuc_enemy_patrol_bt_node",
         "rmuc_enemy_area_patrol_bt_node",
         "rmul_defense_bt_node",
         "rmul_patrol_bt_node",

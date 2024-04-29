@@ -202,6 +202,27 @@
           </Sequence>
           <!-- ///////////////// -->
 
+          <Sequence>
+            <Fallback>
+              <!-- 敌方前哨站存活——ExceptSentry -->
+              <Sequence>
+                <Condition ID="enemyOutpostSurvives"/>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="ExceptSentry" 
+                />
+              </Sequence>
+              <!-- 所有 -->
+              <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                />
+              </Sequence>
+            </Fallback>  
+            <Inverter>
+              <Condition ID="gameStart"/> <!-- TODO : 强制错误 -->
+            </Inverter>
+          </Sequence>
+
           <!-- 十、如果有目标且（前哨站血量不低或基地展开或安全)-->
           <Sequence>
             <Condition ID="haveTarget"/>
@@ -235,102 +256,55 @@
               />
               <!-- ^^^^^^^^^^^^^^^^^^^ -->
             </Fallback>
-            <Fallback>
-              <!-- 敌方前哨站存活——ExceptSentry -->
-              <Sequence>
-                <Condition ID="enemyOutpostSurvives"/>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="ExceptSentry" 
-                />
-              </Sequence>
-              <!-- 所有 -->
-              <Sequence>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="All" 
-                />
-              </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十一、如果前哨站血量不低并且模式二——中心点巡逻 -->
+          <!-- 十一、如果前哨站血量不低 -->
           <Sequence>
             <Inverter>
               <Condition ID="outpostLowHp"/>
             </Inverter>
-            <Condition ID="centerPatrol"/>
+
             <Fallback>
-              <!-- 敌方前哨站存活——ExceptSentry -->
+              <!-- 1-模式二——中心点巡逻 -->
               <Sequence>
-                <Condition ID="enemyOutpostSurvives"/>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="ExceptSentry" 
-                />
+                <Condition ID="centerPatrol"/>
+                <Fallback>
+                  <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
               </Sequence>
-              <!-- 所有 -->
+              <!-- ^^^^^^^^^^^^^^^^^^^ -->
+
+              <!-- 2-模式一——对面小资源岛巡逻 -->
               <Sequence>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="All" 
-                />
+                <Condition ID="enemyAreaPatrol"/>
+                <Fallback>
+                  <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
               </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <!-- ^^^^^^^^^^^^^^^^^^^ -->
+
+              <!-- 3-敌方前哨站掉——对面巡逻区巡逻 -->
+              <Sequence>
+                <Inverter>
+                  <Condition ID="enemyOutpostSurvives"/>
+                </Inverter>
+                <Fallback>
+                  <Action ID="RmucEnemyPatrol" service_name="nav_goal"/>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
+              </Sequence>
+              <!-- ^^^^^^^^^^^^^^^^^^^ -->
             </Fallback>
-            <Fallback>
-              <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
+
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、如果前哨站血量不低并且模式一——对面小资源岛巡逻 -->
-          <Sequence>
-            <Inverter>
-              <Condition ID="outpostLowHp"/>
-            </Inverter>
-            <Condition ID="enemyAreaPatrol"/>
-            <Fallback>
-              <!-- 敌方前哨站存活——ExceptSentry -->
-              <Sequence>
-                <Condition ID="enemyOutpostSurvives"/>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="ExceptSentry" 
-                />
-              </Sequence>
-              <!-- 所有 -->
-              <Sequence>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="All" 
-                />
-              </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-            <Fallback>
-              <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-          </Sequence>
-          <!-- ///////////////// -->
-
-          <!-- 十三、前哨站幸存——去前哨站附近 -->
+          <!-- 十二、前哨站幸存——去前哨站附近 -->
           <Sequence>
             <Condition ID="outpostSurvives"/>
-            <Fallback>
-              <!-- 敌方前哨站存活——ExceptSentry -->
-              <Sequence>
-                <Condition ID="enemyOutpostSurvives"/>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="ExceptSentry" 
-                />
-              </Sequence>
-              <!-- 所有 -->
-              <Sequence>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="All" 
-                />
-              </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
             <Fallback>
               <Action ID="RmucGoOutpost" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -338,24 +312,8 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十四、巡逻 -->
+          <!-- 十三、巡逻 -->
           <Sequence>
-            <Fallback>
-              <!-- 敌方前哨站存活——ExceptSentry -->
-              <Sequence>
-                <Condition ID="enemyOutpostSurvives"/>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="ExceptSentry" 
-                />
-              </Sequence>
-              <!-- 所有 -->
-              <Sequence>
-                <Action ID="SetRmosTarget" service_name="aim_target"
-                  list_name="All" 
-                />
-              </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
             <Fallback>
               <Action ID="RmucPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
