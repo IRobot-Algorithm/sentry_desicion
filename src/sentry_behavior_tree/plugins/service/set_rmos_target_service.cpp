@@ -9,8 +9,9 @@ namespace sentry_behavior_tree{
 
     void SetRmosTargetService::on_tick()
     {
-        std::vector<u_int8_t> low_hp_list;
+        std::vector<u_int8_t> low_hp_list, invincibility_list;
         getInput("low_hp_list", low_hp_list);
+        getInput("invincibility_list", invincibility_list);
 
         std::string list_name;
         if (!getInput<std::string>("list_name", list_name))
@@ -36,6 +37,16 @@ namespace sentry_behavior_tree{
             }
         }
         list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
+
+        std::unordered_set<int> inv_set(invincibility_list.begin(), invincibility_list.end());
+        list.erase(
+            std::remove_if(
+                list.begin(),
+                list.end(),
+                [&inv_set](int x) { return inv_set.count(x) > 0; }
+            ),
+            list.end()
+        );
 
         request_->list = list;
 
@@ -67,6 +78,7 @@ namespace sentry_behavior_tree{
         {
             BT::InputPort<std::string>("list_name"),
             BT::InputPort<std::vector<u_int8_t>>("low_hp_list"),
+            BT::InputPort<std::vector<u_int8_t>>("invincibility_list"),
         });
     }
 

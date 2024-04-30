@@ -126,6 +126,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     // TODO: 更改初始血量
     enemy_hp_.resize(8, 0);
+    enemy_died_time_.resize(8, 0);
+    is_buyback_.resize(8, 0);
     
     /* 敌方机器人血量及自瞄状态 */
     blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
@@ -140,6 +142,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<bool>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
     blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
+    blackboard_->set<std::vector<u_int8_t>>("invincibility_list", invincibility_list_); // 无敌的目标
 
     blackboard_->set<bool>("force_back", force_back_); // 强制回家
     blackboard_->set<bool>("keep_patrol", keep_patrol_); // 保守巡逻
@@ -306,7 +309,24 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
         blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
 
+        invincibility_list_.clear();
+        for (unsigned int i = 0; i < enemy_died_time_.size(); i++)
+        {
+            if (i == 0 || i == 7)
+                continue;
+            if ((now_time - enemy_died_time_[i] < 10 && !is_buyback_[i]) || /* 读条复活 十秒 */
+                (now_time - enemy_died_time_[i] < 4 && is_buyback_[i]) /* 买活 四秒 */) 
+            {
+                invincibility_list_.emplace_back(i);
+            }
+            else
+            {
+                is_buyback_[i] = false;
+            }
+        }
+
         blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
+        blackboard_->set<std::vector<u_int8_t>>("invincibility_list", invincibility_list_); // 无敌的目标
 
         judgeTarget();
 
@@ -459,11 +479,17 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     bought_bullets_ = referee_information->bought_bullets;
 
     low_hp_list_.clear();
-    for (unsigned int i = 1 /* no base */; i < referee_information->enemy_hp.size(); i++)
+    for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
     {
+        if (enemy_hp_[i] == 0 && referee_information->enemy_hp[i] >= 200)
+            is_buyback_[i] = true;
         enemy_hp_[i] = referee_information->enemy_hp[i];
+        if (i == 0 /* no base */ || i == 7 /* no outpost */)
+            continue;
         if (enemy_hp_[i] <= 100 && enemy_hp_[i] != 0)
             low_hp_list_.emplace_back(i);
+        if (enemy_hp_[i] == 0)
+            enemy_died_time_[i] = rclcpp::Clock().now().seconds();
     }
 
     // 裁判系统无敌方无人机信息

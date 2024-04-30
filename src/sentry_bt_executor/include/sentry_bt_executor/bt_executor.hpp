@@ -131,6 +131,8 @@ private:
 
     /* 敌方机器人血量及自瞄状态 */
     std::vector<u_int16_t> enemy_hp_;
+    std::vector<double> enemy_died_time_;
+    std::vector<bool> is_buyback_;
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
     u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
@@ -147,6 +149,7 @@ private:
     uint8_t mode_ = 0; 
 
     std::vector<u_int8_t> low_hp_list_; // 自瞄目标
+    std::vector<u_int8_t> invincibility_list_; // 无敌目标
 
     // 购买弹丸
     u_int16_t buy_bullets_ = 0;
