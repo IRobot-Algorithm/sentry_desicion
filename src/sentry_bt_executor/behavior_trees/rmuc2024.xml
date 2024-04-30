@@ -14,26 +14,30 @@
             <Condition ID="forceBack"/>
             <Fallback>
               <!-- 1-设置目标 -->
-              <Fallback>
-                <!-- 敌方前哨站存活——ExceptSentry -->
-                <Sequence>
-                  <Condition ID="enemyOutpostSurvives"/>
-                  <Action ID="SetRmosTarget" service_name="aim_target"
-                    list_name="ExceptSentry" 
-                    low_hp_list="{low_hp_list}" 
-                    invincibility_list="{invincibility_list}" 
-                  />
-                </Sequence>
-                <!-- 所有 -->
-                <Sequence>
-                  <Action ID="SetRmosTarget" service_name="aim_target"
-                    list_name="All" 
-                    low_hp_list="{low_hp_list}" 
-                    invincibility_list="{invincibility_list}" 
-                  />
-                </Sequence>
-                <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-              </Fallback>
+              <Sequence>
+                <Fallback>
+                  <!-- 敌方前哨站存活——ExceptSentry -->
+                  <Sequence>
+                    <Condition ID="enemyOutpostSurvives"/>
+                    <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="ExceptSentry" 
+                      low_hp_list="{low_hp_list}" 
+                      invincibility_list="{invincibility_list}" 
+                    />
+                  </Sequence>
+                  <!-- 所有 -->
+                  <Sequence>
+                    <Action ID="SetRmosTarget" service_name="aim_target"
+                      list_name="All" 
+                      low_hp_list="{low_hp_list}" 
+                      invincibility_list="{invincibility_list}" 
+                    />
+                  </Sequence>
+                </Fallback>
+                <Inverter>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制错误 -->
+                </Inverter>
+              </Sequence>
               <!-- ^^^^^^^^^^^^^^^^^^^ -->
               <!-- 2-在巡逻区 有目标 -->
               <Sequence>
