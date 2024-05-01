@@ -41,7 +41,7 @@ namespace sentry_behavior_tree{
         }
         list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
 
-        if (gameover_time < 240) // 三分钟后 打工程
+        if (gameover_time < 240 && list_name != "OnlyOutpost" && list_name != "None") // 三分钟后 打工程
             list.push_back(2);
 
         std::unordered_set<int> inv_set(invincibility_list.begin(), invincibility_list.end());
@@ -55,6 +55,19 @@ namespace sentry_behavior_tree{
         );
 
         request_->list = list;
+
+
+        RCLCPP_INFO(node_->get_logger(), "low_hp_list:\n");
+        for (size_t i = 0; i < low_hp_list.size(); i++)
+            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(low_hp_list[i]));
+
+        RCLCPP_INFO(node_->get_logger(), "invincibility_list:\n");
+        for (size_t i = 0; i < invincibility_list.size(); i++)
+            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(invincibility_list[i]));
+
+        RCLCPP_INFO(node_->get_logger(), "list:\n");
+        for (size_t i = 0; i < list.size(); i++)
+            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
 
         // RCLCPP_INFO(node_->get_logger(),"set_rmos_target_service on_tick()... ");
     }

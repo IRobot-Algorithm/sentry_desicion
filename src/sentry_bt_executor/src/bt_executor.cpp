@@ -512,12 +512,12 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     low_hp_list_.clear();
     for (unsigned int i = 0; i < referee_information->enemy_hp.size(); i++)
     {
-        if (enemy_hp_[i] == 0 && referee_information->enemy_hp[i] >= 200)
+        if (enemy_hp_[i] == 0 && referee_information->enemy_hp[i] >= 180 && i != 6 /* expect sentry */)
             is_buyback_[i] = true;
         enemy_hp_[i] = referee_information->enemy_hp[i];
         if (i == 0 /* no base */ || i == 7 /* no outpost */)
             continue;
-        if (enemy_hp_[i] <= 100 && enemy_hp_[i] != 0)
+        if (enemy_hp_[i] <= 50 && enemy_hp_[i] != 0)
             low_hp_list_.emplace_back(i);
         if (enemy_hp_[i] == 0)
             enemy_died_time_[i] = rclcpp::Clock().now().seconds();

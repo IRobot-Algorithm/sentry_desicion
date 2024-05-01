@@ -17,5 +17,15 @@ def generate_launch_description():
                      'behavior_trees/test_rmuc.xml')}],
         output='screen',
     )
-
-    return LaunchDescription([bt_executor_node_])
+    rmos_forwarder_node_ = Node(
+        package='sentry_bt_executor',
+        namespace= '',
+        executable='rmos_forwarder',
+        name='rmos_forwarder',
+        output='screen',
+    )
+    
+    return LaunchDescription([
+        bt_executor_node_,
+        rmos_forwarder_node_,
+    ])

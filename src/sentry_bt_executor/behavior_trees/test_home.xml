@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root main_tree_to_execute="RMUC2024">
-  <!-- ///// 此树用于2024分区赛 ///// -->
+  <!-- ///// 此树用于测试 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
 
