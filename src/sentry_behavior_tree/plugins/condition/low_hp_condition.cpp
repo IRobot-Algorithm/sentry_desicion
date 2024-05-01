@@ -6,7 +6,12 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus lowHp(BT::TreeNode & tree_node){
 
-        auto low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 80;
+        auto have_buff = tree_node.config().blackboard->get<bool>("have_buff");
+        bool low_hp;
+        if (have_buff)
+            low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 80;
+        else
+            low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 150;
 
         return low_hp ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 

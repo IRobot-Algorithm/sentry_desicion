@@ -154,6 +154,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<double>("loop_time", 0);
 
     blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
+    blackboard_->set<bool>("have_buff", have_buff_); // 有防御增益
     blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
     blackboard_->set<bool>("enemy_area", enemy_area_); // 敌方小资源岛
     blackboard_->set<bool>("counter_attack", counter_attack_); // 反击
@@ -345,6 +346,13 @@ void BtExecutor::executeBehaviorTree()
             need_unlock_ = false;
 
         blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
+
+        if (!game_start_)
+            have_buff_ = true;
+        else if (in_supply_ && robot_hp_ < max_hp_)
+            have_buff_ = false;
+        
+        blackboard_->set<bool>("have_buff", have_buff_); // 有防御增益
 
         if (!game_start_)
         {
