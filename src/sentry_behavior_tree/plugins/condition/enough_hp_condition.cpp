@@ -6,7 +6,7 @@ namespace sentry_behavior_tree
 
     BT::NodeStatus enoughHp(BT::TreeNode & tree_node){
 
-        auto enough_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") >= 500;
+        auto enough_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") >= 300;
 
         return enough_hp ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 

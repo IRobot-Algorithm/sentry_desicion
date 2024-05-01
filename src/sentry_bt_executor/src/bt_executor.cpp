@@ -67,6 +67,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "can_buy_bullets_condition_bt_node",
         "center_patrol_condition_bt_node",
         "counter_outpost_condition_bt_node",
+        "counter_attack_condition_bt_node",
         "have_target_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "low_bullets_condition_bt_node", 
@@ -77,6 +78,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 
         "outpost_low_hp_condition_bt_node", 
+        "outpost_low_low_hp_condition_bt_node", 
+        "outpost_stalled_condition_bt_node", 
         "enemy_outpost_survives_condition_bt_node", 
         "outpost_survives_condition_bt_node", 
         "target_can_follow_condition_bt_node", 
@@ -152,6 +155,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
     blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
+    blackboard_->set<bool>("enemy_area", enemy_area_); // 敌方小资源岛
+    blackboard_->set<bool>("counter_attack", counter_attack_); // 反击
     blackboard_->set<bool>("in_supply", in_supply_);
     blackboard_->set<bool>("in_patrol", in_patrol_);
 
@@ -342,13 +347,31 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
 
         if (!game_start_)
+        {
             count_outpost_ = true;
-        else if (bullets_ < 200)
+            enemy_area_ = true;
+        }
+        else if (bullets_ < 250)
+        {
             count_outpost_ = false;
+            if (bullets_ < 100)
+                enemy_area_ = false;
+        }
         else if (bullets_ < 350 && enemy_hp_[7] > 1400)
+        {
             count_outpost_ = false;
+        }
+
+        if (!base_unfolds_)
+            counter_attack_ = false;
+        else if ((gameover_time_ < 180 && gameover_time_ > 170) ||
+                 (gameover_time_ < 104 && gameover_time_ > 94) ||
+                 (gameover_time_ < 30 && gameover_time_ > 20))
+            counter_attack_ = true;
 
         blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
+        blackboard_->set<bool>("enemy_area", enemy_area_); // 敌方小资源岛
+        blackboard_->set<bool>("counter_attack", counter_attack_); // 反击
         blackboard_->set<bool>("in_supply", in_supply_);
         blackboard_->set<bool>("in_patrol", in_patrol_);
 

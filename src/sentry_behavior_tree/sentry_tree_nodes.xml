@@ -100,6 +100,8 @@
 
     <Condition ID="outpostLowHp"/>
 
+    <Condition ID="outpostLowLowHp"/>
+
     <Condition ID="outpostSurvives"/>
 
     <Condition ID="targetCanFollow"/>

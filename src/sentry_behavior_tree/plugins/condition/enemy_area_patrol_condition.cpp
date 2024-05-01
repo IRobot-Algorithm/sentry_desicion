@@ -6,8 +6,9 @@ namespace sentry_behavior_tree
     BT::NodeStatus enemyAreaPatrol(BT::TreeNode & tree_node){
 
         auto mode = tree_node.config().blackboard->get<uint8_t>("mode");
+        auto enemy_area = tree_node.config().blackboard->get<bool>("enemy_area");
 
-        return mode == 1 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return (mode == 1 && enemy_area) ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 

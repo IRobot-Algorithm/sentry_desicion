@@ -23,7 +23,6 @@
                       list_name="ExceptSentry" 
                       low_hp_list="{low_hp_list}" 
                       invincibility_list="{invincibility_list}" 
-                      gameover_time="{gameover_time}" 
                     />
                   </Sequence>
                   <!-- 所有 -->
@@ -32,7 +31,6 @@
                       list_name="All" 
                       low_hp_list="{low_hp_list}" 
                       invincibility_list="{invincibility_list}" 
-                      gameover_time="{gameover_time}" 
                     />
                   </Sequence>
                 </Fallback>
@@ -74,7 +72,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -94,7 +91,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -115,7 +111,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -134,7 +129,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -158,7 +152,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -177,7 +170,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -196,7 +188,6 @@
                 list_name="None" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -207,19 +198,16 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 九、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低——到台阶上 如果到台阶了且有目标——打 -->
+          <!-- 九、如果需要反前哨站且敌方前哨站存活且我方前哨站存活——到台阶上 如果到台阶了且有目标——打 -->
           <Sequence>
             <Condition ID="counterOutpost"/>
             <Condition ID="enemyOutpostSurvives"/>
-            <Inverter>
-              <Condition ID="outpostLowLowHp"/>
-            </Inverter>
+            <Condition ID="outpostSurvives"/>
             <Fallback>
               <Action ID="SetRmosTarget" service_name="aim_target"
                 list_name="OnlyOutpost" 
                 low_hp_list="{low_hp_list}" 
                 invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
               />
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
@@ -247,7 +235,6 @@
                   list_name="ExceptSentry" 
                   low_hp_list="{low_hp_list}" 
                   invincibility_list="{invincibility_list}" 
-                  gameover_time="{gameover_time}" 
                 />
               </Sequence>
               <!-- 所有 -->
@@ -256,7 +243,6 @@
                   list_name="All" 
                   low_hp_list="{low_hp_list}" 
                   invincibility_list="{invincibility_list}" 
-                  gameover_time="{gameover_time}" 
                 />
               </Sequence>
             </Fallback>  
@@ -301,42 +287,40 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十一、如果基地护甲展开 大符可激活——去敌方小资源岛-->
-          <Sequence>
-            <Condition ID="baseUnfolds"/>
-            <Condition ID="counterAttack"/>
-            <Fallback>
-              <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-          </Sequence>
-          <!-- ///////////////// -->
-
-          <!-- 十二、如果前哨站血量不低 -->
+          <!-- 十一、如果前哨站血量不低 -->
           <Sequence>
             <Inverter>
               <Condition ID="outpostLowHp"/>
             </Inverter>
 
             <Fallback>
-              <!-- 1-模式二——巡逻区巡逻 最保守 -->
+              <!-- 1-模式二——中心点巡逻 -->
               <Sequence>
                 <Condition ID="centerPatrol"/>
                 <Fallback>
-                  <Action ID="RmucPatrol" service_name="nav_goal"/>
+                  <Action ID="RmucCenterPatrol" service_name="nav_goal"/>
                   <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
                 </Fallback>
               </Sequence>
               <!-- ^^^^^^^^^^^^^^^^^^^ -->
 
-              <!-- 2-模式一且前哨站不停转——对面小资源岛巡逻 -->
+              <!-- 2-模式一——对面小资源岛巡逻 -->
               <Sequence>
                 <Condition ID="enemyAreaPatrol"/>
-                <Inverter>
-                  <Condition ID="outpostStalled"/>
-                </Inverter>
                 <Fallback>
                   <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
+              </Sequence>
+              <!-- ^^^^^^^^^^^^^^^^^^^ -->
+
+              <!-- 3-敌方前哨站掉——对面巡逻区巡逻 -->
+              <Sequence>
+                <Inverter>
+                  <Condition ID="enemyOutpostSurvives"/>
+                </Inverter>
+                <Fallback>
+                  <Action ID="RmucEnemyPatrol" service_name="nav_goal"/>
                   <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
                 </Fallback>
               </Sequence>
@@ -346,11 +330,9 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、前哨站血量不更低——去前哨站附近 -->
+          <!-- 十二、前哨站幸存——去前哨站附近 -->
           <Sequence>
-            <Inverter>
-              <Condition ID="outpostLowLowHp"/>
-            </Inverter>
+            <Condition ID="outpostSurvives"/>
             <Fallback>
               <Action ID="RmucGoOutpost" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
@@ -382,7 +364,10 @@
       </Sequence>
 
       <Sequence>
-        <Condition ID="enemyAreaPatrol"/>
+        <Fallback>
+          <Condition ID="enemyAreaPatrol"/>
+          <Condition ID="centerPatrol"/>
+        </Fallback>        
         <Fallback>
           <Action ID="RmucGoRight" service_name="nav_goal"/>
           <Inverter>

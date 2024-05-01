@@ -13,6 +13,9 @@ namespace sentry_behavior_tree{
         getInput("low_hp_list", low_hp_list);
         getInput("invincibility_list", invincibility_list);
 
+        u_int16_t gameover_time;
+        getInput("gameover_time", gameover_time);
+
         std::string list_name;
         if (!getInput<std::string>("list_name", list_name))
             RCLCPP_WARN(node_->get_logger(),"Can not get list name !!!");
@@ -37,6 +40,9 @@ namespace sentry_behavior_tree{
             }
         }
         list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
+
+        if (gameover_time < 240) // 三分钟后 打工程
+            list.push_back(2);
 
         std::unordered_set<int> inv_set(invincibility_list.begin(), invincibility_list.end());
         list.erase(
@@ -79,15 +85,16 @@ namespace sentry_behavior_tree{
             BT::InputPort<std::string>("list_name"),
             BT::InputPort<std::vector<u_int8_t>>("low_hp_list"),
             BT::InputPort<std::vector<u_int8_t>>("invincibility_list"),
+            BT::InputPort<u_int16_t>("gameover_time"),
         });
     }
 
     std::vector<uint8_t> SetRmosTargetService::getList(const std::string& list_name)
     {
         if (list_name == "All")
-            return {1, 6, 3, 4, 5, 2};
+            return {1, 6, 3, 4, 5};
         else if (list_name == "ExceptSentry")
-            return {1, 3, 4, 5, 2};
+            return {1, 3, 4, 5};
         else if (list_name == "None")
             return {};
         else if (list_name == "OnlyOutpost")

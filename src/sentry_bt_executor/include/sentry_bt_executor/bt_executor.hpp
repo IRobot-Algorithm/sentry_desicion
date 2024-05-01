@@ -155,8 +155,9 @@ private:
     u_int16_t buy_bullets_ = 0;
     bool can_buy_bullets_ = false;
     
-    // 前哨站
     bool count_outpost_ = true;
+    bool enemy_area_ = true;
+    bool counter_attack_ = false;
 
     bool need_unlock_ = false;
     bool in_supply_ = false;
