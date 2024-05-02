@@ -159,6 +159,8 @@ private:
     bool count_outpost_ = true;
     bool enemy_area_ = true;
     bool counter_attack_ = false;
+    u_int16_t last_enemy_outpost_hp_ = 1500;
+    u_int16_t last_bullets_ = 400;
 
     bool need_unlock_ = false;
     bool in_supply_ = false;
