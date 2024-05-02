@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="RMUC2024">
+  <!-- ///// 此树用于测试 ///// -->
+  <BehaviorTree ID="RMUC2024">
+    <Fallback>
+
+          <Sequence>
+            <Condition ID="haveTarget"/>
+            <Fallback>
+              <Action ID="SetNavTarget" service_name="nav_target"
+                have_target="{have_target}" 
+                gimbal="{gimbal}" 
+                target_pos="{target_pos}"
+              />
+              <Action ID="SetStaticNavTarget" service_name="nav_target"
+                have_target="{have_target}" 
+                gimbal="{gimbal}" 
+                target_pos="{target_pos}"
+              />
+            </Fallback>
+          </Sequence>
+
+          <Action ID="NpuPatrol" service_name="nav_goal"/>
+
+    </Fallback>
+  </BehaviorTree>
+
+</root>
