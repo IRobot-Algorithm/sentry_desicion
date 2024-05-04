@@ -213,7 +213,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     // TODO：可重入？？
     //0.01s
 
-    execute_timer_ = this->create_wall_timer(50ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
+    execute_timer_ = this->create_wall_timer(30ms, std::bind(&BtExecutor::executeBehaviorTree, this), execute_timer_callback_group_);
 }
 
 BtExecutor::~BtExecutor()
@@ -540,15 +540,15 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     in_patrol_ = getBit(referee_information->rfid_status, 14);
     mode_ = referee_information->normal_mode;
 
-    // RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
-    //             static_cast<int>(game_start_), 
-    //             static_cast<int>(gameover_time_),
-    //             static_cast<int>(robot_hp_),
-    //             static_cast<int>(max_hp_),
-    //             static_cast<int>(bullets_),
-    //             static_cast<int>(our_base_hp_),
-    //             static_cast<int>(enemy_hp_[0])
-    //             ); 
+    RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
+                static_cast<int>(game_start_), 
+                static_cast<int>(gameover_time_),
+                static_cast<int>(robot_hp_),
+                static_cast<int>(max_hp_),
+                static_cast<int>(bullets_),
+                static_cast<int>(our_base_hp_),
+                static_cast<int>(enemy_hp_[0])
+                ); 
 
 }
 
@@ -557,7 +557,7 @@ void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::S
     right_target_ = follow_target->have_target;
     right_target_pos_ = follow_target->target;
     right_priority_ = follow_target->priority;
-    // RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
+    RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
 }
 
 void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
@@ -565,7 +565,7 @@ void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::Sh
     left_target_ = follow_target->have_target;
     left_target_pos_ = follow_target->target;
     left_priority_ = follow_target->priority;
-    // RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
+    RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
 }
 
 
