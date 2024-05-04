@@ -102,7 +102,8 @@ private:
     rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr left_rmos_sub_;
 
     rclcpp::CallbackGroup::SharedPtr referee_information_sub_callback_group_;
-    rclcpp::CallbackGroup::SharedPtr rmos_sub_callback_group_;
+    rclcpp::CallbackGroup::SharedPtr right_rmos_sub_callback_group_;
+    rclcpp::CallbackGroup::SharedPtr left_rmos_sub_callback_group_;
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;
 
     rclcpp::TimerBase::SharedPtr execute_timer_;

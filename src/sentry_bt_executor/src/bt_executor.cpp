@@ -192,7 +192,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
-    this->rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+    this->right_rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+    this->left_rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->execute_timer_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
     /* create subscription */
@@ -201,12 +202,14 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 1,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
 
-    auto rmos_sub_options = rclcpp::SubscriptionOptions();
-    rmos_sub_options.callback_group = this->rmos_sub_callback_group_;
+    auto right_rmos_sub_options = rclcpp::SubscriptionOptions();
+    right_rmos_sub_options.callback_group = this->right_rmos_sub_callback_group_;
+    auto left_rmos_sub_options = rclcpp::SubscriptionOptions();
+    left_rmos_sub_options.callback_group = this->left_rmos_sub_callback_group_;
     right_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_r", rclcpp::SensorDataQoS(),
-        std::bind(&BtExecutor::rightRmosCallback, this, _1), rmos_sub_options);
+        std::bind(&BtExecutor::rightRmosCallback, this, _1), right_rmos_sub_options);
     left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", rclcpp::SensorDataQoS(),
-        std::bind(&BtExecutor::leftRmosCallback, this, _1), rmos_sub_options);
+        std::bind(&BtExecutor::leftRmosCallback, this, _1), left_rmos_sub_options);
 
     RCLCPP_INFO(get_logger(), "Activating");
 
