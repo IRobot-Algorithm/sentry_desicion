@@ -206,9 +206,9 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     right_rmos_sub_options.callback_group = this->right_rmos_sub_callback_group_;
     auto left_rmos_sub_options = rclcpp::SubscriptionOptions();
     left_rmos_sub_options.callback_group = this->left_rmos_sub_callback_group_;
-    right_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_r", rclcpp::SensorDataQoS(),
+    right_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_r", 1,
         std::bind(&BtExecutor::rightRmosCallback, this, _1), right_rmos_sub_options);
-    left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", rclcpp::SensorDataQoS(),
+    left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", 1,
         std::bind(&BtExecutor::leftRmosCallback, this, _1), left_rmos_sub_options);
 
     RCLCPP_INFO(get_logger(), "Activating");
@@ -476,13 +476,13 @@ void BtExecutor::judgeTarget()
 
 void BtExecutor::judgeBullets()
 {
-    int n = gold_coins_ - 350;
-    if (n > 0 && bought_bullets_ < 300)
+    int n = gold_coins_ - 300;
+    if (n >= 100 && bought_bullets_ < 250)
     {
         can_buy_bullets_ = true;
         buy_bullets_ = bought_bullets_ + n;
-        if (buy_bullets_ > 300)
-            buy_bullets_ = 300;
+        if (buy_bullets_ > 250)
+            buy_bullets_ = 250;
     }
     else
     {

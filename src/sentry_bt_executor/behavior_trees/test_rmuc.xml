@@ -3,14 +3,14 @@
   <!-- ///// 此树用于2024分区赛 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
-      <Sequence>
-        <Action ID="SetRmosTarget" service_name="aim_target"
-          list_name="OnlyOutpost" 
-          low_hp_list="{low_hp_list}" 
-          invincibility_list="{invincibility_list}" 
-          gameover_time="{gameover_time}" 
-        />
-      </Sequence>
+          <Condition ID="needUnlock"/>
+          <Sequence>
+            <Condition ID="inSupply"/>
+            <Condition ID="canBuyBullets"/>
+            <Action ID="BuyBullets" service_name="buy_bullets"
+              buy_bullets="{buy_bullets}" 
+            />
+          </Sequence>
 
     </Fallback>
   </BehaviorTree>
