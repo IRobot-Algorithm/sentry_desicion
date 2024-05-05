@@ -543,15 +543,15 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
     in_patrol_ = getBit(referee_information->rfid_status, 14);
     mode_ = referee_information->normal_mode;
 
-    RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
-                static_cast<int>(game_start_), 
-                static_cast<int>(gameover_time_),
-                static_cast<int>(robot_hp_),
-                static_cast<int>(max_hp_),
-                static_cast<int>(bullets_),
-                static_cast<int>(our_base_hp_),
-                static_cast<int>(enemy_hp_[0])
-                ); 
+    // RCLCPP_INFO(get_logger(), "referee in : \n game_start:%d\n gameover_time_:%d\n robot_hp:%d\n max_hp:%d\n bullets:%d\n our_base_hp:%d\n enemy_base_hp:%d", 
+    //             static_cast<int>(game_start_), 
+    //             static_cast<int>(gameover_time_),
+    //             static_cast<int>(robot_hp_),
+    //             static_cast<int>(max_hp_),
+    //             static_cast<int>(bullets_),
+    //             static_cast<int>(our_base_hp_),
+    //             static_cast<int>(enemy_hp_[0])
+    //             ); 
 
 }
 

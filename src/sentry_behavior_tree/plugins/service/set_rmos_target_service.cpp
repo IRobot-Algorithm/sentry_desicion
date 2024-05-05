@@ -57,17 +57,17 @@ namespace sentry_behavior_tree{
         request_->list = list;
 
 
-        RCLCPP_INFO(node_->get_logger(), "low_hp_list:\n");
-        for (size_t i = 0; i < low_hp_list.size(); i++)
-            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(low_hp_list[i]));
+        // RCLCPP_INFO(node_->get_logger(), "low_hp_list:\n");
+        // for (size_t i = 0; i < low_hp_list.size(); i++)
+        //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(low_hp_list[i]));
 
-        RCLCPP_INFO(node_->get_logger(), "invincibility_list:\n");
-        for (size_t i = 0; i < invincibility_list.size(); i++)
-            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(invincibility_list[i]));
+        // RCLCPP_INFO(node_->get_logger(), "invincibility_list:\n");
+        // for (size_t i = 0; i < invincibility_list.size(); i++)
+        //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(invincibility_list[i]));
 
-        RCLCPP_INFO(node_->get_logger(), "list:\n");
-        for (size_t i = 0; i < list.size(); i++)
-            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
+        // RCLCPP_INFO(node_->get_logger(), "list:\n");
+        // for (size_t i = 0; i < list.size(); i++)
+        //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
 
         // RCLCPP_INFO(node_->get_logger(),"set_rmos_target_service on_tick()... ");
     }
