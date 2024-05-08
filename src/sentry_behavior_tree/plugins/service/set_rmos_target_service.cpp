@@ -21,6 +21,10 @@ namespace sentry_behavior_tree{
             RCLCPP_WARN(node_->get_logger(),"Can not get list name !!!");
         std::vector<uint8_t> list = getList(list_name);
 
+        // RCLCPP_INFO(node_->get_logger(), "list_pre:\n");
+        // for (size_t i = 0; i < list.size(); i++)
+        //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
+
         size_t i = 0;
         for (auto it1 = list.begin(); it1 != list.end();)
         {
@@ -65,9 +69,9 @@ namespace sentry_behavior_tree{
         // for (size_t i = 0; i < invincibility_list.size(); i++)
         //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(invincibility_list[i]));
 
-        // RCLCPP_INFO(node_->get_logger(), "list:\n");
-        // for (size_t i = 0; i < list.size(); i++)
-        //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
+        RCLCPP_INFO(node_->get_logger(), "list:\n");
+        for (size_t i = 0; i < list.size(); i++)
+            RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
 
         // RCLCPP_INFO(node_->get_logger(),"set_rmos_target_service on_tick()... ");
     }

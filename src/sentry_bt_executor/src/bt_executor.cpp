@@ -183,12 +183,14 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     cout_logger_ = std::make_unique<BT::StdCoutLogger>(tree_);
     
     // 文件日志
+    /*
     char buffer[80];
     std::time_t now = std::time(nullptr);
     struct tm *timeinfo = localtime(&now);
     strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
     file_logger_ = std::make_unique<BT::FileLogger>(tree_, 
         ("/home/nuc/workspace/sentry_desicion/LOG/" + std::string(buffer) + ".fbl").c_str());
+    */
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
@@ -364,6 +366,11 @@ void BtExecutor::executeBehaviorTree()
             last_bullets_ = bullets_;
             count_outpost_ = true;
             enemy_area_ = true;
+        }
+        else if (bullets_ > 350)
+        {
+            last_enemy_outpost_hp_ = enemy_hp_[7];
+            last_bullets_ = bullets_;
         }
         else if (bullets_ < 250)
         {

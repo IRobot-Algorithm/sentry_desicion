@@ -1,0 +1,129 @@
+Script started on 2024-05-08 20:02:59+08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+[INFO] [launch]: All log files can be found below /home/nuc/.ros/log/2024-05-08-20-02-59-706081-nuc-4588
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [bt_executor-1]: process started with pid [4623]
+[INFO] [rmos_forwarder-2]: process started with pid [4625]
+[bt_executor-1] [INFO] [1715169779.767758649] [bt_executor]: Creating
+[bt_executor-1] [INFO] [1715169779.768202554] [bt_executor]: Configuring
+[bt_executor-1] [WARN] [1715169779.768321948] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[rmos_forwarder-2] [INFO] [1715169779.771659085] [rmos_forwarder]: RmosForwarder Start
+[bt_executor-1] default_bt_xml_filename_: /home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/rmuc2024.xml
+[bt_executor-1] [INFO] [1715169779.864600742] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715169779.864672493] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715169779.864872457] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715169779.864893375] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715169779.865464788] [bt_executor]: Waiting for "nav_target" service
+[rmos_forwarder-2] [WARN] [1715169780.774840879] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169781.774805262] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169782.774613389] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169783.774669215] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169784.774704879] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169785.774811161] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169786.774828979] [rmos_forwarder]: Last receive too long
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rmos_forwarder-2] [INFO] [1715169786.841276603] [rclcpp]: signal_handler(signal_value=2)
+[bt_executor-1] [INFO] [1715169786.841301177] [rclcpp]: signal_handler(signal_value=2)
+[INFO] [rmos_forwarder-2]: process has finished cleanly [pid 4625]
+[bt_executor-1] [INFO] [1715169786.939121641] [bt_executor]: "SetStaticNavTarget" BtServiceNode initialized
+[bt_executor-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[bt_executor-1]   what():  could not create client: rcl node's context is invalid, at /tmp/binarydeb/ros-foxy-rcl-1.1.14/src/rcl/node.c:441
+[ERROR] [bt_executor-1]: process has died [pid 4623, exit code -6, cmd '/home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor --ros-args -r __node:=bt_executor -r __ns:=/ --params-file /tmp/launch_params_eb9xtdts'].
+
+Script done on 2024-05-08 20:03:07+08:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2024-05-08 20:05:11+08:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="80" LINES="24"]
+[INFO] [launch]: All log files can be found below /home/nuc/.ros/log/2024-05-08-20-05-12-069623-nuc-5264
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [bt_executor-1]: process started with pid [5300]
+[INFO] [rmos_forwarder-2]: process started with pid [5302]
+[rmos_forwarder-2] [INFO] [1715169912.110434311] [rmos_forwarder]: RmosForwarder Start
+[bt_executor-1] [INFO] [1715169912.111174234] [bt_executor]: Creating
+[bt_executor-1] [INFO] [1715169912.111419589] [bt_executor]: Configuring
+[bt_executor-1] [WARN] [1715169912.111504954] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[bt_executor-1] default_bt_xml_filename_: /home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/rmuc2024.xml
+[bt_executor-1] [INFO] [1715169912.150480312] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715169912.150548457] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715169912.150749804] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715169912.150763135] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715169912.151100503] [bt_executor]: Waiting for "nav_target" service
+[rmos_forwarder-2] [WARN] [1715169913.111901026] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169914.111914200] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169915.111913425] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169916.111816786] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715169917.111827738] [rmos_forwarder]: Last receive too long
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rmos_forwarder-2] [INFO] [1715169917.719039476] [rclcpp]: signal_handler(signal_value=2)
+[bt_executor-1] [INFO] [1715169917.719054306] [rclcpp]: signal_handler(signal_value=2)
+[INFO] [rmos_forwarder-2]: process has finished cleanly [pid 5302]
+[bt_executor-1] [INFO] [1715169917.783498976] [bt_executor]: "SetStaticNavTarget" BtServiceNode initialized
+[bt_executor-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[bt_executor-1]   what():  could not create client: rcl node's context is invalid, at /tmp/binarydeb/ros-foxy-rcl-1.1.14/src/rcl/node.c:441
+[ERROR] [bt_executor-1]: process has died [pid 5300, exit code -6, cmd '/home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor --ros-args -r __node:=bt_executor -r __ns:=/ --params-file /tmp/launch_params_mozii_uv'].
+
+Script done on 2024-05-08 20:05:17+08:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2024-05-08 20:08:34+08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+[INFO] [launch]: All log files can be found below /home/nuc/.ros/log/2024-05-08-20-08-35-209998-nuc-5826
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [bt_executor-1]: process started with pid [5862]
+[INFO] [rmos_forwarder-2]: process started with pid [5864]
+[bt_executor-1] [INFO] [1715170115.250367653] [bt_executor]: Creating
+[bt_executor-1] [INFO] [1715170115.250562104] [bt_executor]: Configuring
+[bt_executor-1] [WARN] [1715170115.250617233] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[rmos_forwarder-2] [INFO] [1715170115.250762574] [rmos_forwarder]: RmosForwarder Start
+[bt_executor-1] default_bt_xml_filename_: /home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/rmuc2024.xml
+[bt_executor-1] [INFO] [1715170115.288094900] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715170115.288164319] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715170115.288423476] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715170115.288449249] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715170115.288826434] [bt_executor]: Waiting for "nav_target" service
+[rmos_forwarder-2] [WARN] [1715170116.253765243] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170117.253564785] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170118.253584091] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170119.253644367] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170120.253644294] [rmos_forwarder]: Last receive too long
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[bt_executor-1] [INFO] [1715170120.550210256] [rclcpp]: signal_handler(signal_value=2)
+[rmos_forwarder-2] [INFO] [1715170120.550291553] [rclcpp]: signal_handler(signal_value=2)
+[INFO] [rmos_forwarder-2]: process has finished cleanly [pid 5864]
+[bt_executor-1] [INFO] [1715170120.620829444] [bt_executor]: "SetStaticNavTarget" BtServiceNode initialized
+[bt_executor-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[bt_executor-1]   what():  could not create client: rcl node's context is invalid, at /tmp/binarydeb/ros-foxy-rcl-1.1.14/src/rcl/node.c:441
+[ERROR] [bt_executor-1]: process has died [pid 5862, exit code -6, cmd '/home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor --ros-args -r __node:=bt_executor -r __ns:=/ --params-file /tmp/launch_params_og0f13gf'].
+
+Script done on 2024-05-08 20:08:40+08:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2024-05-08 20:09:16+08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+[INFO] [launch]: All log files can be found below /home/nuc/.ros/log/2024-05-08-20-09-16-558557-nuc-5984
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [bt_executor-1]: process started with pid [6020]
+[INFO] [rmos_forwarder-2]: process started with pid [6022]
+[rmos_forwarder-2] [INFO] [1715170156.601703900] [rmos_forwarder]: RmosForwarder Start
+[bt_executor-1] [INFO] [1715170156.603171385] [bt_executor]: Creating
+[bt_executor-1] [INFO] [1715170156.603433699] [bt_executor]: Configuring
+[bt_executor-1] [WARN] [1715170156.603528853] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[bt_executor-1] default_bt_xml_filename_: /home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/share/sentry_bt_executor/behavior_trees/rmuc2024.xml
+[bt_executor-1] [INFO] [1715170156.639389058] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715170156.639449484] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715170156.639670319] [bt_executor]: Waiting for "aim_target" service
+[bt_executor-1] [INFO] [1715170156.639683363] [bt_executor]: "SetRmosTarget" BtServiceNode initialized
+[bt_executor-1] [INFO] [1715170156.640008407] [bt_executor]: Waiting for "nav_target" service
+[rmos_forwarder-2] [WARN] [1715170157.603343775] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170158.603148252] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170159.603172837] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170160.603272897] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170161.603132435] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170162.603190871] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170163.603098694] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170164.603176789] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170165.603303275] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170166.603203080] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170167.603291054] [rmos_forwarder]: Last receive too long
+[rmos_forwarder-2] [WARN] [1715170168.603199802] [rmos_forwarder]: Last receive too long
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[bt_executor-1] [INFO] [1715170169.439595055] [rclcpp]: signal_handler(signal_value=2)
+[rmos_forwarder-2] [INFO] [1715170169.439635506] [rclcpp]: signal_handler(signal_value=2)
+[INFO] [rmos_forwarder-2]: process has finished cleanly [pid 6022]
+[bt_executor-1] [INFO] [1715170169.479467638] [bt_executor]: "SetStaticNavTarget" BtServiceNode initialized
+[bt_executor-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[bt_executor-1]   what():  could not create client: rcl node's context is invalid, at /tmp/binarydeb/ros-foxy-rcl-1.1.14/src/rcl/node.c:441
+[ERROR] [bt_executor-1]: process has died [pid 6020, exit code -6, cmd '/home/nuc/workspace/sentry_desicion/install/sentry_bt_executor/lib/sentry_bt_executor/bt_executor --ros-args -r __node:=bt_executor -r __ns:=/ --params-file /tmp/launch_params_l4wfdzwb'].
+
+Script done on 2024-05-08 20:09:29+08:00 [COMMAND_EXIT_CODE="0"]
