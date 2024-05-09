@@ -207,12 +207,15 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 九、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低——到台阶上 如果到台阶了且有目标——打 -->
+          <!-- 九、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低且前哨站不停转——到台阶上 如果到台阶了且有目标——打 -->
           <Sequence>
             <Condition ID="counterOutpost"/>
             <Condition ID="enemyOutpostSurvives"/>
             <Inverter>
               <Condition ID="outpostLowLowHp"/>
+            </Inverter>
+            <Inverter>
+              <Condition ID="outpostStalled"/>
             </Inverter>
             <Fallback>
               <Action ID="SetRmosTarget" service_name="aim_target"
@@ -270,7 +273,7 @@
             <Condition ID="haveTarget"/>
             <Fallback>
               <Inverter>
-                <Condition ID="outpostLowLowHp"/>
+                <Condition ID="outpostLowHp"/>
               </Inverter>
               <Condition ID="baseUnfolds"/>
               <Action ID="RmucIsSave" service_name="nav_goal"/>

@@ -3,15 +3,15 @@
   <!-- ///// 此树用于测试 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
-
-          <Sequence>
+          <Action ID="NpuPatrol" service_name="nav_goal"/>
+          <!-- <Sequence>
             <Condition ID="haveTarget"/>
             <Action ID="SetNavTarget" service_name="nav_target"
               have_target="{have_target}" 
               gimbal="{gimbal}" 
               target_pos="{target_pos}"
             />
-          </Sequence>
+          </Sequence> -->
 
     </Fallback>
   </BehaviorTree>
