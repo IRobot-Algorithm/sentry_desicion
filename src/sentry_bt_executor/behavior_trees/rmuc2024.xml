@@ -218,25 +218,38 @@
               <Condition ID="outpostStalled"/>
             </Inverter>
             <Fallback>
-              <Action ID="SetRmosTarget" service_name="aim_target"
-                list_name="OnlyOutpost" 
-                low_hp_list="{low_hp_list}" 
-                invincibility_list="{invincibility_list}" 
-                gameover_time="{gameover_time}" 
-              />
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-            <Fallback>
               <Sequence>
                 <Action ID="RmucGoEnemyOutpost" service_name="nav_goal"/>
-                <Condition ID="haveTarget"/>
-                <Action ID="SetStaticNavTarget" service_name="nav_target"
-                  have_target="{have_target}" 
-                  gimbal="{gimbal}" 
-                  target_pos="{target_pos}"
-                />
+                <Fallback>
+                  <Action ID="SetRmosTarget" service_name="aim_target"
+                    list_name="OnlyOutpost" 
+                    low_hp_list="{low_hp_list}" 
+                    invincibility_list="{invincibility_list}" 
+                    gameover_time="{gameover_time}" 
+                  />
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
+                <Fallback>
+                  <Sequence>
+                    <Condition ID="haveTarget"/>
+                    <Action ID="SetStaticNavTarget" service_name="nav_target"
+                      have_target="{have_target}" 
+                      gimbal="{gimbal}" 
+                      target_pos="{target_pos}"
+                    />
+                  </Sequence>
+                  <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+                </Fallback>
               </Sequence>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <Fallback>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="None" 
+                  low_hp_list="{low_hp_list}" 
+                  invincibility_list="{invincibility_list}" 
+                  gameover_time="{gameover_time}" 
+                />
+                <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              </Fallback>
             </Fallback>
           </Sequence>
           <!-- ///////////////// -->

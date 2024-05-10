@@ -3,16 +3,34 @@
   <!-- ///// 此树用于2024分区赛 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
-          <Condition ID="needUnlock"/>
+      <Sequence>
+        <Action ID="GoBack" service_name="nav_goal"/>
+        <Action ID="SetRmosTarget" service_name="aim_target"
+          list_name="OnlyOutpost" 
+          low_hp_list="{low_hp_list}" 
+          invincibility_list="{invincibility_list}" 
+          gameover_time="{gameover_time}" 
+        />
+        <Fallback>
           <Sequence>
-            <Condition ID="inSupply"/>
-            <Condition ID="canBuyBullets"/>
-            <Action ID="BuyBullets" service_name="buy_bullets"
-              buy_bullets="{buy_bullets}" 
+            <Condition ID="haveTarget"/>
+            <Action ID="SetStaticNavTarget" service_name="nav_target"
+              have_target="{have_target}" 
+              gimbal="{gimbal}" 
+              target_pos="{target_pos}"
             />
           </Sequence>
-
+          <Inverter>
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          </Inverter>
+        </Fallback>
+      </Sequence>
+      <Action ID="SetRmosTarget" service_name="aim_target"
+        list_name="None" 
+        low_hp_list="{low_hp_list}" 
+        invincibility_list="{invincibility_list}" 
+        gameover_time="{gameover_time}" 
+      />
     </Fallback>
   </BehaviorTree>
-
 </root>
