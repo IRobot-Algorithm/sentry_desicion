@@ -359,8 +359,11 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、前哨站血量不更低——去前哨站附近 -->
+          <!-- 十二、不是最保守模式且前哨站血量不更低——去前哨站附近 -->
           <Sequence>
+            <Inverter>
+              <Condition ID="centerPatrol"/>
+            </Inverter>
             <Inverter>
               <Condition ID="outpostLowLowHp"/>
             </Inverter>

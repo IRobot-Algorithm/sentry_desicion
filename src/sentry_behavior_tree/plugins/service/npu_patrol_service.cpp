@@ -9,7 +9,7 @@ namespace sentry_behavior_tree{
 
     void NpuPatrolService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 20)
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 15)
         {
             last_time_ = rclcpp::Clock().now();
             id_++;
@@ -24,16 +24,16 @@ namespace sentry_behavior_tree{
             {
                 // request_->pose.pose.position.x = 0.0;
                 // request_->pose.pose.position.y = 0.0;
-                request_->pose.pose.position.x = 3.0;
-                request_->pose.pose.position.y = 2.0;
+                request_->pose.pose.position.x = 6.5;
+                request_->pose.pose.position.y = 0.0;
                 break;
             }
             default:
             {
                 // request_->pose.pose.position.x = 8.1;
                 // request_->pose.pose.position.y = 2.3;
-                request_->pose.pose.position.x = -0.65;
-                request_->pose.pose.position.y = 4.72;
+                request_->pose.pose.position.x = 0.0;
+                request_->pose.pose.position.y = 0.0;
                 break;
             }
 
