@@ -5,15 +5,15 @@
     <Fallback>
       <Sequence>
 
-        <!-- <Condition ID="gameStart"/> -->
+        <Condition ID="gameStart"/>
 
         <Fallback>
-          <!-- <Action ID="SetRmosTarget" service_name="aim_target"
+          <Action ID="SetRmosTarget" service_name="aim_target"
             list_name="All" 
             low_hp_list="{low_hp_list}" 
             invincibility_list="{invincibility_list}" 
             gameover_time="{gameover_time}" 
-          /> -->
+          />
           <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
         </Fallback>
 

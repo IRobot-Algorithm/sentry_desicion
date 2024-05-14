@@ -15,7 +15,7 @@ namespace sentry_behavior_tree{
             id_++;
         }
 
-        if (id_ > 1)
+        if (id_ > 3)
             id_ = 0;
 
         switch (id_)
@@ -25,18 +25,33 @@ namespace sentry_behavior_tree{
                 // request_->pose.pose.position.x = 0.0;
                 // request_->pose.pose.position.y = 0.0;
                 request_->pose.pose.position.x = 6.5;
+                request_->pose.pose.position.y = 1.0;
+                break;
+            }
+            case 1:
+            {
+                // request_->pose.pose.position.x = 0.0;
+                // request_->pose.pose.position.y = 0.0;
+                request_->pose.pose.position.x = 3.0;
+                request_->pose.pose.position.y = 2.3;
+                break;
+            }
+            case 2:
+            {
+                // request_->pose.pose.position.x = 0.0;
+                // request_->pose.pose.position.y = 0.0;
+                request_->pose.pose.position.x = 0.0;
                 request_->pose.pose.position.y = 0.0;
                 break;
             }
             default:
             {
-                // request_->pose.pose.position.x = 8.1;
-                // request_->pose.pose.position.y = 2.3;
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 0.0;
+                // request_->pose.pose.position.x = 0.0;
+                // request_->pose.pose.position.y = 0.0;
+                request_->pose.pose.position.x = 3.0;
+                request_->pose.pose.position.y = 2.3;
                 break;
             }
-
         }   
         // RCLCPP_INFO(node_->get_logger(),"npu_patrol_service on_tick()... ");
     }
