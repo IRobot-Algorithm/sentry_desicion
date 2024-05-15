@@ -60,11 +60,9 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 二、前哨站未存活且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
+          <!-- 二、前哨站血量小于300且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
           <Sequence>
-            <Inverter>
-              <Condition ID="outpostSurvives"/>
-            </Inverter>
+            <Condition ID="outpostLowLowHp"/>
             <Inverter>
               <Condition ID="baseUnfolds"/>
             </Inverter>
