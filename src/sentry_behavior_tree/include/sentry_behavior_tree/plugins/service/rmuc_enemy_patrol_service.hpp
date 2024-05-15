@@ -22,6 +22,8 @@ class RmucEnemyPatrolService : public nav2_behavior_tree::BtServiceNode<sentry_s
         std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result) override;
     
     private:
+        int id_ = 0;
+        rclcpp::Time last_time_;
 };
 
 

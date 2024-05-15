@@ -313,12 +313,12 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十一、如果基地护甲展开 大符可激活——去敌方小资源岛-->
+          <!-- 十一、如果基地护甲展开 大符可激活——去敌方区域-->
           <Sequence>
             <Condition ID="baseUnfolds"/>
             <Condition ID="counterAttack"/>
             <Fallback>
-              <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
+              <Action ID="RmucEnemyPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>

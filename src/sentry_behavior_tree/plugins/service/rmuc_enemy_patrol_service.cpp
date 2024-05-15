@@ -9,9 +9,31 @@ namespace sentry_behavior_tree{
 
     void RmucEnemyPatrolService::on_tick()
     {
-        request_->pose.pose.position.x = 15.5;
-        request_->pose.pose.position.y = 0.0;
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 6)
+        {
+            last_time_ = rclcpp::Clock().now();
+            id_++;
+        }
 
+        if (id_ > 1)
+            id_ = 0;
+
+        switch (id_)
+        {
+            case 0:
+            {
+                request_->pose.pose.position.x = 16.0;
+                request_->pose.pose.position.y = -2.0;
+                break;
+            }
+            default:
+            {
+                request_->pose.pose.position.x = 14.0;
+                request_->pose.pose.position.y = 2.0;
+                break;
+            }
+
+        }   
         // RCLCPP_INFO(node_->get_logger(),"rmuc_enemy_patrol_service on_tick()... ");
     }
 
@@ -26,7 +48,11 @@ namespace sentry_behavior_tree{
         {
             auto result = future_result.get();
             if (result->is_arrive)
+            {
+                last_time_ = rclcpp::Clock().now();
+                id_++;
                 return BT::NodeStatus::SUCCESS;
+            }
             else
                 return BT::NodeStatus::FAILURE;
         }
