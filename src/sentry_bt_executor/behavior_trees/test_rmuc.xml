@@ -2,6 +2,8 @@
 <root main_tree_to_execute="RMUC2024">
   <!-- ///// 此树用于2024分区赛 ///// -->
   <BehaviorTree ID="RMUC2024">
+    <Fallback>
+
     <Sequence>
       <Condition ID="haveTarget"/>
       <Fallback>
@@ -15,8 +17,11 @@
           gimbal="{gimbal}" 
           target_pos="{target_pos}"
         />
-        <Condition ID="gameStart"/>
       </Fallback>
     </Sequence>
+
+    <Action ID="GoBack" service_name="nav_goal"/>
+
+    </Fallback>
   </BehaviorTree>
 </root>

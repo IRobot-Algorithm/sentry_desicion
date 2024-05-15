@@ -15,10 +15,13 @@ namespace sentry_behavior_tree{
         getInput("have_target", have_target);
         getInput("gimbal", gimbal);
         getInput("target_pos", target_pos);
-        request_->is_lost = have_target == 2;
+        request_->is_lost = have_target == 3;
         request_->gimbal = gimbal;
         request_->is_dynamic = true;
-        request_->distance = 3.0;
+        if (request_->is_lost)
+            request_->distance = 2.0;
+        else
+            request_->distance = 3.0;
         request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;

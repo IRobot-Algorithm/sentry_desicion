@@ -31,7 +31,6 @@
                 gimbal="{gimbal}" 
                 target_pos="{target_pos}"
               />
-              <Condition ID="gameStart"/>
             </Fallback>
           </Sequence>
 

@@ -479,6 +479,15 @@ void BtExecutor::judgeTarget()
         have_target_ = 0;
     }
 
+    if (have_target_ == 1 || have_target_ == 2)
+    {
+        lost_time_ = rclcpp::Clock().now().seconds();
+    }
+    else if (rclcpp::Clock().now().seconds() - lost_time_ <= 2.0)
+    {
+        have_target_ = 3;
+    }
+
 }
 
 void BtExecutor::judgeBullets()

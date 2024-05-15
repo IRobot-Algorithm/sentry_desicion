@@ -143,6 +143,7 @@ private:
     geometry_msgs::msg::PointStamped right_target_pos_;
     bool gimbal_; // 0 for right, 1 for left
     geometry_msgs::msg::PointStamped target_pos_;
+    double lost_time_ = 0; // 自瞄丢失时间 
 
     bool air_force_ = false; // 敌方空中机器人信息
     bool force_back_ = false; // 强制回家

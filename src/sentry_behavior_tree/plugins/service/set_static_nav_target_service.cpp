@@ -15,7 +15,7 @@ namespace sentry_behavior_tree{
         getInput("have_target", have_target);;
         getInput("gimbal", gimbal);
         getInput("target_pos", target_pos);
-        request_->is_lost = have_target == 2;
+        request_->is_lost = have_target == 3;
         request_->gimbal = gimbal;
         request_->is_dynamic = false;
         request_->distance = 3.0;
