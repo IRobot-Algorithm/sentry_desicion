@@ -60,7 +60,21 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 二、前哨站血量小于300且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
+          <!-- 二、比赛时间剩余20秒且基地护甲未展开且以哨兵血量判负——回补给区 -->
+          <Sequence>
+            <Condition ID="gameAboutOver"/>
+            <Inverter>
+              <Condition ID="baseUnfolds"/>
+            </Inverter>
+            <Condition ID="sentryFailed"/>
+            <Fallback>
+              <Action ID="RmucGoSupply" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 三、前哨站血量小于300且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
           <Sequence>
             <Condition ID="outpostLowLowHp"/>
             <Inverter>
@@ -83,7 +97,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 三、如果在补给区并且可以补给弹丸——补给弹丸 -->
+          <!-- 四、如果在补给区并且可以补给弹丸——补给弹丸 -->
           <Sequence>
             <Condition ID="inSupply"/>
             <Condition ID="canBuyBullets"/>
@@ -102,7 +116,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 四、如果在补给区且血量不充足——回补给区 -->
+          <!-- 五、如果在补给区且血量不充足——回补给区 -->
           <Sequence>
             <Condition ID="inSupply"/>
             <Inverter>
@@ -124,7 +138,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 五、如果需要解锁发射机构——回补给区 -->
+          <!-- 六、如果需要解锁发射机构——回补给区 -->
           <Sequence>
             <Condition ID="needUnlock"/>
             <Fallback>
@@ -143,7 +157,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 六、如果没弹丸且可以补给弹丸且（前哨站存活或基地装甲板展开）——回补给区 -->
+          <!-- 七、如果没弹丸且可以补给弹丸且（前哨站存活或基地装甲板展开）——回补给区 -->
           <Sequence>
             <Condition ID="lowBullets"/>
             <Condition ID="canBuyBullets"/>
@@ -167,7 +181,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 七、如果血少——回补给区 -->
+          <!-- 八、如果血少——回补给区 -->
           <Sequence>
             <Condition ID="lowHp"/>
             <Fallback>
@@ -186,7 +200,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 八、如果没弹丸——乱跑 -->
+          <!-- 九、如果没弹丸——乱跑 -->
           <Sequence>
             <Condition ID="lowBullets"/>
             <Fallback>
@@ -205,7 +219,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 九、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低且前哨站不停转——到台阶上 如果到台阶了且有目标——打 -->
+          <!-- 十、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低且前哨站不停转——到台阶上 如果到台阶了且有目标——打 -->
           <Sequence>
             <Condition ID="counterOutpost"/>
             <Condition ID="enemyOutpostSurvives"/>
@@ -281,7 +295,7 @@
             </Inverter>
           </Sequence>
 
-          <!-- 十、如果有目标且（(前哨站血量不低或基地展开或安全)-->
+          <!-- 十一、如果有目标且（(前哨站血量不低或基地展开或安全)-->
           <Sequence>
             <Condition ID="haveTarget"/>
             <Fallback>
@@ -318,7 +332,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十一、如果基地护甲展开 大符可激活——去敌方区域-->
+          <!-- 十二、如果基地护甲展开 大符可激活——去敌方区域-->
           <Sequence>
             <Condition ID="baseUnfolds"/>
             <Condition ID="counterAttack"/>
@@ -329,7 +343,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、如果前哨站血量不低 -->
+          <!-- 十三、如果前哨站血量不低 -->
           <Sequence>
             <Inverter>
               <Condition ID="outpostLowHp"/>
@@ -363,7 +377,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、不是最保守模式且前哨站血量不更低——去前哨站附近 -->
+          <!-- 十四、不是最保守模式且前哨站血量不更低——去前哨站附近 -->
           <Sequence>
             <Inverter>
               <Condition ID="centerPatrol"/>
@@ -378,7 +392,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十三、巡逻 -->
+          <!-- 十五、巡逻 -->
           <Sequence>
             <Fallback>
               <Action ID="RmucPatrol" service_name="nav_goal"/>

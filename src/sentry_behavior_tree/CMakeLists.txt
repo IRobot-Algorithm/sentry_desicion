@@ -131,6 +131,9 @@ list(APPEND plugin_libs base_unfolds_condition_bt_node)
 add_library(base_failed_condition_bt_node SHARED plugins/condition/base_failed_condition.cpp)
 list(APPEND plugin_libs base_failed_condition_bt_node)
 
+add_library(sentry_failed_condition_bt_node SHARED plugins/condition/sentry_failed_condition.cpp)
+list(APPEND plugin_libs sentry_failed_condition_bt_node)
+
 add_library(base_winned_condition_bt_node SHARED plugins/condition/base_winned_condition.cpp)
 list(APPEND plugin_libs base_winned_condition_bt_node)
 
