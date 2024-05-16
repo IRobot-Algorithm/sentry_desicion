@@ -19,6 +19,7 @@ namespace sentry_behavior_tree{
         request_->gimbal = gimbal;
         request_->is_dynamic = false;
         request_->distance = 3.0;
+        request_->restricted_area = 0;
         request_->pose.header.stamp = target_pos.header.stamp;
         request_->pose.pose.position.x = target_pos.point.x;
         request_->pose.pose.position.y = target_pos.point.y;

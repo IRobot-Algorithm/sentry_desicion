@@ -54,6 +54,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "rmul_go_supply_bt_node",
         "buy_bullets_bt_node",
         "set_nav_target_bt_node",
+        "set_outpost_target_bt_node",
         "set_static_nav_target_bt_node",
         "set_left_target_bt_node",
         "set_right_target_bt_node",

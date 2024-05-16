@@ -226,12 +226,17 @@
                       invincibility_list="{invincibility_list}" 
                       gameover_time="{gameover_time}" 
                     />
-                    <Condition ID="haveTarget"/>
-                    <Action ID="SetStaticNavTarget" service_name="nav_target"
-                      have_target="{have_target}" 
-                      gimbal="{gimbal}" 
-                      target_pos="{target_pos}"
-                    />
+                    <Fallback>
+                      <Sequence>
+                        <Condition ID="haveTarget"/>
+                        <Action ID="SetStaticNavTarget" service_name="nav_target"
+                          have_target="{have_target}" 
+                          gimbal="{gimbal}" 
+                          target_pos="{target_pos}"
+                        />
+                      </Sequence>
+                      <Action ID="SetOutpostTarget" service_name="nav_target"/>
+                    </Fallback>
                   </Sequence>
                   <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
                 </Fallback>

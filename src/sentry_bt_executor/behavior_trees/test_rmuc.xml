@@ -4,23 +4,47 @@
   <BehaviorTree ID="RMUC2024">
     <Fallback>
 
-    <Sequence>
-      <Condition ID="haveTarget"/>
-      <Fallback>
-        <Action ID="SetNavTarget" service_name="nav_target"
-          have_target="{have_target}" 
-          gimbal="{gimbal}" 
-          target_pos="{target_pos}"
-        />
-        <Action ID="SetStaticNavTarget" service_name="nav_target"
-          have_target="{have_target}" 
-          gimbal="{gimbal}" 
-          target_pos="{target_pos}"
-        />
-      </Fallback>
-    </Sequence>
+      <Sequence>
+        <Action ID="GoBack" service_name="nav_goal"/>
 
-    <Action ID="GoBack" service_name="nav_goal"/>
+        <Fallback>
+        
+          <Sequence>
+            <Action ID="SetRmosTarget" service_name="aim_target"
+              list_name="OnlyOutpost" 
+              low_hp_list="{low_hp_list}" 
+              invincibility_list="{invincibility_list}" 
+              gameover_time="{gameover_time}" 
+            />
+            <Fallback>
+              <Sequence>
+                <Condition ID="haveTarget"/>
+                <Action ID="SetStaticNavTarget" service_name="nav_target"
+                  have_target="{have_target}" 
+                  gimbal="{gimbal}" 
+                  target_pos="{target_pos}"
+                />
+              </Sequence>
+              <Action ID="SetOutpostTarget" service_name="nav_target"/>
+            </Fallback>
+          </Sequence>
+
+          <Inverter>
+            <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+          </Inverter>
+        </Fallback>
+      </Sequence>
+      <Fallback>
+        <Action ID="SetRmosTarget" service_name="aim_target"
+          list_name="None" 
+          low_hp_list="{low_hp_list}" 
+          invincibility_list="{invincibility_list}" 
+          gameover_time="{gameover_time}" 
+        />
+        <Inverter>
+          <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+        </Inverter>
+      </Fallback>
 
     </Fallback>
   </BehaviorTree>
