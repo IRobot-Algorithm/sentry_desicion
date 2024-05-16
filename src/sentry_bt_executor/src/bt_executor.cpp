@@ -368,7 +368,7 @@ void BtExecutor::executeBehaviorTree()
             count_outpost_ = true;
             enemy_area_ = true;
         }
-        else if (bullets_ > 350)
+        else if (bullets_ > 380)
         {
             last_enemy_outpost_hp_ = enemy_hp_[7];
             last_bullets_ = bullets_;
