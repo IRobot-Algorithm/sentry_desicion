@@ -60,21 +60,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 二、比赛时间剩余20秒且基地护甲未展开且以哨兵血量判负——回补给区 -->
-          <Sequence>
-            <Condition ID="gameAboutOver"/>
-            <Inverter>
-              <Condition ID="baseUnfolds"/>
-            </Inverter>
-            <Condition ID="sentryFailed"/>
-            <Fallback>
-              <Action ID="RmucGoSupply" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
-          </Sequence>
-          <!-- ///////////////// -->
-
-          <!-- 三、前哨站血量小于300且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
+          <!-- 二、前哨站血量小于300且基地护甲未展开且离开时间大于一定值——必须回巡逻区 -->
           <Sequence>
             <Condition ID="outpostLowLowHp"/>
             <Inverter>
@@ -92,6 +78,20 @@
             </Fallback>
             <Fallback>
               <Action ID="GoBack" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 三、比赛时间剩余20秒且基地护甲未展开且以哨兵血量判负——回补给区 -->
+          <Sequence>
+            <Condition ID="gameAboutOver"/>
+            <Inverter>
+              <Condition ID="baseUnfolds"/>
+            </Inverter>
+            <Condition ID="sentryFailed"/>
+            <Fallback>
+              <Action ID="RmucGoSupply" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
