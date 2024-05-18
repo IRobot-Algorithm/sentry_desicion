@@ -64,6 +64,9 @@ list(APPEND plugin_libs rmuc_base_patrol_bt_node)
 add_library(rmuc_patrol_bt_node SHARED plugins/service/rmuc_patrol_service.cpp)
 list(APPEND plugin_libs rmuc_patrol_bt_node)
 
+add_library(rmuc_test_patrol_bt_node SHARED plugins/service/rmuc_test_patrol_service.cpp)
+list(APPEND plugin_libs rmuc_test_patrol_bt_node)
+
 add_library(rmuc_center_patrol_bt_node SHARED plugins/service/rmuc_center_patrol_service.cpp)
 list(APPEND plugin_libs rmuc_center_patrol_bt_node)
 

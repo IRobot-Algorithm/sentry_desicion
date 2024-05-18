@@ -3,14 +3,7 @@
   <!-- ///// 此树用于2024分区赛 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Sequence>
-      <Action ID="GoBack" service_name="nav_goal"/>
-      <Action ID="RmucGoLeft" service_name="nav_goal"/>
-      <Action ID="RmucGoRight" service_name="nav_goal"/>
-      <Action ID="RmucGoSupply" service_name="nav_goal"/>
-      <Action ID="RmucPatrol" service_name="nav_goal"/>
-      <Action ID="RmucGoEnemyOutpost" service_name="nav_goal"/>
-      <Action ID="RmucEnemyAreaPatrol" service_name="nav_goal"/>
-      <Action ID="RmucGoOutpost" service_name="nav_goal"/>
+      <Action ID="RmucTestPatrol" service_name="nav_goal"/>
     </Sequence>
   </BehaviorTree>
 
