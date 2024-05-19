@@ -381,7 +381,7 @@ void BtExecutor::executeBehaviorTree()
             if (bullets_ < 100)
                 enemy_area_ = false;
         }
-        else if (bullets_ < last_bullets_ - 18)
+        else if (bullets_ < last_bullets_ - 16)
         {
             u_int16_t dhp = last_enemy_outpost_hp_ - enemy_hp_[7];
             last_enemy_outpost_hp_ = enemy_hp_[7];
