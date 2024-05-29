@@ -375,7 +375,7 @@ void BtExecutor::executeBehaviorTree()
             last_enemy_outpost_hp_ = enemy_hp_[7];
             last_bullets_ = bullets_;
         }
-        else if (bullets_ < 250)
+        else if (bullets_ < 150)
         {
             count_outpost_ = false;
             if (bullets_ < 100)
@@ -385,7 +385,7 @@ void BtExecutor::executeBehaviorTree()
         {
             u_int16_t dhp = last_enemy_outpost_hp_ - enemy_hp_[7];
             last_enemy_outpost_hp_ = enemy_hp_[7];
-            if (dhp % 200 < (last_bullets_ - bullets_) * 3.5)
+            if (dhp % 200 < (last_bullets_ - bullets_) * 1.5)
                 count_outpost_ = false;
             last_bullets_ = bullets_;
         }

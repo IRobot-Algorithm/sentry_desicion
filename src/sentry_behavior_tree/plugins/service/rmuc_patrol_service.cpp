@@ -63,14 +63,14 @@ namespace sentry_behavior_tree{
         double y = dis_y(gen);
         
         // be trust
-        if (x < -1.52)
-            x = -1.52;
-        else if (x > 0.9)
-            x = 0.9;
+        if (x < -1.0)
+            x = -1.0;
+        else if (x > 0.7)
+            x = 0.7;
         if (y < 0.45)
             y = 0.45;
-        else if (y > 2.2)
-            y = 2.2;
+        else if (y > 1.6)
+            y = 1.6;
 
         if (!direction_)
             y = -y;
