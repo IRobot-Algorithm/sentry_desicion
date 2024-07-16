@@ -69,14 +69,17 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "base_winned_condition_bt_node",
         "enemy_area_patrol_condition_bt_node",
         "can_buy_bullets_condition_bt_node",
+        "can_get_bullets_condition_bt_node",
         "center_patrol_condition_bt_node",
         "counter_outpost_condition_bt_node",
         "counter_attack_condition_bt_node",
         "have_target_condition_bt_node", 
+        "full_hp_condition_bt_node", 
         "low_hp_condition_bt_node", 
         "low_bullets_condition_bt_node", 
         "leave_too_long_condition_bt_node", 
         "enough_hp_condition_bt_node", 
+        "first_get_bullets_condition_bt_node",
         "force_back_condition_bt_node",
         "need_unlock_condition_bt_node",
         "game_start_condition_bt_node", 
@@ -129,6 +132,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     // 弹丸
     blackboard_->set<bool>("can_buy_bullets", can_buy_bullets_);
+    blackboard_->set<bool>("first_get_bullets", first_get_bullets_);
     blackboard_->set<u_int16_t>("buy_bullets", buy_bullets_);
 
     // TODO: 更改初始血量
@@ -156,6 +160,8 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<uint8_t>("mode", mode_);
 
     blackboard_->set<double>("loop_time", 0);
+    blackboard_->set<double>("supply_time_", 0);
+    blackboard_->set<double>("hit_time", 0);
 
     blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
     blackboard_->set<bool>("have_buff", have_buff_); // 有防御增益
@@ -164,11 +170,6 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<bool>("counter_attack", counter_attack_); // 反击
     blackboard_->set<bool>("in_supply", in_supply_);
     blackboard_->set<bool>("in_patrol", in_patrol_);
-
-    /*
-    // rmul
-    blackboard_->set<double>("supply_time", supply_time_);
-    */
 
     // 裁判系统没有的信息
     blackboard_->set<bool>("air_force", air_force_); // 敌方空中机器人信息
@@ -272,15 +273,6 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<double>("now_time", now_time);
         // RCLCPP_INFO(get_logger()," now_time : %lf", now_time);
 
-        /*
-        // rmul
-        if (in_supply_ && max_hp_ - robot_hp_ >= 100)
-            supply_time_ += loop_time;
-        RCLCPP_INFO(get_logger(), "supply_time: %f", supply_time_);
-
-        blackboard_->set<double>("supply_time", supply_time_);
-        */
-
         if (in_patrol_)
             leave_time_ = now_time;
             
@@ -313,6 +305,22 @@ void BtExecutor::executeBehaviorTree()
         judgeBullets();
         blackboard_->set<bool>("can_buy_bullets", can_buy_bullets_);
         blackboard_->set<u_int16_t>("buy_bullets", buy_bullets_);
+        if (in_supply_)
+            supply_time_ = now_time;
+        blackboard_->set<double>("supply_time_", supply_time_);
+        if (!game_start_)
+        {
+            first_get_bullets_ = false;
+        }
+        else if (in_supply_)
+        {
+            first_get_bullets_ = true;
+        }
+        else if (gameover_time_ >= 300 && gameover_time_ <= 302)
+        {
+            first_get_bullets_ = false;
+        }
+        blackboard_->set<bool>("first_get_bullets", first_get_bullets_);
         
         /* 敌方机器人血量及自瞄状态 */
         blackboard_->set<u_int16_t>("base_hp", enemy_hp_[0]);
@@ -358,9 +366,6 @@ void BtExecutor::executeBehaviorTree()
 
         if (!game_start_)
             have_buff_ = true;
-        else if (in_supply_ && robot_hp_ < max_hp_)
-            have_buff_ = false;
-        
         blackboard_->set<bool>("have_buff", have_buff_); // 有防御增益
 
         if (!game_start_)
@@ -397,16 +402,13 @@ void BtExecutor::executeBehaviorTree()
                  (gameover_time_ < 30 && gameover_time_ > 20))
             counter_attack_ = true;
 
+        blackboard_->set<double>("hit_time", hit_time_);
+
         blackboard_->set<bool>("count_outpost", count_outpost_); // 反前哨站
         blackboard_->set<bool>("enemy_area", enemy_area_); // 敌方小资源岛
         blackboard_->set<bool>("counter_attack", counter_attack_); // 反击
         blackboard_->set<bool>("in_supply", in_supply_);
         blackboard_->set<bool>("in_patrol", in_patrol_);
-
-        /*
-        // rmul
-        blackboard_->set<double>("supply_time", supply_time_);
-        */
 
         blackboard_->set<bool>("force_back", force_back_); // 强制回家
         blackboard_->set<bool>("keep_patrol", keep_patrol_); // 保守巡逻
@@ -527,6 +529,11 @@ void BtExecutor::judgeBullets()
 
 void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information)
 {
+    if (robot_hp_ < referee_information->robot_hp)
+        have_buff_ = false;
+    else if (robot_hp_ > referee_information->robot_hp)
+        hit_time_ = rclcpp::Clock().now().seconds();
+
     game_start_ = referee_information->game_start;
     gameover_time_ = referee_information->gameover_time;
     robot_hp_ = referee_information->robot_hp;

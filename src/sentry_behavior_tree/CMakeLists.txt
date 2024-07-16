@@ -143,6 +143,9 @@ list(APPEND plugin_libs base_winned_condition_bt_node)
 add_library(can_buy_bullets_condition_bt_node SHARED plugins/condition/can_buy_bullets_condition.cpp)
 list(APPEND plugin_libs can_buy_bullets_condition_bt_node)
 
+add_library(can_get_bullets_condition_bt_node SHARED plugins/condition/can_get_bullets_condition.cpp)
+list(APPEND plugin_libs can_get_bullets_condition_bt_node)
+
 add_library(center_patrol_condition_bt_node SHARED plugins/condition/center_patrol_condition.cpp)
 list(APPEND plugin_libs center_patrol_condition_bt_node)
 
@@ -167,6 +170,9 @@ list(APPEND plugin_libs have_target_condition_bt_node)
 add_library(low_hp_condition_bt_node SHARED plugins/condition/low_hp_condition.cpp)
 list(APPEND plugin_libs low_hp_condition_bt_node)
 
+add_library(full_hp_condition_bt_node SHARED plugins/condition/full_hp_condition.cpp)
+list(APPEND plugin_libs full_hp_condition_bt_node)
+
 add_library(low_bullets_condition_bt_node SHARED plugins/condition/low_bullets_condition.cpp)
 list(APPEND plugin_libs low_bullets_condition_bt_node)
 
@@ -176,8 +182,14 @@ list(APPEND plugin_libs leave_too_long_condition_bt_node)
 add_library(enough_hp_condition_bt_node SHARED plugins/condition/enough_hp_condition.cpp)
 list(APPEND plugin_libs enough_hp_condition_bt_node)
 
+add_library(first_get_bullets_condition_bt_node SHARED plugins/condition/first_get_bullets_condition.cpp)
+list(APPEND plugin_libs first_get_bullets_condition_bt_node)
+
 add_library(force_back_condition_bt_node SHARED plugins/condition/force_back_condition.cpp)
 list(APPEND plugin_libs force_back_condition_bt_node)
+
+add_library(need_avoid_condition_bt_node SHARED plugins/condition/need_avoid_condition.cpp)
+list(APPEND plugin_libs need_avoid_condition_bt_node)
 
 add_library(need_unlock_condition_bt_node SHARED plugins/condition/need_unlock_condition.cpp)
 list(APPEND plugin_libs need_unlock_condition_bt_node)

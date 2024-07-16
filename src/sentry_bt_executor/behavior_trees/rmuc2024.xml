@@ -181,9 +181,26 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 八、如果血少——回补给区 -->
+          <!-- 七、如果前哨站血量少且没有领取过子弹且满血——回补给区 -->
+          <Sequence>
+            <Condition ID="outpostLowLowHp"/>
+            <Inverter>
+              <Condition ID="firstGetBullets"/>
+            </Inverter>
+            <Condition ID="fullHp"/>
+            <Fallback>
+              <Action ID="RmucGoSupply" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
+          <!-- 八、如果血少且基地未展开——回补给区 -->
           <Sequence>
             <Condition ID="lowHp"/>
+            <Inverter>
+              <Condition ID="baseUnfolds"/>
+            </Inverter>
             <Fallback>
               <Action ID="SetRmosTarget" service_name="aim_target"
                 list_name="None" 
@@ -322,10 +339,9 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十二、如果基地护甲展开 大符可激活——去敌方区域-->
+          <!-- 十二、如果基地护甲展开——去敌方区域-->
           <Sequence>
             <Condition ID="baseUnfolds"/>
-            <Condition ID="counterAttack"/>
             <Fallback>
               <Action ID="RmucEnemyPatrol" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->

@@ -156,6 +156,8 @@ private:
     // 购买弹丸
     u_int16_t buy_bullets_ = 0;
     bool can_buy_bullets_ = false;
+    bool first_get_bullets_ = false;
+    double supply_time_ = 0.0;
     
     bool have_buff_ = true;
     bool count_outpost_ = true;
@@ -163,11 +165,11 @@ private:
     bool counter_attack_ = false;
     u_int16_t last_enemy_outpost_hp_ = 1500;
     u_int16_t last_bullets_ = 400;
+    double hit_time_ = 0.0;
 
     bool need_unlock_ = false;
     bool in_supply_ = false;
     bool in_patrol_ = false;
-    double supply_time_ = 0.0;
 
 };
 

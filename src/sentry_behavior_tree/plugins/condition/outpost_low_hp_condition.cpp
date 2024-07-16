@@ -8,7 +8,7 @@ namespace sentry_behavior_tree
 
         auto our_outpost_hp = tree_node.config().blackboard->get<u_int16_t>("our_outpost_hp");
 
-        return our_outpost_hp <= 900 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+        return our_outpost_hp <= 700 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
 
