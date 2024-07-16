@@ -22,56 +22,56 @@ namespace sentry_behavior_tree{
         {
             case 0: // back
             {
-                request_->pose.pose.position.x = 0.0;
+                request_->pose.pose.position.x = -0.36;
                 request_->pose.pose.position.y = 1.0;
                 break;
             }
             case 1: // left
             {
-                request_->pose.pose.position.x = 0.5;
+                request_->pose.pose.position.x = 0.0;
                 request_->pose.pose.position.y = 2.05;
                 break;
             }
             case 2: // right
             {
-                request_->pose.pose.position.x = 0.5;
+                request_->pose.pose.position.x = 0.0;
                 request_->pose.pose.position.y = -2.05;
                 break;
             }
             case 3: // supply
             {
-                request_->pose.pose.position.x = -3.4;
+                request_->pose.pose.position.x = -4.2;
                 request_->pose.pose.position.y = -6.1;
                 break;
             }
             case 4: // enemyoutpost
             {
-                request_->pose.pose.position.x = 7.1;
+                request_->pose.pose.position.x = 6.33;
                 request_->pose.pose.position.y = 6.85;
                 break;
             }
             case 5: // enemyarea
             {
-                request_->pose.pose.position.x = 13.5;
-                request_->pose.pose.position.y = -3.6;
+                request_->pose.pose.position.x = 12.6;
+                request_->pose.pose.position.y = -3.2;
                 break;
             }
             case 6: // enemy
             {
-                request_->pose.pose.position.x = 16.0;
-                request_->pose.pose.position.y = -2.0;
+                request_->pose.pose.position.x = 17.2;
+                request_->pose.pose.position.y = -2.2;
                 break;
             }
             case 7: // enemy
             {
-                request_->pose.pose.position.x = 14.0;
-                request_->pose.pose.position.y = 2.0;
+                request_->pose.pose.position.x = 14.6;
+                request_->pose.pose.position.y = 2.2;
                 break;
             }
-            default: // outpost
+            default: // enemyslope
             {
-                request_->pose.pose.position.x = 6.7;
-                request_->pose.pose.position.y = -4.7;
+                request_->pose.pose.position.x = 5.6;
+                request_->pose.pose.position.y = 6.93;
                 break;
             }
 

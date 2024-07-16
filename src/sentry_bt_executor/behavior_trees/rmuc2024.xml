@@ -396,7 +396,7 @@
           </Sequence>
           <!-- ///////////////// -->
 
-          <!-- 十四、不是最保守模式且前哨站血量不更低——去前哨站附近 -->
+          <!-- 十四、不是最保守模式且前哨站血量不更低——挡飞坡 -->
           <Sequence>
             <Inverter>
               <Condition ID="centerPatrol"/>
@@ -405,7 +405,7 @@
               <Condition ID="outpostLowLowHp"/>
             </Inverter>
             <Fallback>
-              <Action ID="RmucEnemySlope" service_name="nav_goal"/>
+              <Action ID="RmucGoEnemySlope" service_name="nav_goal"/>
               <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
             </Fallback>
           </Sequence>
