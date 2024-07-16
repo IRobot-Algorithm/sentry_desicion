@@ -81,6 +81,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
         "enough_hp_condition_bt_node", 
         "first_get_bullets_condition_bt_node",
         "force_back_condition_bt_node",
+        "need_avoid_condition_bt_node",
         "need_unlock_condition_bt_node",
         "game_start_condition_bt_node", 
         "game_about_over_condition_bt_node", 

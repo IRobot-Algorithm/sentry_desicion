@@ -9,7 +9,7 @@ namespace sentry_behavior_tree
         auto have_buff = tree_node.config().blackboard->get<bool>("have_buff");
         bool low_hp;
         if (have_buff)
-            low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 80;
+            low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 100;
         else
             low_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp") <= 150;
 

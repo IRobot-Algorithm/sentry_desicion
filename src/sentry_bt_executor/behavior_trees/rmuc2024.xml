@@ -236,6 +236,19 @@
           </Sequence>
           <!-- ///////////////// -->
 
+          <!-- 如果需要躲避且基地护甲未展开——一直躲避 -->
+          <Sequence>
+            <Condition ID="needAvoid"/>
+            <Inverter>
+              <Condition ID="baseUnfolds"/>
+            </Inverter>
+            <Fallback>
+              <Action ID="RmucPatrol" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+            </Fallback>
+          </Sequence>
+          <!-- ///////////////// -->
+
           <!-- 十、如果需要反前哨站且敌方前哨站存活且前哨站血量不更低且前哨站不停转——到台阶上 如果到台阶了且有目标——打 -->
           <Sequence>
             <Condition ID="counterOutpost"/>

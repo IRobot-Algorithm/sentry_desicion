@@ -9,7 +9,7 @@ namespace sentry_behavior_tree
         auto hit_time = tree_node.config().blackboard->get<double>("hit_time");
         auto robot_hp = tree_node.config().blackboard->get<u_int16_t>("robot_hp");
 
-        return (now_time - hit_time < 1.5 && robot_hp < 200)
+        return (now_time - hit_time < 2.0 && robot_hp < 200)
                 ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 
     }
