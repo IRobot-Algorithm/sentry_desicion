@@ -14,8 +14,8 @@ namespace sentry_behavior_tree{
         request_->restricted_area = 4; // outpost
 
         request_->pose.header.stamp = rclcpp::Clock().now();
-        request_->pose.pose.position.x = 10.85;
-        request_->pose.pose.position.y = 5.1;
+        request_->pose.pose.position.x = 10.32;
+        request_->pose.pose.position.y = 5.06;
         request_->pose.pose.position.z = 1.0;
 
         // RCLCPP_INFO(node_->get_logger(),"set_outpost_target_service on_tick()... ");

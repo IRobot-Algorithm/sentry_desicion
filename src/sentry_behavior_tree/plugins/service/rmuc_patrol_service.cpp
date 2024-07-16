@@ -56,21 +56,21 @@ namespace sentry_behavior_tree{
         std::random_device rd;
         std::mt19937 gen(rd());
         
-        std::uniform_real_distribution<> dis_x(-1.52, 0.9);
-        std::uniform_real_distribution<> dis_y(0.45, 2.2);
+        std::uniform_real_distribution<> dis_x(-2.1, 0.37);
+        std::uniform_real_distribution<> dis_y(0.45, 2.0);
         
         double x = dis_x(gen);
         double y = dis_y(gen);
         
         // be trust
-        if (x < -1.0)
-            x = -1.0;
-        else if (x > 0.7)
-            x = 0.7;
+        if (x < -2.1)
+            x = -2.1;
+        else if (x > 0.37)
+            x = 0.37;
         if (y < 0.45)
             y = 0.45;
-        else if (y > 1.6)
-            y = 1.6;
+        else if (y > 1.8)
+            y = 1.8;
 
         if (!direction_)
             y = -y;

@@ -1,21 +1,22 @@
 #include <string>
-#include "sentry_behavior_tree/plugins/service/go_back_service.hpp"
+#include "sentry_behavior_tree/plugins/service/rmuc_go_enemy_slope_service.hpp"
 
 namespace sentry_behavior_tree{
 
-    GoBackService::GoBackService(const std::string & service_node_name,
+    RmucGoEnemySlopeService::RmucGoEnemySlopeService(const std::string & service_node_name,
         const BT::NodeConfiguration & conf)
         : nav2_behavior_tree::BtServiceNode<sentry_srvs::srv::NavGoal>(service_node_name, conf){}
 
-    void GoBackService::on_tick()
+    void RmucGoEnemySlopeService::on_tick()
     {
-        request_->pose.pose.position.x = -0.36;
-        request_->pose.pose.position.y = 1.0;
 
-        // RCLCPP_INFO(node_->get_logger(),"go_back_service on_tick()... ");
+        request_->pose.pose.position.x = 5.6;
+        request_->pose.pose.position.y = 6.93;
+
+        // RCLCPP_INFO(node_->get_logger(),"rmuc_go_enemy_slope_service on_tick()... ");
     }
 
-    BT::NodeStatus GoBackService::check_future(
+    BT::NodeStatus RmucGoEnemySlopeService::check_future(
     std::shared_future<sentry_srvs::srv::NavGoal::Response::SharedPtr> future_result)
     {
         rclcpp::FutureReturnCode rc;
@@ -26,12 +27,7 @@ namespace sentry_behavior_tree{
         {
             auto result = future_result.get();
             if (result->is_arrive)
-            // {
-            //     double leave_time = rclcpp::Clock().now().seconds();
-            //     // RCLCPP_INFO(node_->get_logger()," leave_time : %lf", leave_time);
-            //     setOutput("leave_time", leave_time);
                 return BT::NodeStatus::SUCCESS;
-            // }
             else
                 return BT::NodeStatus::FAILURE;
         }
@@ -45,21 +41,13 @@ namespace sentry_behavior_tree{
         return BT::NodeStatus::FAILURE;
     }
 
-    // BT::PortsList GoBackService::providedPorts()
-    // {
-    //     return providedBasicPorts(
-    //     {
-    //         BT::OutputPort<double>("leave_time"),
-    //     });
-    // }
-
 
 }
 
 #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  factory.registerNodeType<sentry_behavior_tree::GoBackService>(
-    "GoBack");
+  factory.registerNodeType<sentry_behavior_tree::RmucGoEnemySlopeService>(
+    "RmucGoEnemySlope");
     //注意这里""内没有Service 
 }

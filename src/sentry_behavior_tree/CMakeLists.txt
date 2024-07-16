@@ -40,6 +40,9 @@ set(dependencies
 add_library(go_back_bt_node SHARED plugins/service/go_back_service.cpp)
 list(APPEND plugin_libs go_back_bt_node)
 
+add_library(rmuc_go_enemy_slope_bt_node SHARED plugins/service/rmuc_go_enemy_slope_service.cpp)
+list(APPEND plugin_libs rmuc_go_enemy_slope_bt_node)
+
 add_library(rmuc_go_enemy_outpost_bt_node SHARED plugins/service/rmuc_go_enemy_outpost_service.cpp)
 list(APPEND plugin_libs rmuc_go_enemy_outpost_bt_node)
 

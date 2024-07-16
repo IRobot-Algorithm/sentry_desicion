@@ -34,6 +34,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     const std::vector<std::string> plugin_libs = 
     {
         "go_back_bt_node",
+        "rmuc_go_slope_outpost_bt_node",
         "rmuc_go_enemy_outpost_bt_node",
         "rmuc_go_outpost_bt_node",
         "rmuc_go_supply_bt_node",
