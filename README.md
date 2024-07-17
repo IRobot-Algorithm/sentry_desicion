@@ -4,6 +4,8 @@
 
 本仓库为2024哨兵决策仓库
 
+main为双头构型，spare-sentry为单头构型
+
 ## 行为树节点
 
 - Sequence
