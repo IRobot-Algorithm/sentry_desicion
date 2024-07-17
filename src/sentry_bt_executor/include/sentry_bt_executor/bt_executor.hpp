@@ -60,10 +60,6 @@ protected:
     rclcpp::Time start_time_;
 
 private:
-    /*
-	* @brief 与导航跟随自瞄目标相关决策
-	*/
-    void judgeTarget();
 
     /*
 	* @brief 与购买弹丸相关决策
@@ -73,8 +69,7 @@ private:
 
     void refereeInformationCallback(const sentry_msgs::msg::RefereeInformation::SharedPtr referee_information);
 
-    void rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
-    void leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
+    void RmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target);
 
 	/*
 	* @brief uint32 pos位赋值1
@@ -98,12 +93,10 @@ private:
 
 private:
     rclcpp::Subscription<sentry_msgs::msg::RefereeInformation>::SharedPtr referee_information_sub_;
-    rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr right_rmos_sub_;
-    rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr left_rmos_sub_;
+    rclcpp::Subscription<sentry_interfaces::msg::FollowTarget>::SharedPtr rmos_sub_;
 
     rclcpp::CallbackGroup::SharedPtr referee_information_sub_callback_group_;
-    rclcpp::CallbackGroup::SharedPtr right_rmos_sub_callback_group_;
-    rclcpp::CallbackGroup::SharedPtr left_rmos_sub_callback_group_;
+    rclcpp::CallbackGroup::SharedPtr rmos_sub_callback_group_;
     rclcpp::CallbackGroup::SharedPtr execute_timer_callback_group_;
 
     rclcpp::TimerBase::SharedPtr execute_timer_;
@@ -135,13 +128,6 @@ private:
     std::vector<double> enemy_died_time_;
     std::vector<bool> is_buyback_;
     u_int8_t have_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
-    u_int8_t left_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
-    u_int8_t right_target_ = 0; // 0 for no target, 1 for tracking, 2 for lost
-    u_int8_t left_priority_;
-    u_int8_t right_priority_;
-    geometry_msgs::msg::PointStamped left_target_pos_;
-    geometry_msgs::msg::PointStamped right_target_pos_;
-    bool gimbal_; // 0 for right, 1 for left
     geometry_msgs::msg::PointStamped target_pos_;
     double lost_time_ = 0; // 自瞄丢失时间 
 

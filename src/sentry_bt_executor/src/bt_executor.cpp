@@ -152,7 +152,6 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<u_int16_t>("sentry_hp", enemy_hp_[6]);
     blackboard_->set<u_int16_t>("outpost_hp", enemy_hp_[7]);
     blackboard_->set<u_int8_t>("have_target", have_target_);
-    blackboard_->set<bool>("gimbal", gimbal_);
     blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);    
     blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
     blackboard_->set<std::vector<u_int8_t>>("invincibility_list", invincibility_list_); // 无敌的目标
@@ -200,8 +199,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
 
     /* create callback group */ 
     this->referee_information_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
-    this->right_rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
-    this->left_rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+    this->rmos_sub_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
     this->execute_timer_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
     /* create subscription */
@@ -210,14 +208,10 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     referee_information_sub_ = this->create_subscription<sentry_msgs::msg::RefereeInformation>("/referee_info", 1,
         std::bind(&BtExecutor::refereeInformationCallback, this, _1), referee_information_sub_options);
 
-    auto right_rmos_sub_options = rclcpp::SubscriptionOptions();
-    right_rmos_sub_options.callback_group = this->right_rmos_sub_callback_group_;
-    auto left_rmos_sub_options = rclcpp::SubscriptionOptions();
-    left_rmos_sub_options.callback_group = this->left_rmos_sub_callback_group_;
-    right_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_r", 1,
-        std::bind(&BtExecutor::rightRmosCallback, this, _1), right_rmos_sub_options);
-    left_rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target_l", 1,
-        std::bind(&BtExecutor::leftRmosCallback, this, _1), left_rmos_sub_options);
+    auto rmos_sub_options = rclcpp::SubscriptionOptions();
+    rmos_sub_options.callback_group = this->rmos_sub_callback_group_;
+    rmos_sub_ = this->create_subscription<sentry_interfaces::msg::FollowTarget>("/follow_target", 1,
+        std::bind(&BtExecutor::RmosCallback, this, _1), rmos_sub_options);
 
     RCLCPP_INFO(get_logger(), "Activating");
 
@@ -353,10 +347,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<std::vector<u_int8_t>>("low_hp_list", low_hp_list_); // 血量少的目标
         blackboard_->set<std::vector<u_int8_t>>("invincibility_list", invincibility_list_); // 无敌的目标
 
-        judgeTarget();
-
         blackboard_->set<u_int8_t>("have_target", have_target_);
-        blackboard_->set<bool>("gimbal", gimbal_);
         blackboard_->set<geometry_msgs::msg::PointStamped>("target_pos", target_pos_);
 
         if (game_start_ && robot_hp_ <= 0) // 解锁发射机构
@@ -451,52 +442,6 @@ void BtExecutor::executeBehaviorTree()
     bt_->haltAllActions(tree_.rootNode());
 }
 
-void BtExecutor::judgeTarget()
-{
-
-    if (left_target_ > 0  && right_target_ == 0) // 左有右无
-    {
-        have_target_ = left_target_;
-        gimbal_ = 1; // 1 for left
-        target_pos_ = left_target_pos_;
-    }
-    else if (left_target_ == 0 && right_target_ > 0) // 右有左无
-    {
-        have_target_ = right_target_;
-        gimbal_ = 0; // 0 for right
-        target_pos_ = right_target_pos_;
-    }
-    else if (left_target_ > 0 && right_target_ > 0) // 都有
-    {
-        if (right_priority_ > left_priority_) // 左边更优先
-        {
-            have_target_ = left_target_;
-            gimbal_ = 1; // 1 for left
-            target_pos_ = left_target_pos_;
-        }
-        else // 右边更优先
-        {
-            have_target_ = right_target_;
-            gimbal_ = 0; // 0 for right
-            target_pos_ = right_target_pos_;
-        }
-    }
-    else // 都没有
-    {
-        have_target_ = 0;
-    }
-
-    if (have_target_ == 1 || have_target_ == 2)
-    {
-        lost_time_ = rclcpp::Clock().now().seconds();
-    }
-    else if (rclcpp::Clock().now().seconds() - lost_time_ <= 2.0)
-    {
-        have_target_ = 3;
-    }
-
-}
-
 void BtExecutor::judgeBullets()
 {
     int n = gold_coins_ - 300;
@@ -583,22 +528,12 @@ void BtExecutor::refereeInformationCallback(const sentry_msgs::msg::RefereeInfor
 
 }
 
-void BtExecutor::rightRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
+void BtExecutor::RmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
 {
-    right_target_ = follow_target->have_target;
-    right_target_pos_ = follow_target->target;
-    right_priority_ = follow_target->priority;
-    RCLCPP_INFO(get_logger(), "right_target_ : %d, %f, %f", static_cast<int>(right_target_), right_target_pos_.point.x, right_target_pos_.point.y); 
+    have_target_ = follow_target->have_target;
+    target_pos_ = follow_target->target;
+    RCLCPP_INFO(get_logger(), "have_target_ : %d, %f, %f", static_cast<int>(have_target_), target_pos_.point.x, target_pos_.point.y); 
 }
-
-void BtExecutor::leftRmosCallback(const sentry_interfaces::msg::FollowTarget::SharedPtr follow_target)
-{
-    left_target_ = follow_target->have_target;
-    left_target_pos_ = follow_target->target;
-    left_priority_ = follow_target->priority;
-    RCLCPP_INFO(get_logger(), "left_target_ : %d, %f, %f", static_cast<int>(left_target_), left_target_pos_.point.x, left_target_pos_.point.y); 
-}
-
 
 inline void BtExecutor::setBit(uint32_t& data, int pos)
 {

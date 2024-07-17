@@ -24,8 +24,7 @@ private:
  
   rclcpp::CallbackGroup::SharedPtr timer_callback_group_;
   rclcpp::Service<sentry_interfaces::srv::AimTarget>::SharedPtr list_service_;
-  rclcpp::Client<sentry_interfaces::srv::AimTarget>::SharedPtr client_l_;
-  rclcpp::Client<sentry_interfaces::srv::AimTarget>::SharedPtr client_r_;
+  rclcpp::Client<sentry_interfaces::srv::AimTarget>::SharedPtr client_;
   std::vector<uint8_t> received_list_;
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Time last_receive_time_;

@@ -14,8 +14,7 @@ RmosForwarder::RmosForwarder(const rclcpp::NodeOptions &options) : Node("rmos_fo
       std::bind(&RmosForwarder::listServiceCallback, this,
                 std::placeholders::_1, std::placeholders::_2));
 
-  client_l_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_l/AimTarget_l");
-  client_r_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_r/AimTarget_r");
+  client_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer/AimTarget");
 
   timer_callback_group_ = this->create_callback_group(
     rclcpp::CallbackGroupType::MutuallyExclusive);
@@ -44,23 +43,15 @@ void RmosForwarder::forwardList()
   auto request = std::make_shared<sentry_interfaces::srv::AimTarget::Request>();
   request->list = received_list_;
 
-  if (client_l_->service_is_ready()) 
+  if (client_->service_is_ready()) 
   {
-    auto future_l = client_l_->async_send_request(request);
+    auto future = client_->async_send_request(request);
   }
   else
   {
-    RCLCPP_WARN(this->get_logger(), "Left services is not available");
+    RCLCPP_WARN(this->get_logger(), "Services is not available");
   }
 
-  if (client_r_->service_is_ready()) 
-  {
-    auto future_r = client_r_->async_send_request(request);
-  }
-  else
-  {
-    RCLCPP_WARN(this->get_logger(), "Right services is not available");
-  }
 
 }
 
