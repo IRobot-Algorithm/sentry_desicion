@@ -106,6 +106,9 @@ list(APPEND plugin_libs buy_bullets_bt_node)
 add_library(set_outpost_target_bt_node SHARED plugins/service/set_outpost_target_service.cpp)
 list(APPEND plugin_libs set_outpost_target_bt_node)
 
+add_library(set_slope_target_bt_node SHARED plugins/service/set_slope_target_service.cpp)
+list(APPEND plugin_libs set_slope_target_bt_node)
+
 add_library(set_nav_target_bt_node SHARED plugins/service/set_nav_target_service.cpp)
 list(APPEND plugin_libs set_nav_target_bt_node)
 

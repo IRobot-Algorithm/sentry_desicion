@@ -35,6 +35,7 @@ set(dependencies
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/FollowTarget.msg"
   "srv/AimTarget.srv"
+  "srv/HalfScan.srv"
 
   DEPENDENCIES ${dependencies}
 )

@@ -404,10 +404,13 @@
             <Inverter>
               <Condition ID="outpostLowLowHp"/>
             </Inverter>
-            <Fallback>
+            <Sequence>
               <Action ID="RmucGoEnemySlope" service_name="nav_goal"/>
-              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
-            </Fallback>
+              <Fallback>
+                <Action ID="SetSlopeTarget" service_name="nav_target"/>
+                <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              </Fallback>
+            </Sequence>
           </Sequence>
           <!-- ///////////////// -->
 
