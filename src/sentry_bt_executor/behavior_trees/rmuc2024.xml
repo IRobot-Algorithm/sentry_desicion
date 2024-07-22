@@ -407,7 +407,10 @@
             <Sequence>
               <Action ID="RmucGoEnemySlope" service_name="nav_goal"/>
               <Fallback>
-                <Action ID="SetSlopeTarget" service_name="nav_target"/>
+                <Sequence>
+                  <Action ID="SetSlopeTarget" service_name="nav_target"/>
+                  <Action ID="SetHalfScan" service_name="half_scan"/>
+                </Sequence>
                 <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
               </Fallback>
             </Sequence>

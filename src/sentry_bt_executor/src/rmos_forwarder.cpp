@@ -14,6 +14,11 @@ RmosForwarder::RmosForwarder(const rclcpp::NodeOptions &options) : Node("rmos_fo
       std::bind(&RmosForwarder::listServiceCallback, this,
                 std::placeholders::_1, std::placeholders::_2));
 
+  half_scan_service_ = this->create_service<sentry_interfaces::srv::HalfScan>(
+      "half_scan",
+      std::bind(&RmosForwarder::HalfScanServiceCallback, this,
+                std::placeholders::_1, std::placeholders::_2));
+
   client_l_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_l/AimTarget_l");
   client_r_ = this->create_client<sentry_interfaces::srv::AimTarget>("/rmos_processer_r/AimTarget_r");
 
@@ -33,6 +38,14 @@ void RmosForwarder::listServiceCallback(
   response->success = true;
 }
 
+void RmosForwarder::HalfScanServiceCallback(
+    const std::shared_ptr<sentry_interfaces::srv::HalfScan::Request> request,
+    std::shared_ptr<sentry_interfaces::srv::HalfScan::Response> response) 
+{
+  half_scan_time_ = rclcpp::Clock().now();
+  response->success = true;
+}
+
 void RmosForwarder::forwardList() 
 {
   if (rclcpp::Clock().now().seconds() - last_receive_time_.seconds() > 1.0)
@@ -43,6 +56,10 @@ void RmosForwarder::forwardList()
 
   auto request = std::make_shared<sentry_interfaces::srv::AimTarget::Request>();
   request->list = received_list_;
+  if (rclcpp::Clock().now().seconds() - half_scan_time_.seconds() < 0.2)
+  {
+    request->list.push_back(255);
+  } 
 
   if (client_l_->service_is_ready()) 
   {
