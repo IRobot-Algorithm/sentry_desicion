@@ -3,6 +3,16 @@
   <!-- ///// 此树用于测试 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
+          <Sequence>
+            <Condition ID="needAvoid"/>
+            <Fallback>
+              <Action ID="NpuPatrol" service_name="nav_goal"/>
+              <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              <Inverter>
+                <Condition ID="gameStart"/> <!-- TODO : 强制正确 -->
+              </Inverter>
+            </Fallback>
+          </Sequence>
 
           <Sequence>
             <Condition ID="haveTarget"/>

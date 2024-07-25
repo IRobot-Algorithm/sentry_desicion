@@ -3,15 +3,7 @@
   <!-- ///// 此树用于测试 ///// -->
   <BehaviorTree ID="RMUC2024">
     <Fallback>
-      <Sequence>
-        <Action ID="SetRmosTarget" service_name="aim_target"
-          list_name="OnlyOutpost" 
-          low_hp_list="{low_hp_list}" 
-          invincibility_list="{invincibility_list}" 
-          gameover_time="{gameover_time}" 
-        />
-        <Action ID="SetOutpostTarget" service_name="nav_target"/>
-      </Sequence>
+      <Action ID="SetHalfScan" service_name="half_scan"/>
     </Fallback>
   </BehaviorTree>
 

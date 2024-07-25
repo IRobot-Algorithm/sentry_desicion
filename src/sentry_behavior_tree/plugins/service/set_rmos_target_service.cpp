@@ -25,25 +25,29 @@ namespace sentry_behavior_tree{
         // for (size_t i = 0; i < list.size(); i++)
         //     RCLCPP_INFO(node_->get_logger(), "%d ", static_cast<int>(list[i]));
 
-        size_t i = 0;
-        for (auto it1 = list.begin(); it1 != list.end();)
+
+        if (list_name != "OnlyOutpost")
         {
-            auto it2 = std::find(low_hp_list.begin(), low_hp_list.end(), *it1);
-            if (it2 != low_hp_list.end())
+            size_t i = 0;
+            for (auto it1 = list.begin(); it1 != list.end();)
             {
-                if (i < low_hp_list.size())
+                auto it2 = std::find(low_hp_list.begin(), low_hp_list.end(), *it1);
+                if (it2 != low_hp_list.end())
                 {
-                    std::swap(*(low_hp_list.begin() + i), *it2);
-                    i++;
+                    if (i < low_hp_list.size())
+                    {
+                        std::swap(*(low_hp_list.begin() + i), *it2);
+                        i++;
+                    }
+                    it1 = list.erase(it1);
                 }
-                it1 = list.erase(it1);
+                else
+                {
+                    it1++;
+                }
             }
-            else
-            {
-                it1++;
-            }
+            list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
         }
-        list.insert(list.begin(), low_hp_list.begin(), low_hp_list.end());
 
         if (gameover_time < 240 && list_name != "OnlyOutpost" && list_name != "None") // 三分钟后 打工程
             list.push_back(2);

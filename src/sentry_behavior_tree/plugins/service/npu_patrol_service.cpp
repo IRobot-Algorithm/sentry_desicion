@@ -9,13 +9,24 @@ namespace sentry_behavior_tree{
 
     void NpuPatrolService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 15)
+        if (id_ == 0)
         {
-            last_time_ = rclcpp::Clock().now();
-            id_++;
+            if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 25)
+            {
+                last_time_ = rclcpp::Clock().now();
+                id_++;
+            }
+        }
+        else
+        {
+            if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 15)
+            {
+                last_time_ = rclcpp::Clock().now();
+                id_++;
+            }
         }
 
-        if (id_ > 3)
+        if (id_ > 2)
             id_ = 0;
 
         switch (id_)
@@ -24,32 +35,25 @@ namespace sentry_behavior_tree{
             {
                 // request_->pose.pose.position.x = 0.0;
                 // request_->pose.pose.position.y = 0.0;
-                request_->pose.pose.position.x = 6.5;
-                request_->pose.pose.position.y = 1.0;
+                request_->pose.pose.position.x = -1.74;
+                // request_->pose.pose.position.y = 2.64;
+                request_->pose.pose.position.y = 0.0;
                 break;
             }
             case 1:
             {
-                // request_->pose.pose.position.x = 0.0;
+                // request_->pose.pose.position.x = 2.5;
                 // request_->pose.pose.position.y = 0.0;
-                request_->pose.pose.position.x = 3.0;
-                request_->pose.pose.position.y = 2.3;
-                break;
-            }
-            case 2:
-            {
-                // request_->pose.pose.position.x = 0.0;
-                // request_->pose.pose.position.y = 0.0;
-                request_->pose.pose.position.x = 0.0;
-                request_->pose.pose.position.y = 0.0;
+                request_->pose.pose.position.x = 5.1;
+                request_->pose.pose.position.y = 2.0;
                 break;
             }
             default:
             {
-                // request_->pose.pose.position.x = 0.0;
+                // request_->pose.pose.position.x = 2.5;
                 // request_->pose.pose.position.y = 0.0;
-                request_->pose.pose.position.x = 3.0;
-                request_->pose.pose.position.y = 2.3;
+                request_->pose.pose.position.x = 5.1;
+                request_->pose.pose.position.y = -1.9;
                 break;
             }
         }   
