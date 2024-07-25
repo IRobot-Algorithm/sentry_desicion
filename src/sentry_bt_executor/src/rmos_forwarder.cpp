@@ -59,7 +59,13 @@ void RmosForwarder::forwardList()
   if (rclcpp::Clock().now().seconds() - half_scan_time_.seconds() < 0.2)
   {
     request->list.push_back(255);
-  } 
+  }
+
+  for (const auto& n : request->list)
+  {
+    std::cout << static_cast<int>(n) << " ";
+  }
+  std::cout << "\n";
 
   if (client_l_->service_is_ready()) 
   {

@@ -2,9 +2,15 @@
 <root main_tree_to_execute="RMUC2024">
   <!-- ///// 此树用于测试 ///// -->
   <BehaviorTree ID="RMUC2024">
-    <Fallback>
+    <Sequence>
+                <Action ID="SetRmosTarget" service_name="aim_target"
+                  list_name="All" 
+                  low_hp_list="{low_hp_list}" 
+                  invincibility_list="{invincibility_list}" 
+                  gameover_time="{gameover_time}" 
+                />
       <Action ID="SetHalfScan" service_name="half_scan"/>
-    </Fallback>
+    </Sequence>
   </BehaviorTree>
 
 </root>
