@@ -156,6 +156,7 @@ private:
     // 购买弹丸
     u_int16_t buy_bullets_ = 0;
     bool can_buy_bullets_ = false;
+    u_int16_t got_bullets_ = 0;
     bool first_get_bullets_ = false;
     double supply_time_ = 0.0;
     

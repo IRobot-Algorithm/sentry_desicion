@@ -315,10 +315,12 @@ void BtExecutor::executeBehaviorTree()
         if (!game_start_)
         {
             first_get_bullets_ = false;
+            got_bullets_ = 0;
         }
         else if (in_supply_)
         {
             first_get_bullets_ = true;
+            got_bullets_ = 100 * ((420 - gameover_time_) / 60);
         }
         else if (gameover_time_ >= 300 && gameover_time_ <= 302)
         {
@@ -502,12 +504,13 @@ void BtExecutor::judgeTarget()
 void BtExecutor::judgeBullets()
 {
     int n = gold_coins_ - 300;
-    if (n >= 100 && bought_bullets_ < 250)
+    int max_bullets = std::max(350 - got_bullets_, 0);
+    if (n >= 100 && bought_bullets_ < max_bullets)
     {
         can_buy_bullets_ = true;
         buy_bullets_ = bought_bullets_ + n;
-        if (buy_bullets_ > 250)
-            buy_bullets_ = 250;
+        if (buy_bullets_ > max_bullets)
+            buy_bullets_ = max_bullets;
     }
     else
     {
