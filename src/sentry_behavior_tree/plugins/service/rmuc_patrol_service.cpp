@@ -10,7 +10,7 @@ namespace sentry_behavior_tree{
 
     void RmucPatrolService::on_tick()
     {
-        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 5)
+        if (rclcpp::Clock().now().seconds() - last_time_.seconds() > 4.0)
         {
             last_time_ = rclcpp::Clock().now();
             point_ = generateRandomPoint();
