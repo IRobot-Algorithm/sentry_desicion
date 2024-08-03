@@ -160,7 +160,10 @@
           <!-- 七、如果没弹丸且可以补给弹丸且（前哨站存活或基地装甲板展开）——回补给区 -->
           <Sequence>
             <Condition ID="lowBullets"/>
-            <Condition ID="canBuyBullets"/>
+            <Fallback>
+              <Condition ID="canBuyBullets"/>
+              <Condition ID="canGetBullets"/>
+            </Fallback>
             <Fallback>
               <Condition ID="outpostSurvives"/>
               <Condition ID="baseUnfolds"/>

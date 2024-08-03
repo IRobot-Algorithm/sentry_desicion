@@ -311,7 +311,7 @@ void BtExecutor::executeBehaviorTree()
         blackboard_->set<u_int16_t>("buy_bullets", buy_bullets_);
         if (in_supply_)
             supply_time_ = now_time;
-        blackboard_->set<double>("supply_time_", supply_time_);
+        blackboard_->set<double>("supply_time", supply_time_);
         if (!game_start_)
         {
             first_get_bullets_ = false;
