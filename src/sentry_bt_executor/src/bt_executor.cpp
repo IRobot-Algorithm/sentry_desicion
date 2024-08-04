@@ -164,7 +164,7 @@ BtExecutor::BtExecutor(const rclcpp::NodeOptions &options)
     blackboard_->set<uint8_t>("mode", mode_);
 
     blackboard_->set<double>("loop_time", 0);
-    blackboard_->set<double>("supply_time_", 0);
+    blackboard_->set<double>("supply_time", 0);
     blackboard_->set<double>("hit_time", 0);
 
     blackboard_->set<bool>("need_unlock", need_unlock_); // 需要解锁发射机构
